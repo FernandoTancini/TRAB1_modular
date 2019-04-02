@@ -1,15 +1,15 @@
 Programa de Costura de Árvore para Teste do Arcabouço     Versão 1.0 02/04/2019
-
+Disciplina: INF1301 - Programação Modular
 
 -------------------------------------------------------------------------------
 DESCRIÇÃO GERAL
 -------------------------------------------------------------------------------
 - Programa desenvolvido para ser utilizado no Windows 10
 
-- LeiaMe do arcabouço <http://www4.inf.puc-rio.br/~inf1301/software/ArcaboucoTe
-ste-2-00-LeiaMe.pdf>
 
-- LISTA.H 
+-------------------------------------------------------------------------------
+DESCRIÇÃO DO MÓDULO LISTA
+-------------------------------------------------------------------------------
 	Implementa listas genéricas duplamente encadeadas.
     Podem existir n listas em operação simultaneamente.
     As listas possuem uma cabeça encapsulando o seu estado.
@@ -37,17 +37,24 @@ ste-2-00-LeiaMe.pdf>
        esta função deve promover a destruição (free) desse valor e
        de todos os dados nele ancorados.
 
-
-
-
-
-
 ------------------------------------------------------------------------------
 INSTALAÇÃO
 ------------------------------------------------------------------------------
+- É necessário ter o arcabouço instalado, disponível em <http://www4.inf.puc-r
+io.br/~inf1301/software>
 
+- Descompactar o arquivo INF1301-Trab01.ZIP. Esse passo gerará os seguintes di
+retórios:
+   Recursos
+   Relatorios
+   Scripts
 
+------------------------------------------------------------------------------
+UTILIZAÇÃO
+------------------------------------------------------------------------------
+- Executar o arquivo executa.bat disponível INF1301-Trab01/batches
 
+- 
 
 
 
