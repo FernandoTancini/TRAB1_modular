@@ -1,0 +1,81 @@
+// Script:    TesteArvore.script
+// Autor:     Julia Rocha
+// Data:      01/abr/2019
+// Propósito: Testa a construção de uma árvore usando parâmetros literais, testa costura da arvore em rodem alfabetica
+//
+
+== Verificar assertivas de entrada de irdir
+=irdir      4
+
+== Verificar comando recuperar
+=irdir      0
+=recuperar 
+
+== Verificar ObterValorCorr relativo a árvore inexistente
+=obter      '!'   4
+
+== Verificar recuperar de ObterValorCorr relativo a árvore inexistente
+=obter      '!'   1  
+=recuperar
+
+== Criar árvore
+=criar      0   0
+=irdir      5
+
+== Verifica se tem raiz, nao tem
+=irpai	0
+=recuperar
+
+== Inserir à direita
+=insdir     'a'   0
+=obter 	'a' 0
+
+== Inserir à direita
+=insdir     'd'   0
+=obter 	'd' 0
+
+== Inserir à esquerda
+=irpai	0
+=obter 	'a' 0
+=insesq     'b'   0
+
+== Inserir à direita, nao da
+=irpai	0
+=insdir     'f'   0
+=recuperar
+=obter      'a'   0
+
+== Inserir à esquerda, nao da
+=insdir     'g'   0
+=recuperar
+
+
+== Verificar controle de obter o valor inserido errado
+=obter      'x'   0
+=recuperar
+
+== Ir para no pai, nao tem
+=irpai      6
+=obter      'a'   0
+
+== Ir para no esquerda tem
+=iresq      0
+=obter      'b'   0
+
+== Ir para no direita, nao tem
+=irpai      0
+=irdir      0
+
+== Costura arvore
+=costurar 	0
+
+== Mostrar costura
+=mostrarcostura	0
+
+== Destroi a arvore
+=destruir   
+=irdir      4
+
+
+
+// fim
