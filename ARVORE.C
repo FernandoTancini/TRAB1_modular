@@ -25,7 +25,7 @@
 
 #define ARVORE_OWN
 #include "ARVORE.H"
-#include "LINKEDLIST.H"
+#include "LISTA.H"
 #undef ARVORE_OWN
 
 /***********************************************************************
@@ -66,7 +66,7 @@
 		 char Valor ;
                /* Chave do nó, para a ordem da costura */
 
-		 List * linkedList ;
+		 LIS_tppLista linkedList ;
 		       /* Lista encadeada do no*/
 
    } tpNoArvore ;
@@ -113,6 +113,8 @@
    static void EncontraFolhasECostura( tpNoArvore * pNo ) ;
 
    static void AddNoNaCosturaEmOrdem (tpNoArvore * pNo) ;
+
+   static void DestruirValor( void * pValor );
 	
    
 /*****  Código das funções exportadas pelo módulo  *****/
@@ -226,6 +228,15 @@
       tpNoArvore * pCorr ;
       tpNoArvore * pNo ;
 
+	  // como o modulo lista aceita apenas ponteiro de valor no metodo de iinsercao,
+	  // devemos criar valores alocados na memoria...
+	  int * i1 = (int *) malloc(sizeof(int));
+	  int * i2 = (int *) malloc(sizeof(int));
+	  int * i3 = (int *) malloc(sizeof(int));
+	  *i1 = int1;
+	  *i2 = int2;
+	  *i3 = int2;
+
       /* Tratar vazio, esquerda */
 
          CondRet = CriarNoRaiz( ValorParm ) ;
@@ -253,14 +264,14 @@
             pCorr->pNoEsq    = pNo ;
             pArvore->pNoCorr = pNo ;
 			
-			pNo->linkedList = makelist();
+			pNo->linkedList = LIS_CriarLista(DestruirValor);
 			if ( pNo->linkedList == NULL )
             {
                return ARV_CondRetFaltouMemoria ;
             } /* if */
-			add(int1,pNo->linkedList);
-			add(int2,pNo->linkedList);
-			add(int3,pNo->linkedList);
+			LIS_InserirElementoApos(pNo->linkedList, i1);
+			LIS_InserirElementoApos(pNo->linkedList, i2);
+			LIS_InserirElementoApos(pNo->linkedList, i3);
 
             return ARV_CondRetOK ;
          } /* if */
@@ -333,6 +344,15 @@
       tpNoArvore * pCorr ;
       tpNoArvore * pNo ;
 
+	  // como o modulo lista aceita apenas ponteiro de valor no metodo de iinsercao,
+	  // devemos criar valores alocados na memoria...
+	  int * i1 = (int *) malloc(sizeof(int));
+	  int * i2 = (int *) malloc(sizeof(int));
+	  int * i3 = (int *) malloc(sizeof(int));
+	  *i1 = int1;
+	  *i2 = int2;
+	  *i3 = int2;
+
       /* Tratar vazio, direita */
 
          CondRet = CriarNoRaiz( ValorParm ) ;
@@ -360,14 +380,14 @@
             pCorr->pNoDir    = pNo ;
             pArvore->pNoCorr = pNo ;
 			
-			pNo->linkedList = makelist();
+			pNo->linkedList = LIS_CriarLista(DestruirValor);
 			if ( pNo->linkedList == NULL )
             {
                return ARV_CondRetFaltouMemoria ;
             } /* if */
-			add(int1,pNo->linkedList);
-			add(int2,pNo->linkedList);
-			add(int3,pNo->linkedList);
+			LIS_InserirElementoApos(pNo->linkedList, i1);
+			LIS_InserirElementoApos(pNo->linkedList, i2);
+			LIS_InserirElementoApos(pNo->linkedList, i3);
 
             return ARV_CondRetOK ;
          } /* if */
@@ -645,7 +665,7 @@
       } /* if */
 
 	  if (pNo->linkedList != NULL) {
-		  destroy(pNo->linkedList);
+		  LIS_DestruirLista(pNo->linkedList);
 	  }
       free( pNo );
 
@@ -709,5 +729,19 @@
 		
 	} /* Fim função: ARV Insere na lista de costura em ordem */
 
+/***********************************************************************
+*
+*  $FC Função: TLIS -Destruir valor
+*
+***********************************************************************/
+
+   void DestruirValor( void * pValor )
+   {
+
+      free( pValor ) ;
+
+   } /* Fim função: TLIS -Destruir valor */
+
 /********** Fim do módulo de implementação: Módulo árvore **********/
 
+                              
