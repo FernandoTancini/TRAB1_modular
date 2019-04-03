@@ -67,7 +67,7 @@ ARQUIVOS FONTE
 UTILIZAÇÃO DO PROGRAMA
 -------------------------------------------------------------------------------
 
-- Extraia o arquivo INF1301-Trab01.zip
+- Extraia o conteúdo do arquivo INF1301-Trab01.zip
 
 - Execução do Teste
 	Dê dois cliques em ExecutarTeste.bat
