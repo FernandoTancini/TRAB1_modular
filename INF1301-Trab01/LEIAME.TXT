@@ -18,7 +18,7 @@ AVISOS GERAIS
 - Programa desenvolvido para ser utilizado no Windows 10
 
 - Antes de testar o executável, altere o o nome do arquivo "TRAB1-1.exe.txt" 
-para "TRAB1-1.exe", caso assim esteja
+para "TRAB1-1.exe"
  
 -------------------------------------------------------------------------------
 DESCRIÇÃO DO PROGRAMA
