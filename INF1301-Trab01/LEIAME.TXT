@@ -73,7 +73,7 @@ UTILIZAÇÃO DO PROGRAMA
 	Dê dois cliques em ExecutarTeste.bat
 
 - Visualisação do Log de Saída
-	Abra o arquivo saida.txt gerada após a execução do passo anterior
+	Abra o arquivo saida.txt gerado após a execução do passo anterior
 
 ------------------------------------------------------------------------------
 FIM
