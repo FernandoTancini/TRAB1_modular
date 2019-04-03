@@ -1,0 +1,51 @@
+
+!!! Inicio dos testes
+!!!      Construto sob teste: TestesArcaboucoVS.exe
+!!!      Script de teste:     TesteArvore.script
+
+!!!    0  Linha:     1  // Script:    TesteArvore.script 
+!!!    0  Linha:     2  // Autor:     Julia Rocha 
+!!!    0  Linha:     3  // Data:      01/abr/2019 
+!!!    0  Linha:     4  // Propósito: Testa a construção de uma árvore usando parâmetros literais, testa costura da arvore em rodem alfabetica 
+!!!    0  Linha:     5  // 
+    7  == Verificar assertivas de entrada de irdir
+   10  == Verificar comando recuperar
+>>>    1  Linha:    11  Retorno errado ao ir para direita. Deveria ser: 0  É: 4
+<<<    0  Linha:    12  Falha esperada foi recuperada. 
+   14  == Verificar ObterValorCorr relativo a árvore inexistente
+   17  == Verificar recuperar de ObterValorCorr relativo a árvore inexistente
+>>>    1  Linha:    18  Retorno errado ao obter valor corrente. Deveria ser: 1  É: 4
+<<<    0  Linha:    19  Falha esperada foi recuperada. 
+   21  == Criar árvore
+   25  == Verifica se tem raiz, nao tem
+>>>    1  Linha:    26  Retorno errado ao ir para pai. Deveria ser: 0  É: 5
+<<<    0  Linha:    27  Falha esperada foi recuperada. 
+   29  == Inserir à direita
+   33  == Inserir à direita
+   37  == Inserir à esquerda
+   42  == Inserir à direita, nao da
+>>>    1  Linha:    44  Retorno errado inserir Ã a direita. Deveria ser: 0  É: 3
+<<<    0  Linha:    45  Falha esperada foi recuperada. 
+   48  == Inserir à esquerda, nao da
+>>>    1  Linha:    49  Retorno errado inserir Ã a direita. Deveria ser: 0  É: 3
+<<<    0  Linha:    50  Falha esperada foi recuperada. 
+   53  == Verificar controle de obter o valor inserido errado
+>>>    1  Linha:    54  ConteÃºdo do nÃ³ estÃ¡ errado. Deveria ser: 'x'  É: 'a'
+<<<    0  Linha:    55  Falha esperada foi recuperada. 
+   57  == Ir para no pai, nao tem
+   61  == Ir para no esquerda tem
+   65  == Ir para no direita, nao tem
+   69  == Costura arvore
+   72  == Mostrar costura
+   75  == Destroi a arvore
+!!!    0  Linha:    81  // fim 
+
+!!! Número de linhas lidas:          81
+!!! Número de casos de teste:        18
+!!! Número comandos corretos:        23
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0
