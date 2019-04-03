@@ -10,6 +10,8 @@
 01/04/2019| 03 horas e 00 minutos | projetar    | Documentei o código da árvore implementada pelo grupo, 
 02/04/2019| 02 horas e 15 minutos | projetar    | Criei o arquivo LEIAME.TXT com as instruções de utilização do programa,
 02/04/2019| 00 horas e 30 munutis | projetar    | Criei os arquivos .bat para a execução do programa,
+03/04/2019| 01 horas e 00 minutos | projetar    | Fiz os ultimos ajustes no leiame e no cabeçalho dos módulos para deixar de acordo com as instruções,
+
 
 
 
