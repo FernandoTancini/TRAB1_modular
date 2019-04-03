@@ -1,4 +1,4 @@
-﻿Programa de Costura de Árvore para Teste do Arcabouço     Versão 1.0 02/04/2019
+Programa de Costura de Árvore para Teste do Arcabouço     Versão 1.0 02/04/2019
 Disciplina: INF1301 - Programação Modular
 
 ------------------------------------------------------------------------------
@@ -7,7 +7,7 @@ AUTORES
 
 - Júlia Rocha (juliaafr@outlook.com)
 
-- Fernando Tancini ()
+- Fernando Tancini (fernandotancini@hotmail.com)
 
 - Suemy Inagaki (inagakisuemy@gmail.com)
 
@@ -15,16 +15,16 @@ AUTORES
 AVISOS GERAIS
 -------------------------------------------------------------------------------
 
-- Programa desenvolvido para ser utilizado no Windows 7
+- Programa desenvolvido para ser utilizado no Windows 10
 
 - Antes de testar o executável, altere o o nome do arquivo "TRAB1-1.exe.txt" 
-para "TRAB1-1.exe"
+para "TRAB1-1.exe", caso assim esteja
  
 -------------------------------------------------------------------------------
 DESCRIÇÃO DO PROGRAMA
 -------------------------------------------------------------------------------
 
-- Testa as funções do módulo árvore e do módulo lista
+- Criar uma árvore binária com diversas funcionalidades, passíveis de serem executadas e testadas por um arcabouço.
 
 -------------------------------------------------------------------------------
 ARQUIVOS FONTE
@@ -34,7 +34,6 @@ ARQUIVOS FONTE
 	ARVORE.C
 	LISTA.C
 	TESTARV.C
-	LISTA.C
 
 - Módulos de Interface
 	ARVORE.H
@@ -73,7 +72,7 @@ UTILIZAÇÃO DO PROGRAMA
 	Dê dois cliques em ExecutarTeste.bat
 
 - Visualisação do Log de Saída
-	Abra o arquivo saida.txt gerado após a execução do passo anterior
+	Abra o arquivo saida.log gerado após a execução do passo anterior
 
 ------------------------------------------------------------------------------
 FIM

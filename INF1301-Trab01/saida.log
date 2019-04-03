@@ -1,6 +1,6 @@
 
 !!! Inicio dos testes
-!!!      Construto sob teste: TestesArcaboucoVS.exe
+!!!      Construto sob teste: TRAB1
 !!!      Script de teste:     TesteArvore.script
 
 !!!    0  Linha:     1  // Script:    TesteArvore.script 
@@ -30,7 +30,7 @@
    59  == Inserir à direita, nao da
    63  == Inserir à esquerda, nao da
    66  == Verificar controle de obter o valor inserido errado
->>>    1  Linha:    67  ConteÃºdo do nÃ³ estÃ¡ errado. Deveria ser: 'x'  É: 'j'
+>>>    1  Linha:    67  Conteúdo do nó está errado. Deveria ser: 'x'  É: 'j'
 <<<    0  Linha:    68  Falha esperada foi recuperada. 
    70  == Ir para no pai, tem
    74  == Ir para no esquerda, nao tem
