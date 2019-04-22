@@ -1,0 +1,8 @@
+___Data___|___Horas_Trabalhadas___|______Tipo_Tarefa______|______Descrição da Tarefa Realizada_____________________________
+22/04/2019| 04 horas e 30 minutos | projetar              | Comecei a especificação de requisitos
+22/04/2019| 02 horas e 00 minutos | estudar               | Estudei o jogo gamão para aprender a jogar e melhorar a especificação de requisitos
+22/04/2019| 03 horas e 30 minutos | estudar               | Respondi as 7 questões que foram passadas em sala de aula.
+22/04/2019| 01 horas e 00 minutos | projetar              | Reunião com o grupo para ver a divisão de tarefas
+
+
+
