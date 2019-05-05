@@ -3,7 +3,7 @@
 
 /***************************************************************************
 *
-*  $MCD MÛdulo de definiÁ„o: Modulo Tabuleiro
+*  $MCD M√≥dulo de defini√ß√£o: Modulo Tabuleiro
 *
 *  Arquivo gerado:              TABULEIRO.H
 *  Letras identificadoras:      TAB
@@ -11,13 +11,13 @@
 *  Projeto: Jogo Gamao
 *  Autores: fbt - Fernando Baggi Tancini
 *
-*  $HA HistÛrico de evoluÁ„o:
-*		Vers„o		Autores		Data			ObservaÁıes
+*  $HA Hist√≥rico de evolu√ß√£o:
+*		Vers√£o		Autores		Data			Observa√ß√µes
 *	  	3   		fbt	  		03/05/2019		Revisao e consertos
-*	  	2   		fbt	  		02/05/2019		CriaÁ„o do mÛdulo 
+*	  	2   		fbt	  		02/05/2019		Cria√ß√£o do m√≥dulo 
 *      	1    		fbt	  		01/05/2019		Inicializado projeto
 *
-*  $ED DescriÁ„o do mÛdulo
+*  $ED Descri√ß√£o do m√≥dulo
 *			O modulo tem como objetivo prover a estutura de dados 
 *			para o tabuleiro usando listas encadeadas e promover tambem 
 *			as funcoes nescessarias para realizar o jogo.
@@ -32,7 +32,7 @@
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: TAB CondiÁıes de retorno
+*  $TC Tipo de dados: TAB Condi√ß√µes de retorno
 *
 *
 ***********************************************************************/
@@ -43,25 +43,25 @@
                /* Executou correto */
 
          TAB_CondRetTabNaoExiste,
-               /* Tabuleiro n„o existe */
+               /* Tabuleiro n√£o existe */
 
          TAB_CondRetCasaNaoExiste,
-               /* Casa fornecida n„o existe */
+               /* Casa fornecida n√£o existe */
 
          TAB_CondRetCasaVazia,
-               /* A casa est· vazia*/
+               /* A casa est√° vazia*/
 
 		 TAB_CondRetFaltouMemoria,
-               /* Faltou memÛria ao alocar dados */
+               /* Faltou mem√≥ria ao alocar dados */
 
    } TAB_tpCondRet ;
 
 
 /***********************************************************************
 *
-*	$FC FunÁ„o: TAB Criar tabuleiro
+*	$FC Fun√ß√£o: TAB Criar tabuleiro
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Cria um novo tabuleiro com 24 casas e as pecas
 *		posicionadas nas respectivas posicoes iniciais.
 *		E sobescreve (apaga) outro tabuleiro anterior
@@ -78,9 +78,9 @@
 
 /*************************************************************************
 *
-*	$FC FunÁ„o: TAB Destruir Tabuleiro
+*	$FC Fun√ß√£o: TAB Destruir Tabuleiro
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Destroi o tabuleiro e todas estruturas adjacentes em cascata
 *		caso estas existam.
 *
@@ -91,15 +91,15 @@
 
 /***************************************************************************
 *
-*	$FC FunÁ„o: TAB Insere N PeÁas na Casa informada
+*	$FC Fun√ß√£o: TAB Insere N Pe√ßas na Casa informada
 *
-*  $ED DescriÁ„o da funÁ„o
-*     Insere n peÁas da cor informada na casa informada
+*  $ED Descri√ß√£o da fun√ß√£o
+*     Insere n pe√ßas da cor informada na casa informada
 *	
-*	 $EP Par‚metros:
-*     $P n - È o n˙mero da peÁas a se inserir
-*     $P cor - È a cor da peÁa a ser inserida
-*     $P nCasa - È o n˙mero da casa
+*	 $EP Par√¢metros:
+*     $P n - √© o n√∫mero da pe√ßas a se inserir
+*     $P cor - √© a cor da pe√ßa a ser inserida
+*     $P nCasa - √© o n√∫mero da casa
 *
 *	 $FV Valores de retorno:
 *		- TAB_CondRetOK
@@ -108,18 +108,18 @@
 *		- TAB_CondRetCasaNaoExiste
 *************************************************************************/
 
-	TAB_tpCondRet InsereNPecasCasa( int n, int cor, int nCasa ) 
+	TAB_tpCondRet InsereNPecasCasa( int n, int cor, int nCasa ) ;
 
 
 /*************************************************************************
 *
-*	$FC FunÁ„o: TAB Remove N PeÁas da Casa informada
+*	$FC Fun√ß√£o: TAB Remove N Pe√ßas da Casa informada
 *
-*  $ED DescriÁ„o da funÁ„o
-*     Remove n peÁas da casa informada, caso haja alguma
+*  $ED Descri√ß√£o da fun√ß√£o
+*     Remove n pe√ßas da casa informada, caso haja alguma
 *	
-*	$EP Par‚metros:
-*     $P nCasa - È o n˙mero da casa
+*	$EP Par√¢metros:
+*     $P nCasa - √© o n√∫mero da casa
 *
 *	$FV Valores de retorno:
 *		- TAB_CondRetOK
@@ -134,11 +134,11 @@
 
 /*************************************************************************
 *
-*	$FC FunÁ„o: TAB Num PeÁas da Casa
+*	$FC Fun√ß√£o: TAB Num Pe√ßas da Casa
 *
-*  $EP Par‚metros
-*     $P casa - È o n˙mero da casa escolhida para ver a quantidade de pecas
-*     $P numPecas - … o par·metro que receber· o n˙mero de peÁas
+*  $EP Par√¢metros
+*     $P casa - √© o n√∫mero da casa escolhida para ver a quantidade de pecas
+*     $P numPecas - √â o par√°metro que receber√° o n√∫mero de pe√ßas
 *
 *	$FV Valores de retorno:
 *		- TAB_CondRetOK
@@ -152,11 +152,11 @@
 
 /*************************************************************************
 *
-*	$FC FunÁ„o: TAB Cor PeÁas da Casa
+*	$FC Fun√ß√£o: TAB Cor Pe√ßas da Casa
 *
-*  $EP Par‚metros
-*     $P casa - È o n˙mero da casa escolhida para ver a cor das peÁas
-*     $P numPecas - … o par·metro que receber· a cor das peÁas
+*  $EP Par√¢metros
+*     $P casa - √© o n√∫mero da casa escolhida para ver a cor das pe√ßas
+*     $P numPecas - √â o par√°metro que receber√° a cor das pe√ßas
 *                    da casa escolhida, sendo 0 ou 1
 *
 *	$FV Valores de retorno:
@@ -171,7 +171,7 @@
 
 #undef TABULEIRO_EXT
 
-/********** Fim do mÛdulo de definiÁ„o: MÛdulo Tabuleiro **********/
+/********** Fim do m√≥dulo de defini√ß√£o: M√≥dulo Tabuleiro **********/
 
 #else
 #endif
