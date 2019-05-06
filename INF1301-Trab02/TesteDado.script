@@ -1,0 +1,20 @@
+﻿// Script:    TesteDado.script
+// Autores:   Julia Affonso Figueiredo Rocha
+// Data:      05/05/2019
+// Proposito: Testar o modulo Dado.c
+//
+
+== Inicializar valores
+=declararparm   resultado  int 0
+=declararparm   OK     int  0
+=declararparm   FaltouMemoria   int  1
+
+
+== Jogar dado
+=jogar	resultado	ok
+
+
+// Fim
+
+
+

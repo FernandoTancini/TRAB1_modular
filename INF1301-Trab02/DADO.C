@@ -37,9 +37,8 @@
 *  ****/
 
 DAD_tpCondRet DAD_Jogar(int *Numero) {
-    srand(time(NULL));
-    int resultado = (rand() % 6) + 1;
-	*Numero = resultado;
+    srand((unsigned) time(NULL));
+    *Numero = (rand() % 6) + 1;
 	return DAD_CondRetOK;
 }
 
