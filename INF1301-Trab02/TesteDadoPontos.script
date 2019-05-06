@@ -1,0 +1,101 @@
+// Script:    TestDadoPontos.script
+// Autores:   Suemy Inagaki Pinheiro Fagundes
+// Data:      04/05/2019
+// Proposito: Testar o modulo DadoPontos.c
+//
+
+== Inicializar valores
+//A quantidade de dadoPontos é no máximo 10.
+//Aqui só testei para três
+=declararparm   d0  int 0
+=declararparm   d1  int 1
+=declararparm   d2  int 2
+
+=declararparm   SemErro          	       int  0
+=declararparm   DadoPontosNaoExiste            int  1
+=declararparm   JogadorNaoTemDadoPontos        int  2
+=declararparm	NaoExisteJogadorDadoPontos     int  3
+=declararparm   FalhaMemoria	               int  -1
+
+=declararparm	CorVermelha	 int 0
+=declararparm	CorPreta         int 1
+
+== Testar Recuperar
+=destruirdadopontos d0 SemErro
+=recuperar
+
+== Testar Criar dado de pontos
+=criardadopontos    d0 SemErro
+
+== Testar Criar dado de pontos
+=criardadopontos    d1 SemErro
+
+== Testar Destruir dado de pontos
+=destruirdadopontos d0 SemErro
+
+//Teste de Destruir dadoPontos
+//O teste deve acusar um erro e recuperar, pois d0 não existe
+== Testar Destruir dado de pontos que nao existe e recuperar erro
+=destruirdadopontos d0 SemErro
+=recuperar
+
+//O teste deve acusar um erro e não será recuperado, já que d0 não existe
+== Testar Destruir dado de pontos que nao existe e não recupera o erro
+=destruirdadopontos d0 SemErro
+
+//Não vai acusar erro
+== Testar Destruir dado de pontos que nao existe
+=destruirdadopontos d0 DadoPontosNaoExiste 
+
+
+//Teste de Obter Jogador que tem Dado Pontos
+== Testar Obter jogador que possui o dado de pontos
+=obterjogadordobrapartida d1 CorVermelha NaoExisteJogadorDadoPontos
+// Não tem erro para acusar
+== Testar Dobrar pontuacao partida
+=dobrarpontuacaopartida d1 CorVermelha SemErro
+
+== Testar Dobrar pontuacao partida dado pontos nao existe
+=dobrarpontuacaopartida d0 CorVermelha DadoPontosNaoExiste
+
+== Testar Dobrar pontuacao partida jogador nao possui dado pontos
+=dobrarpontuacaopartida d1 CorPreta JogadorNaoTemDadoPontos
+
+== Testar Obter jogador que possui o dado de pontos
+=obterjogadordobrapartida d0 CorVermelha DadoPontosNaoExiste
+
+== Testar Obter jogador que possui o dado de pontos
+=obterjogadordobrapartida d1 CorVermelha SemErro
+
+== Testar Obter pontuacao partida
+=obterpontuacaopartida d1 2 SemErro
+
+== Testar Obter pontuacao partida dado pontos nao existe
+=obterpontuacaopartida d0 2 DadoPontosNaoExiste
+
+== Testar Destruir dado de pontos
+=destruirdadopontos d1 SemErro
+
+//Teste de Atualizar Jogador de Dobra
+//Nao tem erro
+== Testar Atualizar jogador de dobra
+=atualizarjogadordobra d1 CorVermelha SemErro
+
+//O script não vai acusar erro
+== Testar Atualizar jogador de dobra dado de pontos que nao existe
+=atualizarjogadordobra d0 CorVermelha DadoPontosNaoExiste
+
+//Vai acusar erro e não vai recuperar
+== Testar Atualizar jogador de dobra dado de pontos que nao existe sem recuperar
+=atualizarjogadordobra d0 CorVermelha SemErro
+
+//Vai acusar erro e vai recuperar
+== Testar Atualizar jogador de dobra dado de pontos que nao existe recuperando
+=atualizarjogadordobra d0 CorVermelha SemErro
+=recuperar
+
+
+
+
+
+
