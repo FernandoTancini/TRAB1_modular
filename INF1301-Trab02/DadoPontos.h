@@ -73,15 +73,18 @@ typedef enum {
 *
 *  $EP Parâmetros
 *     $P pDadoPontos - Ponteiro para o Dado de Pontos.
-*                    - Passado por Referência.
 *
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_FaltouMemoria
 *
+*  Assertivas de Entrada: Deve existir um ponteiro de tpDadoPontos passado como parâmetro que 
+*                         receberá o dado criado na função 
+*  Assertivas de Saída: Um dado de pontos é criado e passado para o ponteiro recebido. 
+*
 *****************************************************************************************/
 
-DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos **pDadoPontos);
+DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos);
 
 
 /*****************************************************************************************
@@ -98,6 +101,11 @@ DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos **pDadoPontos);
 *  $FV Valor retornado
 *     DPTS _Feito
 *     DPTS_DadoPontosNaoExiste
+*
+*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que indica a dobra.
+*                         - Deve ter um char que representa a cor do jogador
+*  Assertivas de Saída: A cor do jogador que pode dobrar a pontuacao é atulizada.
+*
 ******************************************************************************************/
 
 DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorPeca);
@@ -119,6 +127,10 @@ DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorP
 *     DPTS_DadoPontosNaoExiste
 *     DPTS_JogadorNaoTemDadoPontos
 *
+*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que sera utilizado;
+*  Assertivas de Saída:   - Se dado pontos não existir ou cor da peça não for igual a cor que pode
+*                           dobrar a pontuação o ponteiro pDadoPontos não é atualizado
+*                         - Caso contrário, a pontuação é dobrada e o ponteiro é atualizado
 ******************************************************************************************/
 
 DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_tpDadoPontos *pDadoPontos, char CorPeca);
@@ -140,6 +152,15 @@ DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_tpDadoPontos *pDadoPontos, char CorP
 *     DPTS_DadoPontosNaoExiste
 *     DPTS_NaoExisteJogadorComDadoPontos
 *
+*  Assertivas de Entrada:  - Deve ter um ponteiro para o dado de pontos
+*                            que ser ́a analisado
+*                          - Deve ter um ponteiro de char que ser ́a atualizado com a cor do jogador
+*                            possuidor do dado de pontos.
+*
+*  Assertivas de Saída:   - Se dado pontos não tiver possuidor no momento, o ponteiro não será
+*                           atualizado.
+*                         - Caso contrário, o ponteiro é atualizado com a cor correta
+*
 ******************************************************************************************/
 
 DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_tpDadoPontos *pDadoPontos, char *pCorPeca);
@@ -160,7 +181,11 @@ DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_tpDadoPontos *pDadoPontos, char *p
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_DadoPontosNaoExiste
-*
+*  
+*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que será utilizado;
+*                         - Deve ter um ponteiro para receber a  pontuação da partida.
+*  Assertivas de Saída:   - Se dado de pontos existir, a pontuação será obtida e o valor do ponteiro
+*                           pPonto será atualizado.
 ******************************************************************************************/
 
 DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPonto);
@@ -175,15 +200,15 @@ DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPo
 *
 *  $EP Parâmetros
 *     $P pDadoPontos - ponteiro para o dado de pontos a ser destruído 
-*                    - Passado por referência
 *
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_DadoPontosNaoExiste
-*
+*  Assertivas de Entrada:  - Deve ter um ponteiro para o dado de pontos que será destruído.
+*  Assertivas de Saída:    - O dado de pontos foi destruído e ponteiro aponta para NULL.
 *******************************************************************************************/
 
-DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos **pDadoPontos);
+DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos *pDadoPontos);
 
 #undef DadoPontos_EXT
 
