@@ -47,7 +47,7 @@ typedef struct DPTS_tpDadoPontos{
 *  Função: DPTS Criar Dado  Pontos
 * 
 *****************************************************************************************/
-DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos **pDadoPontos){
+DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos){
 	
 	*pDadoPontos = (DPTS_tpDadoPontos *) malloc(sizeof(DPTS_tpDadoPontos));
 	if(*pDadoPontos == NULL){
@@ -129,7 +129,7 @@ DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPo
 *  Função: DPTS Destruir dado de pontos
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos **pDadoPontos){
+DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos *pDadoPontos){
 	if(*pDadoPontos == NULL){
 		return DPTS_DadoPontosNaoExiste;
 	} 
