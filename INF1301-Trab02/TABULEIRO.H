@@ -51,7 +51,7 @@
          TAB_CondRetCasaVazia,
                /* A casa está vazia*/
 
-		 TAB_CondRetFaltouMemoria,
+		 TAB_CondRetFaltouMemoria
                /* Faltou memória ao alocar dados */
 
    } TAB_tpCondRet ;
@@ -84,14 +84,16 @@
 *		Destroi o tabuleiro e todas estruturas adjacentes em cascata
 *		caso estas existam.
 *
+*	 $FV Valores de retorno:
+*		- TAB_CondRetOK
 *************************************************************************/
 
-   void TAB_DestruirTabuleiro( void ) ;
+   TAB_tpCondRet TAB_DestruirTabuleiro( void ) ;
 
 
 /***************************************************************************
 *
-*	$FC Função: TAB Insere N Peças na Casa informada
+*	$FC Função: TAB Insere N Peças na Casa
 *
 *  $ED Descrição da função
 *     Insere n peças da cor informada na casa informada
@@ -108,12 +110,12 @@
 *		- TAB_CondRetCasaNaoExiste
 *************************************************************************/
 
-	TAB_tpCondRet InsereNPecasCasa( int n, int cor, int nCasa ) ;
+	TAB_tpCondRet TAB_InsereNPecasCasa( int n, int cor, int nCasa ) ;
 
 
 /*************************************************************************
 *
-*	$FC Função: TAB Remove N Peças da Casa informada
+*	$FC Função: TAB Remove N Peças da Casa
 *
 *  $ED Descrição da função
 *     Remove n peças da casa informada, caso haja alguma
@@ -156,8 +158,7 @@
 *
 *  $EP Parâmetros
 *     $P casa - é o número da casa escolhida para ver a cor das peças
-*     $P numPecas - É o parámetro que receberá a cor das peças
-*                    da casa escolhida, sendo 0 ou 1
+*     $P cor - É o parámetro que receberá a cor das peças da casa escolhida.
 *
 *	$FV Valores de retorno:
 *		- TAB_CondRetOK
@@ -167,7 +168,7 @@
 *
 *************************************************************************/
 
-   TAB_tpCondRet TAB_CorPecasCasa( int nCasa, int * cor ) ;
+   TAB_tpCondRet TAB_CorPecasCasa( int nCasa, char * cor ) ;
 
 #undef TABULEIRO_EXT
 
