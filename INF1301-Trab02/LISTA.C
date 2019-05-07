@@ -480,6 +480,7 @@
 
    } /* Fim função: LIS  &Procurar elemento contendo valor */
 
+
 /***************************************************************************
 *
 *  Função: LIS  Pegar Numero Elementos da Lista

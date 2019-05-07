@@ -12,10 +12,11 @@
 *
 *  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
 *  Gestor:  LES/DI/PUC-Rio
-*  Autores: avs
+*  Autores: avs, fbt - Fernando Baggi Tancini
 *
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data     Observações
+*     4       fbt   06/mai/2019 Add func pra ver tamanho da lista
 *     4       avs   01/fev/2006 criar linguagem script simbólica
 *     3       avs   08/dez/2004 uniformização dos exemplos
 *     2       avs   07/jul/2003 unificação de todos os módulos em um só projeto
@@ -340,34 +341,6 @@ typedef struct LIS_tagLista * LIS_tppLista ;
 
 /***********************************************************************
 *
-*  $FC Função: LIS  &Procurar elemento contendo valor
-*
-*  $ED Descrição da função
-*     Procura o elemento que referencia o valor dado.
-*     A função compara ponteiro e não conteúdo apontado.
-*
-*  $EP Parâmetros
-*     pLista  - ponteiro para a lista onde procura
-*     pValor  - ponteiro para o valor procurado
-*               Pode ser NULL
-*
-*  $FV Valor retornado
-*     LIS_CondRetOK  - se encontrou.
-*                      O elemento corrente é o primeiro elemento do
-*                      elemento corrente inclusive para o fim da lista
-*                      e que contém o ponteiro procurado
-*
-*     LIS_CondRetNaoEncontrou - se o ponteiro não foi encontrado
-*                      O elemento corrente continua o mesmo
-*     LIS_CondRetListaVazia   - se a lista estiver vazia
-*
-***********************************************************************/
-
-   LIS_tpCondRet LIS_ProcurarValor( LIS_tppLista pLista ,
-                                    void * pValor        ) ;
-
-/***********************************************************************
-*
 *  $FC função: LIS  Pegar Numero Elementos da Lista
 *
 *  $ED Descrição da função
@@ -379,7 +352,7 @@ typedef struct LIS_tagLista * LIS_tppLista ;
 *
 ***********************************************************************/
 
-   void LIS_PegarNumElemenLista( LIS_tppLista pLista, int * n)
+   void LIS_PegarNumElemenLista( LIS_tppLista pLista, int * n) ;
 
 #undef LISTA_EXT
 

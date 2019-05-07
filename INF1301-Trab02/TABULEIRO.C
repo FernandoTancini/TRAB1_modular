@@ -50,9 +50,9 @@
 
 	static TAB_tpCondRet ConfigPosInicial( ) ;
 
-	static TAB_tpCondRet InsereNPecasCasa( int n, char cor, int nCasa ) ;
+	static TAB_tpCondRet InserePecaCasa(  char cor, int nCasa ) ;
 
-	static TAB_tpCondRet TAB_InserePecaCasa(  char cor, int nCasa ) ;
+	static TAB_tpCondRet RemovePecaCasa( int nCasa )  ;
 	
 	static LIS_tppLista ObterListaCasa( int nCasa ) ;
 
@@ -67,7 +67,7 @@
 
 	TAB_tpCondRet TAB_CriarTabuleiro( void ) 
 	{
-		int cond, i ;
+		int i ;
 		LIS_tppLista casa = NULL;
 		if ( tab != NULL )
 		{
@@ -97,11 +97,7 @@
 			LIS_InserirElementoApos( tab->listaCasas, casa ) ;
 		} /* for */
 
-		if ( ConfigPosInicial( ) == TAB_CondRetFaltouMemoria ) {
-			return TAB_CondRetFaltouMemoria ;
-		} /* if */
-
-		return TAB_CondRetOK ;
+		return ConfigPosInicial( ) ;
 	} /* Fim função: TAB Criar Tabuleiro */
 
 /***************************************************************************
@@ -109,14 +105,12 @@
 *  Função: TAB Destruir Tabuleiro
 *  ****/
 
-	void TAB_DestruirTabuleiro( void ) 
+	TAB_tpCondRet TAB_DestruirTabuleiro( void ) 
 	{
-		LIS_tppLista casa ;
-		int numCasas, i ;
 
 		if ( tab == NULL )
 		{
-			return ;
+			return TAB_CondRetOK ;
 		} /* if */
 
 		if (tab->listaCasas !=  NULL) 
@@ -126,6 +120,8 @@
 
 		free( tab ) ;
 		tab = NULL ;
+
+		return TAB_CondRetOK;
 	} /* Fim função: TAB Destruir Tabuleiro */
 
 /***************************************************************************
@@ -135,20 +131,18 @@
 
 	TAB_tpCondRet TAB_InsereNPecasCasa( int n, int cor, int nCasa ) 
 	{
-		int i, cond ;
+		int i ;
+		TAB_tpCondRet cond ;
 
 		if ( tab == NULL ) {
 			return TAB_CondRetTabNaoExiste ;
 		} /* if */
 		for ( i = 0; i < n; i++ )
 		{
-			cond = TAB_InserePecaCasa( nCasa, cor );
-			if ( cond == TAB_CondRetFaltouMemoria ) {
-				return TAB_CondRetFaltouMemoria ;
+			cond = InserePecaCasa( cor, nCasa );
+			if ( cond != TAB_CondRetOK ) {
+				return cond ;
 			} /* if */
-			else if (cond == TAB_CondRetCasaNaoExiste ) {
-				return TAB_CondRetCasaNaoExiste ;
-			} /* else if */
 		} /* for */
 		return TAB_CondRetOK ;
 	} /* Fim função: TAB Insere N Pecas na Casa */
@@ -168,7 +162,7 @@
 		} /* if */
 		for ( i = 0; i < n; i++ )
 		{
-			cond = TAB_RemovePecaCasa( nCasa );
+			cond = RemovePecaCasa( nCasa );
 			if ( cond == TAB_CondRetCasaNaoExiste ) {
 				return TAB_CondRetCasaNaoExiste ;
 			} /* if */
@@ -199,7 +193,7 @@
 		} /* if */
 
 		LIS_PegarNumElemenLista( casa, numPecas ) ;
-		return TAB_CondRetOK
+		return TAB_CondRetOK ;
 	} /* Fim função: TAB Num Peças da Casa */
 
 /***************************************************************************
@@ -211,7 +205,6 @@
 	{
 		LIS_tppLista casa ;
 		tppPeca peca ;
-		int nPecas, cond ;
 
 		if ( tab == NULL ) {
 			return TAB_CondRetTabNaoExiste ;
@@ -250,23 +243,49 @@
 	
 	TAB_tpCondRet ConfigPosInicial( void ) 
 	{
-		int cond ;
-
+		TAB_tpCondRet cond;
 		if ( tab == NULL ) {
 			return TAB_CondRetTabNaoExiste ;
 		} /* if */
 
+		cond = TAB_InsereNPecasCasa( 2, PEC_corPreta, 1 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
 
-		if (   InsereNPecasCasa( 2, PEC_corPreta, 1 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 5, PEC_corVermelha, 6 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 3, PEC_corVermelha, 8 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 5, PEC_corPreta, 12 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 5, PEC_corVermelha, 13 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 3, PEC_corPreta, 17 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 5, PEC_corPreta, 19 ) == TAB_CondRetFaltouMemoria
-			|| InsereNPecasCasa( 2, PEC_corVermelha, 24 ) == TAB_CondRetFaltouMemoria 
-			){
-			return TAB_CondRetFaltouMemoria ;
+		cond = TAB_InsereNPecasCasa( 5, PEC_corVermelha, 6 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 3, PEC_corVermelha, 8 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 5, PEC_corPreta, 12 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 5, PEC_corVermelha, 13 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 3, PEC_corPreta, 17 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 5, PEC_corPreta, 19 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
+		} /* if */
+
+		cond = TAB_InsereNPecasCasa( 2, PEC_corVermelha, 24 ) ;
+		if ( cond != TAB_CondRetOK ) {
+			return cond ;
 		} /* if */
 
 		return TAB_CondRetOK ;
@@ -287,7 +306,7 @@
 *		- TAB_CondRetFaltouMemoria
 *  ****/
 
-	TAB_tpCondRet TAB_InserePecaCasa( char cor, int nCasa ) 
+	TAB_tpCondRet InserePecaCasa( char cor, int nCasa ) 
 	{
 		LIS_tppLista casa ;
 		tppPeca peca ;
@@ -305,7 +324,7 @@
 
 		casa = ObterListaCasa ( nCasa ) ;
 		if ( casa == NULL ) {
-			return TAB_CondRetCasaNaoExiste ;
+			return TAB_CondRetCasaNaoExiste ; 
 		} /* if */
 		LIS_InserirElementoApos( casa, peca );
 		return TAB_CondRetOK ;
@@ -326,7 +345,7 @@
 *		- TAB_CondRetCasaVazia
 *  ****/
 
-	TAB_tpCondRet TAB_RemovePecaCasa( int nCasa ) 
+	TAB_tpCondRet RemovePecaCasa( int nCasa ) 
 	{
 		LIS_tppLista casa ;
 
@@ -373,9 +392,8 @@
 
 		IrInicioLista( tab->listaCasas ) ;
 		cond = LIS_AvancarElementoCorrente( tab->listaCasas , nCasa-1 ) ;
-
 		if (cond == LIS_CondRetOK) {
-			return * ((LIS_tppLista *) LIS_ObterValor( tab->listaCasas )) ;
+			return (LIS_tppLista) LIS_ObterValor( tab->listaCasas ) ;
 		} /* if */
 		else {
 			return NULL ;
