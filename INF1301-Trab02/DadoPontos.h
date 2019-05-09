@@ -13,7 +13,8 @@
 *
 *	$HA Histórico de evolução:
 *	Versão  Autor    Data     Observações
-*	1       sipf   30/abr/2019 início desenvolvimento
+*	1.01    sipf   09/05/2019  Assertivas das funções adicionadas
+*	1.00    sipf   30/abr/2019 Desenvolvimento
 *
 *       $ED Descrição do módulo
 *       Define as Funções de DadoPontos.
