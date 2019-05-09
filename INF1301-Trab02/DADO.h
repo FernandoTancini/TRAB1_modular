@@ -9,11 +9,11 @@
 *
 *  Projeto: INF 1301
 *  Autor: jfr     Júlia Affonso Figueiredo Rocha
-
+*
 *
 *  $HA Historico de evolucao:
 *     Versao   Autor    Data       Observacoes
-        1.01   jfr   05/05/2019 Revisao e melhorias no módulo
+*       1.01   jfr   05/05/2019 Revisao e melhorias no módulo
 *       1.00   jfr   01/05/2019 Inicio do desenvolvimento
 *
 *  $ED Descricao do modulo
@@ -57,6 +57,9 @@
 *  $FV Valor retonado
 *     - DAD_CondRetOK
 *     - DAD_CondRetFaltouMemoria
+*  Assertivas de Entrada: - Deve existir um ponteiro para um número
+*  Assertivas de Saída:   - O número do dado deve ser passado por referência
+*                           ao ponteiro recebido
 ***********************************************************************/
 
 DAD_tpCondRet DAD_Jogar(int *Numero) ;
