@@ -15,7 +15,7 @@
 *		Versão		Autores		Data			Observações
 *	  	3   		fbt	  		03/05/2019		Revisao e consertos
 *	  	2   		fbt	  		02/05/2019		Criação do módulo 
-*      	1    		fbt	  		01/05/2019		Inicializado projeto
+*       	1    		fbt	  		01/05/2019		Inicializado projeto
 *
 *  $ED Descrição do módulo
 *			O modulo tem como objetivo prover a estutura de dados 
@@ -70,6 +70,8 @@
 *	$FV Valores de retorno:
 *		- TAB_CondRetOK
 *		- TAB_CondRetFaltouMemoria
+*   Assertivas de Entrada: Não existe assertivas de entrada para essa função
+*   Assertiva de Saída:    Um tabuleiro é criado
 *
 *************************************************************************/
 
@@ -86,6 +88,8 @@
 *
 *	 $FV Valores de retorno:
 *		- TAB_CondRetOK
+*  Assertivas de Entrada: Um tabuleiro a ser destruído deve existir
+*  Asertivas de Saída:    O tabuleiro foi destruido
 *************************************************************************/
 
    TAB_tpCondRet TAB_DestruirTabuleiro( void ) ;
@@ -108,6 +112,9 @@
 *		- TAB_CondRetTabNaoExiste
 *		- TAB_CondRetFaltouMemoria
 *		- TAB_CondRetCasaNaoExiste
+*   Assertivas de Entrada: A peça a ser inserida deve existir
+*                          Deve-se saber a cor da peça e o numero da casa a inserir
+*   Assertivas de Saída:   A peça foi inserida na casa do tabuleiro
 *************************************************************************/
 
 	TAB_tpCondRet TAB_InsereNPecasCasa( int n, int cor, int nCasa ) ;
@@ -129,6 +136,8 @@
 *		- TAB_CondRetCasaVazia
 *		- TAB_CondRetCasaNaoExiste
 *
+*   Assertivas de Entrada: Deve existir uma peça na casa de onde quer remover
+*   Assertivas de Saída:   Uma peça é removida da casa recebida como parâmetro
 *************************************************************************/
 
    TAB_tpCondRet TAB_RemoveNPecasCasa( int n, int nCasa ) ;
@@ -147,6 +156,8 @@
 *		- TAB_CondRetTabNaoExiste
 *		- TAB_CondRetCasaNaoExiste
 *
+*   Assertivas de Entrada: Deve existir um ponteiro que receberá a quantidade de peças
+*   Assertivas de Saída:   O numero de peças na casa é passado para o ponteiro.
 *************************************************************************/
 
    TAB_tpCondRet TAB_NumPecasCasa( int nCasa, int * numPecas ) ;
@@ -166,6 +177,8 @@
 *		- TAB_CondRetCasaVazia
 *		- TAB_CondRetCasaNaoExiste
 *
+*   Assertivas de Entrada: Deve existir um ponteiro para receber a cor da peça
+*   Assertivas de Saída: A cor da peça é passada para o ponteiro
 *************************************************************************/
 
    TAB_tpCondRet TAB_CorPecasCasa( int nCasa, char * cor ) ;
