@@ -74,6 +74,9 @@ typedef struct tgPeca * tppPeca;
 *  $FV Valor retonado
 *     - Pec_CondRetOK
 *     - Pec_CondRetFaltouMemoria
+*  Assertivas de Entrada: Deve existir um ponteiro para a peça a ser criada
+*  Assertivas de Saída:   Uma peça criada deve ser retornada pelo ponteiro recebido
+*                         no parâmetro
 *
 ***********************************************************************/
 
@@ -89,6 +92,9 @@ typedef struct tgPeca * tppPeca;
 *  $EP Parametros:
 *
 *   $P Peca - a peca que será destruida
+*
+*   Assertivas de Entrada: Deve existir uma peça a ser destruída
+*   Assertivas de Saída:   O ponteiro da peça que foi destruida aponta para NULL
 *
 ***********************************************************************/
 
@@ -111,5 +117,7 @@ typedef struct tgPeca * tppPeca;
 *     PEC_CondRetOK
 *     PEC_CondRetFaltouMemoria
 *
+*   Assertivas de Entrada: Deve existir um ponteiro que receberá a peça
+*   Assertivas de Saída:   A cor da peça obtida deve ser passada para p ponteiro
 ***********************************************************************/
 PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
