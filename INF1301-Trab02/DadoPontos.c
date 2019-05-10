@@ -47,13 +47,15 @@ typedef struct DPTS_tpDadoPontos{
 *  Função: DPTS Criar Dado  Pontos
 * 
 *****************************************************************************************/
-DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos){
+DPTS_CondRet DPTS_CriarDadoPontos(DPTS_DadoPCabeca *pDadoPontos){
 	
-	*pDadoPontos = (DPTS_tpDadoPontos *) malloc(sizeof(DPTS_tpDadoPontos));
-	if(*pDadoPontos == NULL){
+	*pDadoPontos = (DPTS_DadoPCabeca) malloc(sizeof(DPTS_tpDadoPontos));
+	if(pDadoPontos == NULL){
 		return DPTS_FaltouMemoria ;
 	} 
+
 	(*pDadoPontos)->Ponto = 1;
+
 	return DPTS_Feito ;
 } /* Fim da função: DPTS Criar Dado Pontos */
 
@@ -63,7 +65,7 @@ DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos){
 *  Função: DPTS Jogador Dobra Atualiza
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorPeca){
+DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_DadoPCabeca pDadoPontos, char CorPeca){
 	if(pDadoPontos == NULL){
 		return DPTS_DadoPontosNaoExiste;
 	} 
@@ -77,51 +79,47 @@ DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorP
 *  Função: DPTS Dobrar Pontuacao Atual
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_tpDadoPontos *pDadoPontos, char CorPeca){
-	if(pDadoPontos == NULL){
+DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_DadoPCabeca pDadoPontos, char CorPeca){
+	if(pDadoPontos == NULL)
 		return  DPTS_DadoPontosNaoExiste;
-	} 
 
-	if(pDadoPontos->CorPeca != CorPeca){
+	if(pDadoPontos->CorPeca != CorPeca)
 		return DPTS_JogadorNaoTemDadoPontos;
-	}
 
 	pDadoPontos->Ponto *= 2;
 	return DPTS_Feito ;
 }/* Fim da função:  DPTS Dobrar Pontuacao Atual*/
-
 
 /*****************************************************************************************
 *
 *  Função: DPTS Obter jogador Dobra Ponto
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_tpDadoPontos *pDadoPontos, char *pCorPeca){
-	if(pDadoPontos == NULL){
+DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_DadoPCabeca pDadoPontos, char *pCorPeca){
+	if(pDadoPontos == NULL)
 		return DPTS_DadoPontosNaoExiste;
-	}
 
-	if(pDadoPontos->Ponto == 1){
+	if(pDadoPontos->Ponto == 1)
 		return DPTS_NaoExisteJogadorComDadoPontos;
-	}
 
 	*pCorPeca = pDadoPontos->CorPeca;
 	return DPTS_Feito ;
 } /* Fim da função:  DPTS Obter jogador Dobra Ponto*/
-
 
 /*****************************************************************************************
 *
 *  Função: DPTS Obter pontuação partida
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPonto){
+DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_DadoPCabeca pDadoPontos, int *pPonto){
 	if(pDadoPontos == NULL){
 		return DPTS_DadoPontosNaoExiste;
 	}
 
 	*pPonto = pDadoPontos->Ponto;
+	
 	return DPTS_Feito;
+
 } /* Fim da função:  DPTS Obter pontuação partida*/
 
 /*****************************************************************************************
@@ -129,16 +127,16 @@ DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPo
 *  Função: DPTS Destruir dado de pontos
 *  
 *****************************************************************************************/
-DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos *pDadoPontos){
-	if(*pDadoPontos == NULL){
+DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_DadoPCabeca *pDadoPontos){
+	if(pDadoPontos == NULL){
 		return DPTS_DadoPontosNaoExiste;
 	} 
 
 	free(*pDadoPontos);
 	*pDadoPontos = NULL;
+
 	return DPTS_Feito;
 
 } /* Fim da função: DPTS Destruir dado de pontos */
 
 /***************** Fim do módulo de implementação: Módulo Dado Pontos ********************/
-

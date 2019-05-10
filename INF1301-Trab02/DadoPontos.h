@@ -3,22 +3,23 @@
 
 #include "PECA.h"
 /*******************************************************************************************
-*	$MCI Módulo de definição: Módulo dado pontos
-*	Arquivo gerado:		  DadoPontos.h
-*	Letras identificadoras:	  DPTS
+* $MCI Módulo de definição: Módulo dado pontos
+* Arquivo gerado:     DadoPontos.h
+* Letras identificadoras:   DPTS
 *
-*	Projeto:	          Disciplina INF 1301
+* Projeto:            Disciplina INF 1301
 *
-*  	Autor:                    sipf - Suemy Inagaki Pinheiro Fagundes
+*   Autor:                    sipf - Suemy Inagaki Pinheiro Fagundes
 *
-*	$HA Histórico de evolução:
-*	Versão  Autor    Data     Observações
-*	1.01    sipf   09/05/2019  Assertivas das funções adicionadas
-*	1.00    sipf   30/abr/2019 Desenvolvimento
+* $HA Histórico de evolução:
+* Versão  Autor    Data     Observações
+* 1.02    sipf   10/05/2019  Refiz o código todo para mudar a estrutura de dadopontos
+* 1.01    sipf   09/05/2019  Assertivas das funções adicionadas
+* 1.00    sipf   30/abr/2019 Desenvolvimento
 *
 *       $ED Descrição do módulo
 *       Define as Funções de DadoPontos.
-*	No início de cada partida não existe dado de pontos
+* No início de cada partida não existe dado de pontos
 *
 *****************************************************************************************/
 
@@ -34,10 +35,7 @@
 
 /* Tipo de referência para um dado de pontos*/
 
-typedef struct DPTS_tpDadoPontos DPTS_tpDadoPontos;
-
-
-
+typedef struct DPTS_tpDadoPontos* DPTS_DadoPCabeca;
 
 /******************************************************************************************
 *
@@ -47,20 +45,20 @@ typedef struct DPTS_tpDadoPontos DPTS_tpDadoPontos;
 ****************************************************************************************/
 
 typedef enum {
-   	 DPTS_FaltouMemoria = -1,
+     DPTS_FaltouMemoria = -1,
           /* Faltou  memoria ao tentar alocar */
 
          DPTS_Feito = 0,
           /* Dado Criado corretamente */
 
-	 DPTS_DadoPontosNaoExiste = 1,
-	  /* Dado de pontos não existe */
+   DPTS_DadoPontosNaoExiste = 1,
+    /* Dado de pontos não existe */
 
-	 DPTS_JogadorNaoTemDadoPontos = 2,
-	  /* Jogador não tem dado de pontos no momento */
+   DPTS_JogadorNaoTemDadoPontos = 2,
+    /* Jogador não tem dado de pontos no momento */
 
-	 DPTS_NaoExisteJogadorComDadoPontos = 3,
-	  /* Não existe jogador atual com dado de pontos */
+   DPTS_NaoExisteJogadorComDadoPontos = 3,
+    /* Não existe jogador atual com dado de pontos */
 
  }DPTS_CondRet;
 
@@ -85,8 +83,7 @@ typedef enum {
 *
 *****************************************************************************************/
 
-DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos);
-
+DPTS_CondRet DPTS_CriarDadoPontos(DPTS_DadoPCabeca *pDadoPontos);
 
 /*****************************************************************************************
 *
@@ -109,8 +106,7 @@ DPTS_CondRet DPTS_CriarDadoPontos(DPTS_tpDadoPontos *pDadoPontos);
 *
 ******************************************************************************************/
 
-DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorPeca);
-
+DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_DadoPCabeca pDadoPontos, char CorPeca);
 
 /*****************************************************************************************
 *
@@ -134,8 +130,7 @@ DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_tpDadoPontos *pDadoPontos, char CorP
 *                         - Caso contrário, a pontuação é dobrada e o ponteiro é atualizado
 ******************************************************************************************/
 
-DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_tpDadoPontos *pDadoPontos, char CorPeca);
-
+DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_DadoPCabeca pDadoPontos, char CorPeca);
 
 /*****************************************************************************************
 *
@@ -164,9 +159,7 @@ DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_tpDadoPontos *pDadoPontos, char CorP
 *
 ******************************************************************************************/
 
-DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_tpDadoPontos *pDadoPontos, char *pCorPeca);
-
-
+DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_DadoPCabeca pDadoPontos, char *pCorPeca);
 
 /*****************************************************************************************
 *
@@ -189,8 +182,7 @@ DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_tpDadoPontos *pDadoPontos, char *p
 *                           pPonto será atualizado.
 ******************************************************************************************/
 
-DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPonto);
-
+DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_DadoPCabeca pDadoPontos, int *pPonto);
 
 /*****************************************************************************************
 *
@@ -209,8 +201,7 @@ DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_tpDadoPontos *pDadoPontos, int *pPo
 *  Assertivas de Saída:    - O dado de pontos foi destruído e ponteiro aponta para NULL.
 *******************************************************************************************/
 
-DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_tpDadoPontos *pDadoPontos);
-
+DPTS_CondRet DPTS_DestruirDadoPontos(DPTS_DadoPCabeca *pDadoPontos);
 #undef DadoPontos_EXT
 
 /***************** Fim do módulo de definição: Módulo Dado Pontos **********************/
