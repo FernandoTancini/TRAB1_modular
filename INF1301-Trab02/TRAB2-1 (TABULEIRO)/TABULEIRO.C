@@ -129,7 +129,7 @@
 *  Função: TAB Insere N pecas no Tabuleiro
 *  ****/
 
-	TAB_tpCondRet TAB_InsereNPecasCasa( int n, int cor, int nCasa ) 
+	TAB_tpCondRet TAB_InsereNPecasCasa( int n, char cor, int nCasa ) 
 	{
 		int i ;
 		TAB_tpCondRet cond ;

@@ -117,7 +117,7 @@
 *   Assertivas de Saída:   A peça foi inserida na casa do tabuleiro
 *************************************************************************/
 
-	TAB_tpCondRet TAB_InsereNPecasCasa( int n, int cor, int nCasa ) ;
+	TAB_tpCondRet TAB_InsereNPecasCasa( int n, char cor, int nCasa ) ;
 
 
 /*************************************************************************
