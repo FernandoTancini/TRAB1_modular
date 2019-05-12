@@ -112,7 +112,7 @@ DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_DadoPCabeca pDadoPontos, char *pCo
 *  
 *****************************************************************************************/
 DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_DadoPCabeca pDadoPontos, int *pPonto){
-	if(pDadoPontos == NULL){
+	if(*pDadoPontos == NULL){
 		return DPTS_DadoPontosNaoExiste;
 	}
 
