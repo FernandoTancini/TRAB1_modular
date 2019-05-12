@@ -2,29 +2,29 @@
 #define LerParm_
 /***************************************************************************
 *
-*  $MCD Módulo de definição: LER  Ler parâmetros de comandos
+*  $MCD Mî‰˜ulo de definiéˆ¬o: LER  Ler parç©ƒetros de comandos
 *
 *  Arquivo gerado:              LerParm.h
 *  Letras identificadoras:      LER
 *
-*  Nome da base de software:    Arcabouço para a automação de testes de programas redigidos em C
+*  Nome da base de software:    Arcabouè¼Ÿ para a automaéˆ¬o de testes de programas redigidos em C
 *  Arquivo da base de software: C:\AUTOTEST\PROJETOS\INSTRUM.BSW
 *
-*  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
+*  Projeto: INF 1301 / 1628 Automatizaéˆ¬o dos testes de mî‰˜ulos C
 *  Gestor:  LES/DI/PUC-Rio
 *  Autores: avs
 *
-*  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*     4       avs   01/fev/2006 criar linguagem script simbólica
-*     3       avs   08/dez/2004 uniformização dos exemplos
-*     2       avs   07/jul/2003 unificação de todos os módulos em um sEprojeto
-*     1       avs   16/abr/2003 inú€io desenvolvimento
+*  $HA Histî‰¦ico de evoluéˆ¬o:
+*     Versç¸Š  Autor    Data     Observaé‹es
+*     4       avs   01/fev/2006 criar linguagem script simbî‰ ica
+*     3       avs   08/dez/2004 uniformizaéˆ¬o dos exemplos
+*     2       avs   07/jul/2003 unificaéˆ¬o de todos os mî‰˜ulos em um sãƒ»projeto
+*     1       avs   16/abr/2003 inå…¤io desenvolvimento
 *
-*  $ED Descrição do módulo
-*     Le parâmetros contidos em um buffer.
-*     Os parâmetros podem ser simbólicos ou literais.
-*     Parâmetros simbólicos devem ser declarados antes de serem utilizados.
+*  $ED Descriéˆ¬o do mî‰˜ulo
+*     Le parç©ƒetros contidos em um buffer.
+*     Os parç©ƒetros podem ser simbî‰ icos ou literais.
+*     Parç©ƒetros simbî‰ icos devem ser declarados antes de serem utilizados.
 *
 ***************************************************************************/
  
@@ -34,7 +34,7 @@
    #define LerParm_EXT extern
 #endif
 
-/***** Declarações exportadas pelo módulo *****/
+/***** Declaraé‹es exportadas pelo mî‰˜ulo *****/
 
 #define  LER_DIM_NOME     32
 #define  LER_DIM_STRING  500
@@ -43,7 +43,7 @@
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: LER Condições de retorno
+*  $TC Tipo de dados: LER Condié‹es de retorno
 *
 *
 ***********************************************************************/
@@ -54,13 +54,13 @@
                /* Ler retorno OK */
 
          LER_CondRetNaoAbriu
-               /* Ler não abriu arquivo */
+               /* Ler nç¸Š abriu arquivo */
 
    } LER_tpCondRet;
 
-/***** Dados exportados pelo módulo *****/
+/***** Dados exportados pelo mî‰˜ulo *****/
 
-   /* Estrutura de dados: *LER  Dados globais públicos */
+   /* Estrutura de dados: *LER  Dados globais pç‚»licos */
 
    LerParm_EXT int LER_TamBuffer;
          /* Tamanho do string contido no buffer de leitura */
@@ -71,12 +71,12 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Inicializar módulo LerParm
+*  $FC Funéˆ¬o: LER  &Inicializar mî‰˜ulo LerParm
 *
-*  $ED Descrição da função
-*     Inicializa o módulo.
-*     Deve ser chamada antes de iniciar a análise de comandos.
-*     Deve ser chamada uma única vez no inú€io ou após terminar o módulo.
+*  $ED Descriéˆ¬o da funéˆ¬o
+*     Inicializa o mî‰˜ulo.
+*     Deve ser chamada antes de iniciar a anç–ise de comandos.
+*     Deve ser chamada uma ä½–ica vez no inå…¤io ou apî‰§ terminar o mî‰˜ulo.
 *
 ***********************************************************************/
 
@@ -85,7 +85,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Obter nome do arquivo script
+*  $FC Funéˆ¬o: LER  &Obter nome do arquivo script
 *
 ***********************************************************************/
 
@@ -94,13 +94,13 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Interpretar comandos de teste
+*  $FC Funéˆ¬o: LER  &Interpretar comandos de teste
 *
-*  $ED Descrição da função
-*     Interpreta os comandos de teste disponibilizados pelo módulo
+*  $ED Descriéˆ¬o da funéˆ¬o
+*     Interpreta os comandos de teste disponibilizados pelo mî‰˜ulo
 *     de leitura.
 *
-*     Ver a descrição do módulo para mais detalhes
+*     Ver a descriéˆ¬o do mî‰˜ulo para mais detalhes
 *
 ***********************************************************************/
 
@@ -109,7 +109,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Terminar módulo LerParm
+*  $FC Funéˆ¬o: LER  &Terminar mî‰˜ulo LerParm
 *
 ***********************************************************************/
 
@@ -118,20 +118,20 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Abrir arquivo script de teste
+*  $FC Funéˆ¬o: LER  &Abrir arquivo script de teste
 *
-*  $ED Descrição da função
-*     Abre o arquivo que contém o script de teste.
-*     A extensão default do arquivo de comandos script de teste E*     ".script" e serEacrescida ao nome do arquivo caso este não
-*     contenha nome de extensão.
+*  $ED Descriéˆ¬o da funéˆ¬o
+*     Abre o arquivo que conté§‘ o script de teste.
+*     A extensç¸Š default do arquivo de comandos script de teste ãƒ»*     ".script" e serãƒ»acrescida ao nome do arquivo caso este nç¸Š
+*     contenha nome de extensç¸Š.
 *
-*  $EP Parâmetros
+*  $EP Parç©ƒetros
 *     $P NomeArqParm - nome do arquivo contendo o script de teste
 *
 *  $FV Valor retornado
-*     LER_CondRetOK        - caso tenha sido possú“el abrir o arquivo.
+*     LER_CondRetOK        - caso tenha sido posså’©el abrir o arquivo.
 *     LER_CondRetNaoAbriu  - caso tenha ocorrido algum erro.
-*                            Não hEdiscriminação do erro encontrado.
+*                            Nç¸Š hãƒ»discriminaéˆ¬o do erro encontrado.
 *
 ***********************************************************************/
 
@@ -140,7 +140,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Fechar arquivo script
+*  $FC Funéˆ¬o: LER  &Fechar arquivo script
 *
 ***********************************************************************/
 
@@ -149,7 +149,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Declarar parâmetro simbólico
+*  $FC Funéˆ¬o: LER  &Declarar parç©ƒetro simbî‰ ico
 *
 ***********************************************************************/
 
@@ -158,7 +158,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Exibir declaração de súŠbolo
+*  $FC Funéˆ¬o: LER  &Exibir declaraéˆ¬o de såŒ‡bolo
 *
 ***********************************************************************/
 
@@ -167,15 +167,15 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler linha script eliminando brancos ao final
+*  $FC Funéˆ¬o: LER  &Ler linha script eliminando brancos ao final
 *
-*  $ED Descrição da função
-*     LEuma linha do arquivo script e elimina os caracteres branco,
-*     fim de linha, tabulação etc. do final da linha lida.
+*  $ED Descriéˆ¬o da funéˆ¬o
+*     Lãƒ»uma linha do arquivo script e elimina os caracteres branco,
+*     fim de linha, tabulaéˆ¬o etc. do final da linha lida.
 *
 *  $FV Valor retornado
 *     Retorna o tamanho da linha lida.
-*     SerE
+*     Serãƒ»
 *        -1 caso tenha ocorrido fim de arquivo.
 *        -2 caso tenha ocorrido algum problema de leitura.
 *
@@ -186,7 +186,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Obter número de linhas lidas atEo momento
+*  $FC Funéˆ¬o: LER  &Obter nä¼¹ero de linhas lidas atãƒ»o momento
 *
 ***********************************************************************/
 
@@ -195,32 +195,32 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler linha de parâmetros
+*  $FC Funéˆ¬o: LER  &Ler linha de parç©ƒetros
 *
-*  $ED Descrição da função
-*     LEum número variável de parâmetros
+*  $ED Descriéˆ¬o da funéˆ¬o
+*     Lãƒ»um nä¼¹ero variç–±el de parç©ƒetros
 *
-*  $EP Parâmetros
-*     Tipos   Eum string contendo a identificação dos tipos dos parâmetros
+*  $EP Parç©ƒetros
+*     Tipos   ãƒ»um string contendo a identificaéˆ¬o dos tipos dos parç©ƒetros
 *             a serem lidos.
-*     ...     Os demais parâmetros são referências (ponteiros) para os
-*             espaços onde deverão ser armazenados os valores lidos.
+*     ...     Os demais parç©ƒetros sç¸Š referéº©cias (ponteiros) para os
+*             espaè¼Ÿs onde deverç¸Š ser armazenados os valores lidos.
 *
 *     Tal como em scanf deve-se tomar o cuidado de assegurar que a lista
-*     de referência e o string de tipos tenha o mesmo tamanho
-*     e que os indicadores de tipo sejam consistentes com a referência
+*     de referéº©cia e o string de tipos tenha o mesmo tamanho
+*     e que os indicadores de tipo sejam consistentes com a referéº©cia
 *     posicionalmente correspondente.
 *
-*     Ao ler um campo primeiro procura ler um nome de parâmetro jE*     declarado. Caso isto seja possú“el e o tipo esteja correto
-*     E" lido" o valor contido no parâmetro
-*     Caso não seja possú“el tenta ler um literal em acordo com o tipo
+*     Ao ler um campo primeiro procura ler um nome de parç©ƒetro jãƒ»*     declarado. Caso isto seja posså’©el e o tipo esteja correto
+*     ãƒ»" lido" o valor contido no parç©ƒetro
+*     Caso nç¸Š seja posså’©el tenta ler um literal em acordo com o tipo
 *     dado.
 *
-*     Gera mensagens de erro para parâmetros desconhecidos, sintaxe errada
+*     Gera mensagens de erro para parç©ƒetros desconhecidos, sintaxe errada
 *     e tipo inconsistente com o solicitado.
 *
 *  $FV Valor retornado
-*     Retorna o número de campos lidos atEconcluir ou atEencontrar
+*     Retorna o nä¼¹ero de campos lidos atãƒ»concluir ou atãƒ»encontrar
 *     um erro.
 *
 ***********************************************************************/
@@ -230,7 +230,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler parâmetro caractere
+*  $FC Funéˆ¬o: LER  &Ler parç©ƒetro caractere
 *
 ***********************************************************************/
 
@@ -239,7 +239,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler parâmetro flutuante
+*  $FC Funéˆ¬o: LER  &Ler parç©ƒetro flutuante
 *
 ***********************************************************************/
 
@@ -248,7 +248,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler parâmetro nome
+*  $FC Funéˆ¬o: LER  &Ler parç©ƒetro nome
 *
 ***********************************************************************/
 
@@ -257,7 +257,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler parâmetro inteiro
+*  $FC Funéˆ¬o: LER  &Ler parç©ƒetro inteiro
 *
 ***********************************************************************/
 
@@ -266,7 +266,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Ler parâmetro string
+*  $FC Funéˆ¬o: LER  &Ler parç©ƒetro string
 *
 ***********************************************************************/
 
@@ -275,7 +275,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: LER  &Pular comando de teste
+*  $FC Funéˆ¬o: LER  &Pular comando de teste
 *
 ***********************************************************************/
 
@@ -283,7 +283,7 @@
 
 #undef LerParm_EXT
 
-/********** Fim do módulo de definição: LER  Ler parâmetros de comandos **********/
+/********** Fim do mî‰˜ulo de definiéˆ¬o: LER  Ler parç©ƒetros de comandos **********/
 
 #else
 #endif
