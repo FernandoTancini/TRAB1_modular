@@ -13,6 +13,7 @@
 *
 * $HA Histórico de evolução:
 * Versão  Autor    Data     Observações
+* 1.03    sipf   11/05/2019  Refiz as assertivas de entrada e saída
 * 1.02    sipf   10/05/2019  Refiz o código todo para mudar a estrutura de dadopontos
 * 1.01    sipf   09/05/2019  Assertivas das funções adicionadas
 * 1.00    sipf   30/abr/2019 Desenvolvimento
@@ -71,13 +72,13 @@ typedef enum {
 *     Cria um dado de pontos.
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - Ponteiro para o Dado de Pontos.
+*     $P pDadoPontos - Ponteiro para a cabeça de dadopontos
 *
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_FaltouMemoria
 *
-*  Assertivas de Entrada: Deve existir um ponteiro de tpDadoPontos passado como parâmetro que 
+*  Assertivas de Entrada: Deve existir um ponteiro do tipo DPTS_DadoPCabeca passado como parâmetro que 
 *                         receberá o dado criado na função 
 *  Assertivas de Saída: Um dado de pontos é criado e passado para o ponteiro recebido. 
 *
@@ -93,14 +94,14 @@ DPTS_CondRet DPTS_CriarDadoPontos(DPTS_DadoPCabeca *pDadoPontos);
 *     Atualiza o jogador que pode dobrar a pontuacao da partida.
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - ponteiro para o dado de pontos.
+*     $P pDadoPontos - ponteiro para a cabeca do tipo DPTS_DadoPCabeca
 *     $P CorPeca - char que representa a cor do jogador.
 *
 *  $FV Valor retornado
 *     DPTS _Feito
 *     DPTS_DadoPontosNaoExiste
 *
-*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que indica a dobra.
+*  Assertivas de Entrada: - Deve ter um ponteiro para a cabeca de dado de pontos que indica a dobra.
 *                         - Deve ter um char que representa a cor do jogador
 *  Assertivas de Saída: A cor do jogador que pode dobrar a pontuacao é atulizada.
 *
@@ -116,7 +117,7 @@ DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_DadoPCabeca pDadoPontos, char CorPec
 *     Dobra o valor da pontuação da partida.
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - ponteiro para o dado de pontos.
+*     $P pDadoPontos - ponteiro para a cabeca de dado de pontos.
 *     $P CorPeca - char que representa a cor do jogador.
 *
 *  $FV Valor retornado
@@ -124,7 +125,7 @@ DPTS_CondRet DPTS_JogadorDobraAtualiza(DPTS_DadoPCabeca pDadoPontos, char CorPec
 *     DPTS_DadoPontosNaoExiste
 *     DPTS_JogadorNaoTemDadoPontos
 *
-*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que sera utilizado;
+*  Assertivas de Entrada: - Deve ter um ponteiro para a cabeca de dado de pontos que sera utilizado;
 *  Assertivas de Saída:   - Se dado pontos não existir ou cor da peça não for igual a cor que pode
 *                           dobrar a pontuação o ponteiro pDadoPontos não é atualizado
 *                         - Caso contrário, a pontuação é dobrada e o ponteiro é atualizado
@@ -140,7 +141,7 @@ DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_DadoPCabeca pDadoPontos, char CorPec
 *     Obtém o jogador que pode dobrar a pontuacao da partida.
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - ponteiro para o dado de pontos.
+*     $P pDadoPontos - ponteiro para a cabeca dado de pontos.
 *     $P pCorPeca - ponteiro que vai obter por referencia a cor do jogador que pode dobrar a pontuacao da partida.
 *
 *  $FV Valor retornado
@@ -148,7 +149,7 @@ DPTS_CondRet DPTS_DobrarPontuacaoAtual(DPTS_DadoPCabeca pDadoPontos, char CorPec
 *     DPTS_DadoPontosNaoExiste
 *     DPTS_NaoExisteJogadorComDadoPontos
 *
-*  Assertivas de Entrada:  - Deve ter um ponteiro para o dado de pontos
+*  Assertivas de Entrada:  - Deve ter um ponteiro para a cabeca dado de pontos
 *                            que ser ́a analisado
 *                          - Deve ter um ponteiro de char que ser ́a atualizado com a cor do jogador
 *                            possuidor do dado de pontos.
@@ -169,14 +170,14 @@ DPTS_CondRet DPTS_ObterJogadorDobraPonto(DPTS_DadoPCabeca pDadoPontos, char *pCo
 *     Obtém a pontuação atual da partida
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - ponteiro para o dado de pontos.
+*     $P pDadoPontos - variavel cabeca dado de pontos de onde a pontuacao vai ser obtida.
 *     $P pPonto - Ponteiro que vai obter por referencia a pontuacao atual da partida.
 *
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_DadoPontosNaoExiste
 *  
-*  Assertivas de Entrada: - Deve ter um ponteiro para o dado de pontos que será utilizado;
+*  Assertivas de Entrada: - Deve ter uma cabeca para dado de pontos;
 *                         - Deve ter um ponteiro para receber a  pontuação da partida.
 *  Assertivas de Saída:   - Se dado de pontos existir, a pontuação será obtida e o valor do ponteiro
 *                           pPonto será atualizado.
@@ -192,12 +193,12 @@ DPTS_CondRet DPTS_ObterPontuacaoPartida(DPTS_DadoPCabeca pDadoPontos, int *pPont
 *     Destrói a peça.
 *
 *  $EP Parâmetros
-*     $P pDadoPontos - ponteiro para o dado de pontos a ser destruído 
+*     $P pDadoPontos - ponteiro para o a cabeca do dado de pontos a ser destruido
 *
 *  $FV Valor retornado
 *     DPTS_Feito
 *     DPTS_DadoPontosNaoExiste
-*  Assertivas de Entrada:  - Deve ter um ponteiro para o dado de pontos que será destruído.
+*  Assertivas de Entrada:  - Deve ter um ponteiro para a cabeca do dado de pontos que será destruído
 *  Assertivas de Saída:    - O dado de pontos foi destruído e ponteiro aponta para NULL.
 *******************************************************************************************/
 
