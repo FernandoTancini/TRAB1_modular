@@ -4,59 +4,53 @@ LES - LaboratÛrio de Engenharia de Software DI/PUC-Rio
       ArcabouÁo de teste de mÛdulos C  (c) 2006
 
 ---------------------------------------------
-      Construto sob teste: TestDadoPontos
+      Construto sob teste: TRAB2-3
 
       Arquivo de teste:    TestDadoPontos.script
 
 
 !!!    0  Linha:     1  // Script:    TesteDadoPontos.script 
-!!!    0  Linha:     2  // Autores:   Felipe de Oliveira 
-!!!    0  Linha:     3  // // Data:      05/05/2019 
-!!!    0  Linha:     4  // Proposito: Testar o modulo dado de pontos 
+!!!    0  Linha:     2  // Autore:   Suemy Inagaki Pinheiro Fagundes 
+!!!    0  Linha:     3  // // Data:      11/05/2019 
+!!!    0  Linha:     4  // Proposito: Testar o modulo Dado de Pontos 
 !!!    0  Linha:     5  // 
     7  == Inicializar valores
-   18  == Testar Comando Recuperar
->>>    1  Linha:    20  Comando n„o conhecido:  =recuperar
    22  == Criar dado de pontos
-   25  == Criar dado de pontos
-   28  == Destruir dado de pontos
-   31  == Destruir dado de pontos que nao existe e recupera o erro
->>>    2  Linha:    33  Comando n„o conhecido:  =recuperar
-   35  == Destruir dado de pontos que nao existe sem recuperar erro
-   38  == Destruir dado de pontos que  nao existe
->>>    3  Linha:    39  Erro ao destruir Dado de Pontos. Deveria ser: 1  …: 0
-   42  == Atualizar jogador de dobra dado de pontos sem o dado existir e recuperando o erro
->>>    4  Linha:    43  Comando n„o conhecido:  =atualizarjogadordobra  CorBranca OK
->>>    5  Linha:    44  Comando de teste ignorado:  =recuperar
-   46  == Atualizar jogador de dobra  de dado de pontos que nao existe
->>>    6  Linha:    47  Comando n„o conhecido:  =atualizarjogadordobra  CorBranca DadoPontosNaoExiste
-   50  == Obter jogador que possui o dado de pontos
->>>    7  Linha:    51  Comando n„o conhecido:  =obterjogadordobrapartida  CorBranca NaoHaJogadorDadoPontos
-   53  == Atualizar jogador de dobra
->>>    8  Linha:    54  Comando n„o conhecido:  =atualizarjogadordobra  CorBranca OK
-   56  == Dobrar pontuacao partida
->>>    9  Linha:    57  Comando n„o conhecido:  =dobrarpontuacaopartida  CorBranca OK
-   59  == Dobrar pontuacao partida dado pontos nao existe
->>>   10  Linha:    60  Comando n„o conhecido:  =dobrarpontuacaopartida  CorBranca DadoPontosNaoExiste
-   62  == Dobrar pontuacao partida jogador nao possui dado pontos
->>>   11  Linha:    63  Comando n„o conhecido:  =dobrarpontuacaopartida  CorPreta JogadorNaoPossuiDadoPontos
-   65  == Obter jogador que possui o dado de pontos
->>>   12  Linha:    66  Comando n„o conhecido:  =obterjogadordobrapartida  CorBranca DadoPontosNaoExiste
-   68  == Obter jogador que possui o dado de pontos
->>>   13  Linha:    69  Comando n„o conhecido:  =obterjogadordobrapartida  CorBranca OK
-   71  == Obter pontuacao partida
->>>   14  Linha:    72  Erro nos par‚metros do comando:  =obterpontuacaopartida  2 OK
-   74  == Obter pontuacao partida dado pontos nao existe
->>>   15  Linha:    75  Erro nos par‚metros do comando:  =obterpontuacaopartida  2 DadoPontosNaoExiste
-   77  == Destruir dado de pontos
-!!!   15  Linha:    80  // fim 
+   25  == Destruir dado de pontos
+   28  == Criar segundo dado de pontos
+   31  == Destruindo um dado que existe
+   34  == Destruir dado de pontos que nao existe avisa que nao tem dado
+   37  == Destruir dado de pontos que nao existe recupera erro
+>>>    1  Linha:    38  Erro ao destruir Dado de Pontos. Deveria ser: 0  …: 1
+<<<    0  Linha:    39  Falha esperada foi recuperada. 
+   41  == Obter pontuacao partida sem dado pontos e dando erro
+>>>    1  Linha:    42  Erro ao Obter pontua√ß√£o da partida. Deveria ser: 0  …: 1
+<<<    0  Linha:    43  Falha esperada foi recuperada. 
+   45  == Obter pontuacao partida dado pontos nao existe
+   48  == Atualizar jogador que pode dobrar a pontuacao da partida
+   51  == Atualizar jogador que pode dobrar a pontuacao da partida com recuperar erro
+>>>    1  Linha:    52  Erro ao atualizar jogador de dobra. Deveria ser: 0  …: 1
+<<<    0  Linha:    53  Falha esperada foi recuperada. 
+   55  == Obter jogador que possui o dado de pontos mas sem dado de pontos criado mas sem pertencer a ele
+   58  == Criar dado de pontos
+   61  == Obter jogador que possui o dado de pontos com dado de pontos criado
+   64  == Dobrar pontuacao partida com o dado de pontos mas sem o dado pertencer ao jogador
+>>>    1  Linha:    65  Erro ao dobrar pontuacao da partida. Deveria ser: 0  …: 2
+<<<    0  Linha:    66  Falha esperada foi recuperada. 
+   68  == Destruir dado de pontos
+   71  == Dobrar pontuacao partida sem o dado de pontos
+   74  == Criar dado de pontos
+   77  == Dobrar pontuacao partida com jogador que nao possui um dado de pontos
+   80  == Obter jogador que dobra partida de pontos mas sem existir jogador que possui dado ponto
+   85  == Obter jogador que dobra partida sem existir dado de pontos
+!!!    0  Linha:    88  // fim 
 
-!!! N˙mero de linhas lidas:          80
-!!! N˙mero de casos de teste:        20
-!!! N˙mero comandos corretos:        14
-!!! N˙mero de falhas encontradas:    15
+!!! N˙mero de linhas lidas:          88
+!!! N˙mero de casos de teste:        21
+!!! N˙mero comandos corretos:        24
+!!! N˙mero de falhas encontradas:     0
 
-!!! Foram encontrados problemas
+!!! N„o foram encontrados problemas
 
 
 !!! Numero de espacos ainda alocados: 0
