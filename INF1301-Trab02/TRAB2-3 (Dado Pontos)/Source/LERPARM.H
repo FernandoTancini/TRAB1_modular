@@ -1,40 +1,40 @@
-#if ! defined(LerParm_)
+#if ! defined( LerParm_ )
 #define LerParm_
 /***************************************************************************
 *
-*  $MCD Mulo de defini鈬o: LER  Ler par穃etros de comandos
+*  $MCD Módulo de definição: LER  Ler parâmetros de comandos
 *
 *  Arquivo gerado:              LerParm.h
 *  Letras identificadoras:      LER
 *
-*  Nome da base de software:    Arcabou輟 para a automa鈬o de testes de programas redigidos em C
+*  Nome da base de software:    Arcabouço para a automação de testes de programas redigidos em C
 *  Arquivo da base de software: C:\AUTOTEST\PROJETOS\INSTRUM.BSW
 *
-*  Projeto: INF 1301 / 1628 Automatiza鈬o dos testes de mulos C
+*  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
 *  Gestor:  LES/DI/PUC-Rio
 *  Autores: avs
 *
-*  $HA Histico de evolu鈬o:
-*     Vers縊  Autor    Data     Observa鋏es
-*     4       avs   01/fev/2006 criar linguagem script simbica
-*     3       avs   08/dez/2004 uniformiza鈬o dos exemplos
-*     2       avs   07/jul/2003 unifica鈬o de todos os mulos em um s・projeto
-*     1       avs   16/abr/2003 in兤io desenvolvimento
+*  $HA Histórico de evolução:
+*     Versão  Autor    Data     Observações
+*     4       avs   01/fev/2006 criar linguagem script simbólica
+*     3       avs   08/dez/2004 uniformização dos exemplos
+*     2       avs   07/jul/2003 unificação de todos os módulos em um só projeto
+*     1       avs   16/abr/2003 início desenvolvimento
 *
-*  $ED Descri鈬o do mulo
-*     Le par穃etros contidos em um buffer.
-*     Os par穃etros podem ser simbicos ou literais.
-*     Par穃etros simbicos devem ser declarados antes de serem utilizados.
+*  $ED Descrição do módulo
+*     Le parâmetros contidos em um buffer.
+*     Os parâmetros podem ser simbólicos ou literais.
+*     Parâmetros simbólicos devem ser declarados antes de serem utilizados.
 *
 ***************************************************************************/
  
-#if defined(LerParm_OWN)
+#if defined( LerParm_OWN )
    #define LerParm_EXT
 #else
    #define LerParm_EXT extern
 #endif
 
-/***** Declara鋏es exportadas pelo mulo *****/
+/***** Declarações exportadas pelo módulo *****/
 
 #define  LER_DIM_NOME     32
 #define  LER_DIM_STRING  500
@@ -43,7 +43,7 @@
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: LER Condi鋏es de retorno
+*  $TC Tipo de dados: LER Condições de retorno
 *
 *
 ***********************************************************************/
@@ -54,236 +54,238 @@
                /* Ler retorno OK */
 
          LER_CondRetNaoAbriu
-               /* Ler n縊 abriu arquivo */
+               /* Ler não abriu arquivo */
 
-   } LER_tpCondRet;
+   } LER_tpCondRet ;
 
-/***** Dados exportados pelo mulo *****/
+/***** Dados exportados pelo módulo *****/
 
-   /* Estrutura de dados: *LER  Dados globais p炻licos */
+   /* Estrutura de dados: *LER  Dados globais públicos */
 
-   LerParm_EXT int LER_TamBuffer;
+   LerParm_EXT int LER_TamBuffer ;
          /* Tamanho do string contido no buffer de leitura */
 
-   LerParm_EXT char LER_Buffer[LER_DIM_BUFFER + 1];
+   LerParm_EXT char LER_Buffer[ LER_DIM_BUFFER + 1 ] ;
          /* Buffer de leitura */
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Inicializar mulo LerParm
+*  $FC Função: LER  &Inicializar módulo LerParm
 *
-*  $ED Descri鈬o da fun鈬o
-*     Inicializa o mulo.
-*     Deve ser chamada antes de iniciar a an疝ise de comandos.
-*     Deve ser chamada uma 佖ica vez no in兤io ou ap terminar o mulo.
+*  $ED Descrição da função
+*     Inicializa o módulo.
+*     Deve ser chamada antes de iniciar a análise de comandos.
+*     Deve ser chamada uma única vez no início ou após terminar o módulo.
 *
 ***********************************************************************/
 
-   int LER_InicializarLeitura(void);
+   int LER_InicializarLeitura( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Obter nome do arquivo script
+*  $FC Função: LER  &Obter nome do arquivo script
 *
 ***********************************************************************/
 
-   char * LER_ObterNomeArqScript(void);
+   char * LER_ObterNomeArqScript( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Interpretar comandos de teste
+*  $FC Função: LER  &Interpretar comandos de teste
 *
-*  $ED Descri鈬o da fun鈬o
-*     Interpreta os comandos de teste disponibilizados pelo mulo
+*  $ED Descrição da função
+*     Interpreta os comandos de teste disponibilizados pelo módulo
 *     de leitura.
 *
-*     Ver a descri鈬o do mulo para mais detalhes
+*     Ver a descrição do módulo para mais detalhes
 *
 ***********************************************************************/
 
-   TST_tpCondRet LER_InterpretarComandos(char * ComandoTeste);
+   TST_tpCondRet LER_InterpretarComandos( char * ComandoTeste ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Terminar mulo LerParm
+*  $FC Função: LER  &Terminar módulo LerParm
 *
 ***********************************************************************/
 
-   void LER_TerminarLeitura(void);
+   void LER_TerminarLeitura( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Abrir arquivo script de teste
+*  $FC Função: LER  &Abrir arquivo script de teste
 *
-*  $ED Descri鈬o da fun鈬o
-*     Abre o arquivo que cont駑 o script de teste.
-*     A extens縊 default do arquivo de comandos script de teste ・*     ".script" e ser・acrescida ao nome do arquivo caso este n縊
-*     contenha nome de extens縊.
+*  $ED Descrição da função
+*     Abre o arquivo que contém o script de teste.
+*     A extensão default do arquivo de comandos script de teste é
+*     ".script" e será acrescida ao nome do arquivo caso este não
+*     contenha nome de extensão.
 *
-*  $EP Par穃etros
+*  $EP Parâmetros
 *     $P NomeArqParm - nome do arquivo contendo o script de teste
 *
 *  $FV Valor retornado
-*     LER_CondRetOK        - caso tenha sido poss咩el abrir o arquivo.
+*     LER_CondRetOK        - caso tenha sido possível abrir o arquivo.
 *     LER_CondRetNaoAbriu  - caso tenha ocorrido algum erro.
-*                            N縊 h・discrimina鈬o do erro encontrado.
+*                            Não há discriminação do erro encontrado.
 *
 ***********************************************************************/
 
-   LER_tpCondRet LER_AbrirArquivoScript(char * NomeArqParm);
+   LER_tpCondRet LER_AbrirArquivoScript( char * NomeArqParm ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Fechar arquivo script
+*  $FC Função: LER  &Fechar arquivo script
 *
 ***********************************************************************/
 
-   void LER_FecharScript(void);
+   void LER_FecharScript( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Declarar par穃etro simbico
+*  $FC Função: LER  &Declarar parâmetro simbólico
 *
 ***********************************************************************/
 
-   int LER_DeclararParametro(void);
+   int LER_DeclararParametro( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Exibir declara鈬o de s匇bolo
+*  $FC Função: LER  &Exibir declaração de símbolo
 *
 ***********************************************************************/
 
-   void LER_ExibirParametro(char * Simbolo);
+   void LER_ExibirParametro( char * Simbolo ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler linha script eliminando brancos ao final
+*  $FC Função: LER  &Ler linha script eliminando brancos ao final
 *
-*  $ED Descri鈬o da fun鈬o
-*     L・uma linha do arquivo script e elimina os caracteres branco,
-*     fim de linha, tabula鈬o etc. do final da linha lida.
+*  $ED Descrição da função
+*     Lê uma linha do arquivo script e elimina os caracteres branco,
+*     fim de linha, tabulação etc. do final da linha lida.
 *
 *  $FV Valor retornado
 *     Retorna o tamanho da linha lida.
-*     Ser・
+*     Será:
 *        -1 caso tenha ocorrido fim de arquivo.
 *        -2 caso tenha ocorrido algum problema de leitura.
 *
 ***********************************************************************/
 
-   int LER_LerLinhaScript(void);
+   int LER_LerLinhaScript( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Obter n伹ero de linhas lidas at・o momento
+*  $FC Função: LER  &Obter número de linhas lidas até o momento
 *
 ***********************************************************************/
 
-   int LER_ObterNumLinhas(void);
+   int LER_ObterNumLinhas( void ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler linha de par穃etros
+*  $FC Função: LER  &Ler linha de parâmetros
 *
-*  $ED Descri鈬o da fun鈬o
-*     L・um n伹ero vari疱el de par穃etros
+*  $ED Descrição da função
+*     Lê um número variável de parâmetros
 *
-*  $EP Par穃etros
-*     Tipos   ・um string contendo a identifica鈬o dos tipos dos par穃etros
+*  $EP Parâmetros
+*     Tipos   é um string contendo a identificação dos tipos dos parâmetros
 *             a serem lidos.
-*     ...     Os demais par穃etros s縊 refer麩cias (ponteiros) para os
-*             espa輟s onde dever縊 ser armazenados os valores lidos.
+*     ...     Os demais parâmetros são referências (ponteiros) para os
+*             espaços onde deverão ser armazenados os valores lidos.
 *
 *     Tal como em scanf deve-se tomar o cuidado de assegurar que a lista
-*     de refer麩cia e o string de tipos tenha o mesmo tamanho
-*     e que os indicadores de tipo sejam consistentes com a refer麩cia
+*     de referência e o string de tipos tenha o mesmo tamanho
+*     e que os indicadores de tipo sejam consistentes com a referência
 *     posicionalmente correspondente.
 *
-*     Ao ler um campo primeiro procura ler um nome de par穃etro j・*     declarado. Caso isto seja poss咩el e o tipo esteja correto
-*     ・" lido" o valor contido no par穃etro
-*     Caso n縊 seja poss咩el tenta ler um literal em acordo com o tipo
+*     Ao ler um campo primeiro procura ler um nome de parâmetro já
+*     declarado. Caso isto seja possível e o tipo esteja correto
+*     é " lido" o valor contido no parâmetro
+*     Caso não seja possível tenta ler um literal em acordo com o tipo
 *     dado.
 *
-*     Gera mensagens de erro para par穃etros desconhecidos, sintaxe errada
+*     Gera mensagens de erro para parâmetros desconhecidos, sintaxe errada
 *     e tipo inconsistente com o solicitado.
 *
 *  $FV Valor retornado
-*     Retorna o n伹ero de campos lidos at・concluir ou at・encontrar
+*     Retorna o número de campos lidos até concluir ou até encontrar
 *     um erro.
 *
 ***********************************************************************/
 
-   int LER_LerParametros(char * Tipos , ...);
+   int LER_LerParametros( char * Tipos , ... ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler par穃etro caractere
+*  $FC Função: LER  &Ler parâmetro caractere
 *
 ***********************************************************************/
 
-   int LER_LerParmChar(char * Parm);
+   int LER_LerParmChar( char * Parm ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler par穃etro flutuante
+*  $FC Função: LER  &Ler parâmetro flutuante
 *
 ***********************************************************************/
 
-   int LER_LerParmDouble(double * Parm);
+   int LER_LerParmDouble( double * Parm ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler par穃etro nome
+*  $FC Função: LER  &Ler parâmetro nome
 *
 ***********************************************************************/
 
-   int LER_LerParmNome(char * Parm , int * tamNome , int dimNome);
+   int LER_LerParmNome( char * Parm , int * tamNome , int dimNome ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler par穃etro inteiro
+*  $FC Função: LER  &Ler parâmetro inteiro
 *
 ***********************************************************************/
 
-   int LER_LerParmInt(int * Parm);
+   int LER_LerParmInt( int * Parm ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Ler par穃etro string
+*  $FC Função: LER  &Ler parâmetro string
 *
 ***********************************************************************/
 
-   int LER_LerParmString(char * Parm , int * tamString , int dimString);
+   int LER_LerParmString( char * Parm , int * tamString , int dimString ) ;
 
 
 /***********************************************************************
 *
-*  $FC Fun鈬o: LER  &Pular comando de teste
+*  $FC Função: LER  &Pular comando de teste
 *
 ***********************************************************************/
 
-   void LER_PularComando(void);
+   void LER_PularComando( void ) ;
 
 #undef LerParm_EXT
 
-/********** Fim do mulo de defini鈬o: LER  Ler par穃etros de comandos **********/
+/********** Fim do módulo de definição: LER  Ler parâmetros de comandos **********/
 
 #else
 #endif
