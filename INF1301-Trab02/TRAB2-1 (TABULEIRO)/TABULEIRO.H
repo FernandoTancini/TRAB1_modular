@@ -70,8 +70,11 @@
 *	$FV Valores de retorno:
 *		- TAB_CondRetOK
 *		- TAB_CondRetFaltouMemoria
-*   Assertivas de Entrada: Não existe assertivas de entrada para essa função
-*   Assertiva de Saída:    Um tabuleiro é criado
+*
+*   Assertivas de Entrada: - Não há.
+*
+*   Assertiva de Saída:    - Tabuleiro foi criado com uma lista de casas e para cada casa uma lista de peças.
+*                          - Valem as assertivas estruturais da Lista Duplamente Encadeada com cabeça. 
 *
 *************************************************************************/
 
@@ -88,8 +91,11 @@
 *
 *	 $FV Valores de retorno:
 *		- TAB_CondRetOK
-*  Assertivas de Entrada: Um tabuleiro a ser destruído deve existir
-*  Asertivas de Saída:    O tabuleiro foi destruido
+*
+*  Assertivas de Entrada:  - Não há.
+*
+*  Asertivas de Saída:     - Se tabuleiro existe ele é destruído e ponteiro para ele passa a apontar para NULL.
+*
 *************************************************************************/
 
    TAB_tpCondRet TAB_DestruirTabuleiro( void ) ;
@@ -112,9 +118,14 @@
 *		- TAB_CondRetTabNaoExiste
 *		- TAB_CondRetFaltouMemoria
 *		- TAB_CondRetCasaNaoExiste
-*   Assertivas de Entrada: A peça a ser inserida deve existir
-*                          Deve-se saber a cor da peça e o numero da casa a inserir
-*   Assertivas de Saída:   A peça foi inserida na casa do tabuleiro
+*
+*   Assertivas de Entrada: - n deve ser um inteiro positivo e finito.
+*                          - cor deve ser um char dentre os: ‘v’ e ‘p’.
+*                          - nCasa deve ser um inteiro positivo com valores de 1 a 24.
+*
+*   Assertivas de Saída:   - Se o tabuleiro ou a casa não existir, não será inserida peça nenhuma.
+*                          - Valem as assertivas estruturais da Lista Duplamente Encadeada com cabeça. 
+*
 *************************************************************************/
 
 	TAB_tpCondRet TAB_InsereNPecasCasa( int n, char cor, int nCasa ) ;
@@ -136,8 +147,13 @@
 *		- TAB_CondRetCasaVazia
 *		- TAB_CondRetCasaNaoExiste
 *
-*   Assertivas de Entrada: Deve existir uma peça na casa de onde quer remover
-*   Assertivas de Saída:   Uma peça é removida da casa recebida como parâmetro
+*   Assertivas de Entrada: - n deve ser um inteiro positivo e finito.
+*                          - nCasa deve ser um inteiro positivo com valores de 1 a 24.
+*
+*   Assertivas de Saída:   - Se o tabuleiro ou a casa não existir, não será inserida peça nenhuma.
+*                          - Se o número de peças atual for menor que n, remove-se todas peças da casa.
+*                          - Valem as assertivas estruturais da Lista Duplamente Encadeada com cabeça.
+*
 *************************************************************************/
 
    TAB_tpCondRet TAB_RemoveNPecasCasa( int n, int nCasa ) ;
@@ -156,8 +172,14 @@
 *		- TAB_CondRetTabNaoExiste
 *		- TAB_CondRetCasaNaoExiste
 *
-*   Assertivas de Entrada: Deve existir um ponteiro que receberá a quantidade de peças
-*   Assertivas de Saída:   O numero de peças na casa é passado para o ponteiro.
+*   Assertivas de Entrada: - nCasa deve ser um inteiro positivo com valores de 1 a 24.
+*	                        - numPecas deve ser um ponteiro para inteiro.
+*
+*   Assertivas de Saída:   - Se o tabuleiro ou a casa não existir, não será inserida peça nenhuma.
+*		                     - numPecas será retornado como um inteiro positivo finito.
+*		                     - Se numPecas não for um ponteiro de inteiro, a leitura de numPecas após 
+*                             o retorno pode não condizer com a quantidade de peças na casa nCasa.
+*
 *************************************************************************/
 
    TAB_tpCondRet TAB_NumPecasCasa( int nCasa, int * numPecas ) ;
@@ -177,8 +199,14 @@
 *		- TAB_CondRetCasaVazia
 *		- TAB_CondRetCasaNaoExiste
 *
-*   Assertivas de Entrada: Deve existir um ponteiro para receber a cor da peça
-*   Assertivas de Saída: A cor da peça é passada para o ponteiro
+*   Assertivas de Entrada: - nCasa deve ser um inteiro positivo com valores de 1 a 24.
+*	                        - cor deve ser um ponteiro para char.
+*
+*   Assertivas de Saída:   - Se o tabuleiro ou a casa não existir, não será inserida peça nenhuma.
+*		                     - cor será retornado como um char dentre as opções: ‘v’ e ‘p’.
+*		                     - Se cor não for um ponteiro de char, a leitura de cor após o retorno pode 
+*                             não condizer com a verdadeira cor das peças na casa nCasa.
+*
 *************************************************************************/
 
    TAB_tpCondRet TAB_CorPecasCasa( int nCasa, char * cor ) ;
