@@ -1,0 +1,62 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: TestDadoPontos
+
+      Arquivo de teste:    TestDadoPontos.script
+
+
+!!!    0  Linha:     1  // Script:    TesteDadoPontos.script 
+!!!    0  Linha:     2  // Autores:   Felipe de Oliveira 
+!!!    0  Linha:     3  // // Data:      05/05/2019 
+!!!    0  Linha:     4  // Proposito: Testar o modulo dado de pontos 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   18  == Testar Comando Recuperar
+>>>    1  Linha:    20  Comando não conhecido:  =recuperar
+   22  == Criar dado de pontos
+   25  == Criar dado de pontos
+   28  == Destruir dado de pontos
+   31  == Destruir dado de pontos que nao existe e recupera o erro
+>>>    2  Linha:    33  Comando não conhecido:  =recuperar
+   35  == Destruir dado de pontos que nao existe sem recuperar erro
+   38  == Destruir dado de pontos que  nao existe
+>>>    3  Linha:    39  Erro ao destruir Dado de Pontos. Deveria ser: 1  É: 0
+   42  == Atualizar jogador de dobra dado de pontos sem o dado existir e recuperando o erro
+>>>    4  Linha:    43  Comando não conhecido:  =atualizarjogadordobra  CorBranca OK
+>>>    5  Linha:    44  Comando de teste ignorado:  =recuperar
+   46  == Atualizar jogador de dobra  de dado de pontos que nao existe
+>>>    6  Linha:    47  Comando não conhecido:  =atualizarjogadordobra  CorBranca DadoPontosNaoExiste
+   50  == Obter jogador que possui o dado de pontos
+>>>    7  Linha:    51  Comando não conhecido:  =obterjogadordobrapartida  CorBranca NaoHaJogadorDadoPontos
+   53  == Atualizar jogador de dobra
+>>>    8  Linha:    54  Comando não conhecido:  =atualizarjogadordobra  CorBranca OK
+   56  == Dobrar pontuacao partida
+>>>    9  Linha:    57  Comando não conhecido:  =dobrarpontuacaopartida  CorBranca OK
+   59  == Dobrar pontuacao partida dado pontos nao existe
+>>>   10  Linha:    60  Comando não conhecido:  =dobrarpontuacaopartida  CorBranca DadoPontosNaoExiste
+   62  == Dobrar pontuacao partida jogador nao possui dado pontos
+>>>   11  Linha:    63  Comando não conhecido:  =dobrarpontuacaopartida  CorPreta JogadorNaoPossuiDadoPontos
+   65  == Obter jogador que possui o dado de pontos
+>>>   12  Linha:    66  Comando não conhecido:  =obterjogadordobrapartida  CorBranca DadoPontosNaoExiste
+   68  == Obter jogador que possui o dado de pontos
+>>>   13  Linha:    69  Comando não conhecido:  =obterjogadordobrapartida  CorBranca OK
+   71  == Obter pontuacao partida
+>>>   14  Linha:    72  Erro nos parâmetros do comando:  =obterpontuacaopartida  2 OK
+   74  == Obter pontuacao partida dado pontos nao existe
+>>>   15  Linha:    75  Erro nos parâmetros do comando:  =obterpontuacaopartida  2 DadoPontosNaoExiste
+   77  == Destruir dado de pontos
+!!!   15  Linha:    80  // fim 
+
+!!! Número de linhas lidas:          80
+!!! Número de casos de teste:        20
+!!! Número comandos corretos:        14
+!!! Número de falhas encontradas:    15
+
+!!! Foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0
