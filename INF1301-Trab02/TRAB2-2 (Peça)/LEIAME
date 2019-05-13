@@ -24,7 +24,7 @@ ARQUIVOS FONTE
 -> Arquivos Disponíveis na pasta Source
 - Módulos de Implementação
 	PECA.C
-	TESTAPECA.C
+	TESTEPECA.C
 
 - Módulos de Interface
 	PECA.H
