@@ -1,11 +1,11 @@
-Módulo de Dado Ponto para ser utilizado no jogo de gamão Versão 1.0 13/05/2019
+Módulo de Dado Ponto para ser utilizado no jogo de gamão Versão 3.0 03/05/2019
 Disciplina: INF1301 - Programação Modular
 
 ------------------------------------------------------------------------------
 AUTORES
 ------------------------------------------------------------------------------
 
-- Suemy Inagaki (inagakisuemy@gmail.com)
+- fernando Tancini (fernandotancini@hotmail.com)
 
 -------------------------------------------------------------------------------
 AVISOS GERAIS
@@ -17,20 +17,22 @@ AVISOS GERAIS
 DESCRIÇÃO DO PROGRAMA
 -------------------------------------------------------------------------------
 
-- Contém funções de dado de pontos para o jogo de gamão
+- Contém funções de tabuleiro do jogo Gamão. Como a criação das casas, inserção e remoção de peças de uma determinada casa e a obtenção da cor ou quantidade de peças de uma determinada casa.
 
 -------------------------------------------------------------------------------
 ARQUIVOS FONTE
 -------------------------------------------------------------------------------
 -> Arquivos Disponíveis na pasta Source
 - Módulos de Implementação
-	DadoPontos.c
-	PECA.c
-	TesteDadoPontos.c
+	TABULEIRO.C
+	PECA.C
+	TESTTAB.C
+	LISTA.C
 
 - Módulos de Interface
-	DadoPontos.h
-	PECA.h
+	TABULEIRO.H
+	PECA.H
+	LISTA.H
 	LERPARM.H
 	TST_ESPC.H
 	GENERICO.H
@@ -41,16 +43,16 @@ ARQUIVOS FONTE
 -> Arquivos Disponíveis na pasta Teste
 
 - Arquivo de Script 
-	TestDadoPontos.script
+	script
 
 - Arquivo de Log
 	saida.log
 
 - Arquivo .bat
-	TestDadoPontos.bat
+	ExecutarTeste.bat
 
 - Arquivo Executável
-	TRAB2-3.exe
+	TRAB2-1.exe
 
 -> Arquivo Leiame
 	LEIAME.TXT
@@ -62,7 +64,7 @@ UTILIZAÇÃO DO PROGRAMA
 - Extraia o conteúdo do arquivo INF1301-Trab02.zip
 
 - Execução do Teste
-	Dê dois cliques em TestDadoPontos.bat
+	Dê dois cliques em ExecutarTeste.bat
 
 - Visualisação do Log de Saída
 	Abra o arquivo saida.log gerado após a execução do passo anterior
