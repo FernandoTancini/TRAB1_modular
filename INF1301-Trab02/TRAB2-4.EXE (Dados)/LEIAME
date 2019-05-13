@@ -24,7 +24,7 @@ ARQUIVOS FONTE
 -> Arquivos Disponíveis na pasta Source
 - Módulos de Implementação
 	DADO.C
-	TESTADADO.C
+	TESTEDADO.C
 
 - Módulos de Interface
 	DADO.H
