@@ -21,14 +21,14 @@
 /***************************************************************************/
 
 
+
 #include    <string.h>
 #include    <stdio.h>
-#include    <malloc.h>
-#include    "LERPARM.H"
+
 #include    "TST_ESPC.H"
 #include    "GENERICO.H"
-#include    "Peca.h"
-extern "C" BOOL DeregisterEventSource ( HANDLE hEventLog );
+#include    "LERPARM.H"
+#include    "PECA.h"
 
 /* Tabela dos nomes dos comandos de teste específicos */
 
@@ -36,6 +36,11 @@ static const char CMD_CRIAR_PECA       [] = "=criaPeca" ;
 static const char CMD_DESTRUIR_PECA    [] = "=destruirPeca";
 static const char CMD_OBTER_COR  [] = "=obtemCor";
 
+
+/*****  Dados encapsulados no módulo  *****/
+
+	static tppPeca Peca = NULL ;
+				/* Ponteiro para o tabuleiro */
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
@@ -65,23 +70,22 @@ static const char CMD_OBTER_COR  [] = "=obtemCor";
       char ValorEsperado = '?'  ;
       char ValorObtido   = '!'  ;
       char ValorDado     = '\0' ;
-
+	  char corEsperada;
+	  char cor;
       int  NumLidos = -1 ;
-
-      TST_tpCondRet Ret ;
 
       /* Testar PEC Criar Peca */
 
          if ( strcmp( ComandoTeste , CMD_CRIAR_PECA ) == 0 ) {
 
-            NumLidos = LER_LerParametros( "ici" , &peca, &cor
+            NumLidos = LER_LerParametros( "ci", &cor,
                                &CondRetEsperada ) ;
-            if ( NumLidos != 3 )
+            if ( NumLidos != 2 )
             {
                return TST_CondRetParm ;
             } /* if */
 
-            CondRetObtido = PEC_CriarPeca(&peca, cor) ;
+            CondRetObtido = PEC_CriarPeca(&Peca, cor) ;
 
             return TST_CompararInt( CondRetEsperada , CondRetObtido ,
                                     "Retorno errado ao criar peca." );
@@ -92,13 +96,7 @@ static const char CMD_OBTER_COR  [] = "=obtemCor";
 
          else if ( strcmp( ComandoTeste , CMD_DESTRUIR_PECA ) == 0 ) {
 
-			NumLidos = LER_LerParametros( "i" , &peca) ;
-            if ( NumLidos != 1 )
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            PEC_DestruirPeca(peca) ;
+            PEC_DestruirPeca(Peca) ;
 
             return TST_CondRetOK ;
 
@@ -106,19 +104,26 @@ static const char CMD_OBTER_COR  [] = "=obtemCor";
 
 	  /* Testar PEC Obter Cor */
 
-         if ( strcmp( ComandoTeste , CMD_OBTER_COR ) == 0 ) {
+         else if ( strcmp( ComandoTeste , CMD_OBTER_COR ) == 0 ) {
 
-            NumLidos = LER_LerParametros( "ici" , &peca, &cor
+			TST_tpCondRet ret;
+            NumLidos = LER_LerParametros( "ci", &corEsperada,
                                &CondRetEsperada ) ;
-            if ( NumLidos != 3 )
+            if ( NumLidos != 2 )
             {
                return TST_CondRetParm ;
             } /* if */
 
-            CondRetObtido = PEC_ObterCor(&peca, &cor) ;
+            CondRetObtido = PEC_ObterCor(Peca, &cor) ;
 
-            return TST_CompararInt( CondRetEsperada , CondRetObtido ,
+            ret = TST_CompararInt( CondRetEsperada , CondRetObtido ,
                                     "Retorno errado ao obter cor." );
+			if (ret != TST_CondRetOK)
+			{
+				return ret;
+			} /* if */
+			return TST_CompararChar(corEsperada, cor,
+									"Cor esperada diferente da cor retornada.");
 
          } /* fim ativa: Testar PEC Obter cor */
 

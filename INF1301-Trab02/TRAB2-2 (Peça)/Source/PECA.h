@@ -1,3 +1,6 @@
+#if ! defined( PECA_ )
+#define PECA_
+
 /***************************************************************************
 *
 *  $MCD Modulo de definicao: Modulo Peca
@@ -121,3 +124,8 @@ typedef struct tgPeca * tppPeca;
 *   Assertivas de Saída:   A cor da peça obtida deve ser passada para p ponteiro
 ***********************************************************************/
 PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
+
+/********** Fim do módulo de definição: Módulo PECA **********/
+
+#else
+#endif

@@ -19,15 +19,15 @@
 *
 ***************************************************************************/
 
-
 #include    <string.h>
 #include    <stdio.h>
-#include    <malloc.h>
-#include    "LERPARM.h"
+
 #include    "TST_ESPC.H"
 #include    "GENERICO.H"
-#include    "Dado.h"
-extern "C" BOOL DeregisterEventSource ( HANDLE hEventLog );
+#include    "LERPARM.H"
+
+#include    <malloc.h>
+#include    "DADO.h"
 
 /* Tabela dos nomes dos comandos de teste específicos */
 
@@ -55,30 +55,28 @@ static const char CMD_JOGAR       [] = "=jogar" ;
 
    TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ) {
 
-      PEC_tpCondRet CondRetObtido   = DAD_CondRetOK ;
-      PEC_tpCondRet CondRetEsperada = DAD_CondRetFaltouMemoria ;
+      DAD_tpCondRet CondRetObtido   = DAD_CondRetOK ;
+      DAD_tpCondRet CondRetEsperada = DAD_CondRetFaltouMemoria ;
                                       /* inicializa para qualquer coisa */
 
       char ValorEsperado = '?'  ;
       char ValorObtido   = '!'  ;
       char ValorDado     = '\0' ;
-
+	  int numero;
       int  NumLidos = -1 ;
-
-      TST_tpCondRet Ret ;
 
       /* Testar DAD Jogar */
 
          if ( strcmp( ComandoTeste , CMD_JOGAR ) == 0 ) {
 
-            NumLidos = LER_LerParametros( "ii" , &numero,
+            NumLidos = LER_LerParametros( "i" ,
                                &CondRetEsperada ) ;
-            if ( NumLidos != 2 )
+            if ( NumLidos != 1 )
             {
                return TST_CondRetParm ;
             } /* if */
 
-            CondRetObtido = PEC_Jogar(&numero) ;
+            CondRetObtido = DAD_Jogar(&numero) ;
 
             return TST_CompararInt( CondRetEsperada , CondRetObtido ,
                                     "Retorno errado ao jogar dado." );
