@@ -1,13 +1,7 @@
 
-
-LES - Laboratório de Engenharia de Software DI/PUC-Rio
-      Arcabouço de teste de módulos C  (c) 2006
-
----------------------------------------------
-      Construto sob teste: TRAB2-3
-
-      Arquivo de teste:    TestDadoPontos.script
-
+!!! Inicio dos testes
+!!!      Construto sob teste: TRAB2-3
+!!!      Script de teste:     TestDadoPontos.script
 
 !!!    0  Linha:     1  // Script:    TesteDadoPontos.script 
 !!!    0  Linha:     2  // Autore:   Suemy Inagaki Pinheiro Fagundes 
