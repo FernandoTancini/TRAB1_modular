@@ -16,6 +16,7 @@ ___Data___|___Horas_Trabalhadas___|______Tipo_Tarefa______|______Descrição da 
 04/05/2019| 03 horas e 00 munutos | revisar projetos      | Revisei toda a especificacao de requisitos, já que eu já tinha feito todo o documento
 05/05/2019| 02 horas e 00 minutos | revisar projetos      | Organizei todos os arquivos nas pastas, já preparados para a entrega final
 11/05/2019| 06 horas e 00 minutos | revisar projetos      | Refiz o módulo alterando a estrutura de dados e fiz as alterações necessárias nos outros locais (Especificação de requisitos, teste, script..)
+12/05/2019| 06 horas e 00 minutos | estudar               | Organizei o caderno para ser entregue junto com o trabalho
 
 
 
