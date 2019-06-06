@@ -4,7 +4,7 @@
 *
 *  $MCD Módulo de definição: Módulo peças finalizadas
 *
-*  Arquivo gerado:              pecasfinalizadas.h
+*  Arquivo gerado:              PecasFinalizadas.h
 *  Letras identificadoras:      PFN
 *
 *  Projeto: Disciplina INF 1301
