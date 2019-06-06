@@ -1,9 +1,11 @@
 #if ! defined( FINALIZADAS_ )
 #define FINALIZADAS_
-*******************************************************************************************
-* $MCI Módulo de definição: Módulo dado pontos
-* Arquivo gerado:     DadoPontos.h
-* Letras identificadoras:   DPTS
+
+#include "PECA.h"
+/*******************************************************************************************
+* $MCI Módulo de definição: Módulo pecas dinalizadas
+* Arquivo gerado:     PecasFinalizadas.h
+* Letras identificadoras:   PFZ
 *
 * Projeto:            Disciplina INF 1301
 *
@@ -11,49 +13,45 @@
 *
 * $HA Histórico de evolução:
 * Versão  Autor    Data     Observações
-* 1.03    sipf   11/05/2019  Refiz as assertivas de entrada e saída
-* 1.02    sipf   10/05/2019  Refiz o código todo para mudar a estrutura de dadopontos
-* 1.01    sipf   09/05/2019  Assertivas das funções adicionadas
-* 1.00    sipf   30/abr/2019 Desenvolvimento
+* 1.00    sipf   06/jun/2019 Desenvolvimento
 *
 *       $ED Descrição do módulo
-*       Define as Funções de DadoPontos.
-* No início de cada partida não existe dado de pontos
+*       Define as Funções de PecasFinalizadas
+* No início de cada partida não existe pecas finalizadas
 *
 *****************************************************************************************/
+#if defined(FINALIZADAS_OWN)
+   #define FINALIZADAS_EXT
+#else
+   #define FINALIZADAS_EXT extern
+#endif
 
-#include "peca.h"
+/************************ Declarações exportadas pelo módulo ****************************/
+/* Tipo de referência para uma peca fnializada*/
 
-/***********************************************************************
+typedef struct PFZ_tpPecasFinalizadas* PFZ_PCabeca;
+
+/******************************************************************************************
 *
-*  $TC Tipo de dados: PFN Condições de retorno
+*  $TC Tipo de dados: PFZ Condicao de Retorno
 *
 *
-***********************************************************************/
+****************************************************************************************/
 
    typedef enum {
 
-      PFN_CondRetOK = 0 ,
-          /* Rodou sem erros */
+      PFZ_OK = 0 ,
+          /* Funcionou sem problemas*/
 
-      PFN_CondRetMemoria = 1
-          /* Erro ao alocar memória */
+      PFZ_Memoria = 1
+          /* Faltou memoria*/
+         
+   } PFZ_tpCondRet ;
 
-   } PFN_tpCondRet ;
-
-
-/***********************************************************************
-*
-*  $TC Tipo de dados: PFN Tipo abstrato peças finalizadas
-*
-*
-***********************************************************************/
-
-typedef struct tpFinalizadas * PFN_tppFinalizadas ;
 
 /***********************************************************************
 *
-*  $FC Função: PFN Criar
+*  $FC Função: PFZ Criar
 *
 *  $ED Descrição da função
 *     Cria uma lista de peças finalizadas vazia
@@ -70,16 +68,16 @@ typedef struct tpFinalizadas * PFN_tppFinalizadas ;
 *     - *pFinalizadas deve conter a lista de peças finalizadas criada.
 *
 *  $FV Valor retornado:
-*     PFN_CondRetOK
-*     PFN_CondRetMemoria
+*     PFZ_OK
+*     PFZ_Memoria
 *
 ***********************************************************************/
 
-   PFN_tpCondRet PFN_Criar( PFN_tppFinalizadas * pFinalizadas ) ;
+   PFZ_tpCondRet PFZ_Criar( PFZ_PCabeca * pFinalizadas ) ;
 
 /***********************************************************************
 *
-*  $FC Função: PFN Destruir
+*  $FC Função: PFZ Destruir
 *
 *  $ED Descrição da função:
 *     Destroi a lista e as peças nela contidas
@@ -95,15 +93,15 @@ typedef struct tpFinalizadas * PFN_tppFinalizadas ;
 *       ser desalocada.
 *
 *  $FV Valor retornado:
-*     PFN_tpCondRetOK
+*     PFZ_OK
 *
 ***********************************************************************/
 
-   PFN_tpCondRet PFN_Destruir( PFN_tppFinalizadas pFinalizadas ) ;
+   PFZ_tpCondRet PFZ_Destruir( PFZ_PCabeca pFinalizadas ) ;
 
 /***********************************************************************
 *
-*  $FC Função: PFN Incluir Peça
+*  $FC Função: PFZ Incluir Peça
 *
 *  $ED Descrição da função:
 *     Inclui uma peça na lista de peças finalizadas
@@ -120,16 +118,16 @@ typedef struct tpFinalizadas * PFN_tppFinalizadas ;
 *     - A peça passada no parâmetro peca será incluída na lista passada.
 *
 *  $FV Valor retornado
-*     PFN_CondRetMemoria 
-*     PFN_CondRetOK
+*     PFZ_CondRetMemoria 
+*     PFZ_CondRetOK
 *
 ***********************************************************************/
 
-   PFN_tpCondRet PFN_InserirPeca ( PFN_tppFinalizadas pFinalizadas , PEC_tppPeca peca ) ;
+   PFZ_tpCondRet PFZ_InserirPeca ( PFZ_PCabeca pFinalizadas , char* peca ) ;
 
  /***********************************************************************
 *
-*  $FC Função: PFN Contar Peças
+*  $FC Função: PFZ Contar Peças
 *
 *  $ED Descrição da função:
 *     Conta as peças da lista de peças finalizadas.
@@ -146,13 +144,13 @@ typedef struct tpFinalizadas * PFN_tppFinalizadas ;
 *     - qtd_pecas tem o tamnaho da lista.
 *
 *  $FV Valor retornado:
-*     PFN_CondRetOK
+*     PFZ_CondRetOK
 *
 ***********************************************************************/
 
-   PFN_tpCondRet PFN_ContaPecas ( PFN_tppFinalizadas pFinalizadas , int * qtd_pecas ) ;
+   PFZ_tpCondRet PFZ_ContaPecas ( PFZ_PCabeca pFinalizadas , int * qtd_pecas ) ;
 
-/********** Fim do módulo de definição: Módulo tabuleiro **********/
+/********** Fim do módulo de definição: Módulo Peças Finalizadas **********/
 
 
 #else
