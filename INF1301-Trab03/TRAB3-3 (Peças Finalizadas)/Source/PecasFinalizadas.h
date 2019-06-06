@@ -1,27 +1,26 @@
 #if ! defined( FINALIZADAS_ )
 #define FINALIZADAS_
-/**********************************************************************
+*******************************************************************************************
+* $MCI Módulo de definição: Módulo dado pontos
+* Arquivo gerado:     DadoPontos.h
+* Letras identificadoras:   DPTS
 *
-*  $MCD Módulo de definição: Módulo peças finalizadas
+* Projeto:            Disciplina INF 1301
 *
-*  Arquivo gerado:              PecasFinalizadas.h
-*  Letras identificadoras:      PFN
+*   Autor:                    sipf - Suemy Inagaki Pinheiro Fagundes
 *
-*  Projeto: Disciplina INF 1301
-*  Autores: gbo - Gabriel Barbosa de Oliveira
-*           gapm - Guilherme de Azevedo Pereira Marques
-*           tdn - Thiago Duarte Naves
-*           pa - Pedro Alvarez
+* $HA Histórico de evolução:
+* Versão  Autor    Data     Observações
+* 1.03    sipf   11/05/2019  Refiz as assertivas de entrada e saída
+* 1.02    sipf   10/05/2019  Refiz o código todo para mudar a estrutura de dadopontos
+* 1.01    sipf   09/05/2019  Assertivas das funções adicionadas
+* 1.00    sipf   30/abr/2019 Desenvolvimento
 *
-*  $HA Histórico de evolução:
-*     Versão  Autor               Data       Observações
-*       1.00  gbo, gapm, tdn, pa  26/09/2015 Início do desenvolvimento
+*       $ED Descrição do módulo
+*       Define as Funções de DadoPontos.
+* No início de cada partida não existe dado de pontos
 *
-*  $ED Descrição do módulo
-*     Tipo abstrato de dados que encapsula uma lista de estruturas Peça
-*     capturadas de cada jogador
-*
-***********************************************************************/
+*****************************************************************************************/
 
 #include "peca.h"
 
