@@ -1,170 +1,169 @@
-/**********************************************************************
+/*****************************************************************************************
+*  $MCI Módulo de implementação: Módulo Pecas Finalizadas
+*  Arquivo gerado:            PecasFinalizadas.c
+*  Letras identificadoras:       PFZ
 *
-*  $MCD Módulo de definição: Módulo peças finalizadas
+*  Projeto:               Disciplina INF 1301
 *
-*  Arquivo gerado:              pecasfinalizadas.c
-*  Letras identificadoras:      PFN
-*
-*  Projeto: Disciplina INF 1301
-*  Autores: gbo - Gabriel Barbosa de Oliveira
-*           gapm - Guilherme de Azevedo Pereira Marques
-*           tdn - Thiago Duarte Naves
-*           pa - Pedro Alvarez
-*
+*  Autor:                 sipf - Suemy Inagaki Pinheiro Fagundes
+* 
 *  $HA Histórico de evolução:
-*     Versão  Autor               Data        Observações
-*       1.00  gbo, gapm, tdn, pa  23/10/2015  Início do desenvolvimento
+*  Versão  Autor    Data     Observações
+*  1       sipf   09/jun/2019 início desenvolvimento
 *
-*  $ED Descrição do módulo
-*     Tipo abstrato de dados que encapsula uma lista de estruturas Peça
-*     capturadas de cada jogador
+*       $ED Descrição do módulo
+*       Define as Funções de PecasFinalizadas.
+*       No início de cada partida não existe PecasFinalizadas
 *
-***********************************************************************/
+*****************************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include "lista.h"
-#include "peca.h"
+
+#include   <malloc.h>
+#include   <stdio.h>
+
+#define PECASFINALIZADAS_OWN
 #include "PecasFinalizadas.h"
+#undef PECASFINALIZADAS_OWN
 
+#include "PECA.h"
+
+#include "LISTA.h"
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: PFN Estrutura finalizadas
+*  $TC Tipo de dados: PFZ Descritor da peça finalizada
 *
 *
 ***********************************************************************/
 
-struct tpFinalizadas
-{
-   LIS_tppLista finalizadas ;
-   /* Lista com os peças finalizdas
-    * de cada jogador
-    */
+typedef struct PFZ_tagPecasFinalizadas {
+
+	LIS_tppLista listaPecasVermelhas;
+	/* Lista de peças Vermelhas finalizadas */
+
+	LIS_tppLista listaPecasPretas;
+	/* Lista de peças pretas finalizadas */
+
 };
 
-/*****  Prorótipos das funções internas ao módulo  *****/
+/*****  Dados encapsulados no módulo  *****/
 
-   static void LiberarPeca( void * pValor ) ;
+/***** Protótipos das funções encapsuladas no módulo *****/
+
+void LiberarPeca(void *pPeca);
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
+/***************************************************************************
+*
+*  Função: PFZ Criar lista de peças finalizadas
+* 
+***************************************************************************/
+PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas)
+{
+
+	*pPecasFinalizadas = (PFZ_tpPecasFinalizadas *) malloc(sizeof(PFZ_tpPecasFinalizadas));
+	if(*pPecasFinalizadas == NULL)
+		return PFZ_SemMemoria ;
+	(*pPecasFinalizadas)->listaPecasVermelhas = LIS_CriarLista(LiberarPeca);
+	(*pPecasFinalizadas)->listaPecasPretas = LIS_CriarLista(LiberarPeca);
+
+	return PFZ_OK ;
+
+} /* Fim função: PFZ Criar lista de peças finalizadas */
 
 /***************************************************************************
 *
-*  Função: PFN Criar Lista
-*
-***************************************************************************/
+*  Função: PFZ Inserir peça
+*  
+****************************************************************************/
+PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca)
+{
+	char CorPeca;
 
-   PFN_tpCondRet PFN_Criar ( PFN_tppFinalizadas * pFinalizadas )
-   {
-      *pFinalizadas = ( PFN_tppFinalizadas ) malloc ( sizeof ( PFN_tppFinalizadas ) ) ;
+	if(pPecasFinalizadas == NULL) 
+		return PFZ_NaoExisteLista;
 
-      if ( pFinalizadas == NULL ) 
-      {
-         return PFN_CondRetMemoria ;
-      } /* if */
+	PEC_ObterCor(pPeca, &CorPeca);	
+	
+	if(CorPeca == PEC_corVermelha)
+		LIS_InserirElementoAntes(pPecasFinalizadas->listaPecasVermelhas, pPeca);
 
-      if ( LIS_CriarLista ( &(*pFinalizadas)->finalizadas , LiberarPeca ) != LIS_CondRetOK  )
-      {
-         return PFN_CondRetMemoria ;
-      } /* if */
+	else
+		LIS_InserirElementoAntes(pPecasFinalizadas->listaPecasPretas, pPeca);
+	
+	return PFZ_OK;
 
-      return PFN_CondRetOK ;
-
-   } /* Fim função: PFN Criar Lista */
-
-/***************************************************************************
-*
-*  Função: PFN Destruir Lista
-*
-***************************************************************************/
-
-   PFN_tpCondRet PFN_Destruir ( PFN_tppFinalizadas pFinalizadas )
-   {
-      if ( pFinalizadas == NULL )
-      {
-         return PFN_CondRetOK ;
-      } /* if */
-
-      LIS_DestruirLista ( pFinalizadas->finalizadas ) ;
-
-      return PFN_CondRetOK ;
-
-   } /* Fim função: PFN Destruir Lista */
+} /* Fim função: PFZ Inserir peça */
 
 /***************************************************************************
 *
-*  Função: PFN Inserir Peça
-*
+*  Função: PFZ Conta peças
+*  
 ***************************************************************************/
 
-   PFN_tpCondRet PFN_InserirPeca ( PFN_tppFinalizadas pFinalizadas , PEC_tppPeca peca )
-   {
-      assert ( pFinalizadas != NULL ) ;
+   PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem)
+{
+	LIS_tppLista ListaPecas;
 
-      if ( LIS_InserirElementoApos ( pFinalizadas->finalizadas , ( void * ) peca ) != LIS_CondRetOK ) 
-      {
-         return PFN_CondRetMemoria ;
-      } /* if */
+	if(pPecasFinalizadas == NULL) 
+		return PFZ_NaoExisteLista;
 
-      return PFN_CondRetOK ;
+	*pContagem = 0;
 
-   } /* FIm função: PFN Inserir Peça */
+	if(CorPeca == PEC_corVermelha)
+		ListaPecas = pPecasFinalizadas->listaPecasVermelhas;
+	else 
+		ListaPecas = pPecasFinalizadas->listaPecasPretas;
+
+	IrInicioLista(ListaPecas);
+
+	if(LIS_ObterValor(ListaPecas) != NULL)
+		do
+		{
+			(*pContagem)++;
+		} while(LIS_AvancarElementoCorrente(ListaPecas, 1) == LIS_CondRetOK);
+
+	return PFZ_OK ;
+
+} /* Fim função: PFZ Contar peças */
 
 /***************************************************************************
 *
-*  Função: PFN Conta Pecas
-*
-***************************************************************************/
+*  Função: PFZ Destruir lista de peças finalizadas
+*  
+****************************************************************************/
+PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas)
+{
+	if(*pPecasFinalizadas == NULL || ((*pPecasFinalizadas)->listaPecasVermelhas == NULL && (*pPecasFinalizadas)->listaPecasPretas == NULL)) 
+		return PFZ_NaoExisteLista;
 
-   PFN_tpCondRet PFN_ContaPecas ( PFN_tppFinalizadas pFinalizadas , int * qtd_pecas )
-   {
+	if((*pPecasFinalizadas)->listaPecasVermelhas != NULL)
+		LIS_DestruirLista((*pPecasFinalizadas)->listaPecasVermelhas);
 
-      PEC_tppPeca peca = NULL ;
-      LIS_tppLista lis = pFinalizadas->finalizadas ;
+	if((*pPecasFinalizadas)->listaPecasPretas != NULL)
+		LIS_DestruirLista((*pPecasFinalizadas)->listaPecasPretas);
 
-      assert ( pFinalizadas != NULL ) ;
-      assert ( qtd_pecas != NULL ) ;
+	free(*pPecasFinalizadas);
+	*pPecasFinalizadas = NULL;
 
-      LIS_IrInicioLista(lis) ;
+	return PFZ_OK ;
 
-      if ( LIS_ObterValor ( lis , (void ** ) &peca ) != LIS_CondRetOK )
-      {
-         *qtd_pecas = 0 ;
-         return PFN_CondRetOK ;
-      } /* if */
+} /* Fim função: PFZ Destruir lista de peças finalizadas */
 
-      *qtd_pecas = 1 ;
-
-      while ( LIS_AvancarElementoCorrente ( lis , 1 ) != LIS_CondRetFimLista )
-      {
-         ( *qtd_pecas ) ++ ;
-      } /* while */
-
-      return PFN_CondRetOK ;
-
-   } /* Fim função: PFN Contar Pecças */
-
-
-/*****  Código das funções encapsuladas pelo módulo  *****/
+/*****  Código das funções encapsuladas no módulo  *****/
 
 /***********************************************************************
 *
-*  $FC Função: Liberar Peça
+*  $FC Função: Libera peça
 *
 *  $ED Descrição da função
-*     Destroi a peça indicada
-*
-*  $EP Parâmetros
-*     $P pValor - Peça a ser destruída
+*     Libera uma peça.
 *
 ***********************************************************************/
+void LiberarPeca(tppPeca *pPeca)
+{
+	PEC_DestruirPeca(&pPeca);
+}
 
-   static void LiberarPeca( void * pValor )
-   {
-
-      PEC_Destruir( ( PEC_tppPeca ) pValor ) ;
-
-} /* Fim função Liberar peça */
+/********** Fim do módulo de implementação: Módulo peças finalizadas **********/
