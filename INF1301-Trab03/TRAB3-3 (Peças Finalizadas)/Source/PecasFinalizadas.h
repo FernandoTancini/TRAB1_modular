@@ -1,157 +1,141 @@
-#if ! defined( FINALIZADAS_ )
-#define FINALIZADAS_
+#if ! defined(PECASFINALIZADAS_)
+#define PECASFINALIZADAS_
 
 #include "PECA.h"
-/*******************************************************************************************
-* $MCI Módulo de definição: Módulo pecas dinalizadas
-* Arquivo gerado:     PecasFinalizadas.h
-* Letras identificadoras:   PFZ
+
+/***************************************************************************
 *
-* Projeto:            Disciplina INF 1301
+*  $MCD Módulo de definição: Módulo peças finalizadas
 *
-*   Autor:                    sipf - Suemy Inagaki Pinheiro Fagundes
+*  Arquivo gerado:              PecasFinalizadas.h
+*  Letras identificadoras:      PFZ
 *
-* $HA Histórico de evolução:
-* Versão  Autor    Data     Observações
-* 1.00    sipf   06/jun/2019 Desenvolvimento
+*  Projeto: Disciplina INF 1301
 *
-*       $ED Descrição do módulo
-*       Define as Funções de PecasFinalizadas
-* No início de cada partida não existe pecas finalizadas
+*  Autores: sipf - Suemy Inagaki Pinheiro Fagundes
 *
-*****************************************************************************************/
-#if defined(FINALIZADAS_OWN)
-   #define FINALIZADAS_EXT
+*  $HA Histórico de evolução:
+*     Versão       Autor          Data          Observações
+*       1.00       sipf        09/jun/2019   Início do desenvolvimento
+*
+*  $ED Descrição do módulo
+*     Este módulo implementa funções do módulo de peças finalizadas
+*     Não existe peças finalizadas no inicio do programa
+*
+***************************************************************************/
+ 
+#if defined(PECASFINALIZADAS_OWN)
+   #define PECASFINALIZADAS_EXT
 #else
-   #define FINALIZADAS_EXT extern
+   #define PECASFINALIZADAS_EXT extern
 #endif
 
-/************************ Declarações exportadas pelo módulo ****************************/
-/* Tipo de referência para uma peca fnializada*/
+/***** Declarações exportadas pelo módulo *****/
 
-typedef struct PFZ_tpPecasFinalizadas* PFZ_PCabeca;
+/* Tipo referência para uma lista de peças finalizadas */
 
-/******************************************************************************************
+typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
+
+/***********************************************************************
 *
-*  $TC Tipo de dados: PFZ Condicao de Retorno
+*  $TC Tipo de dados: PFZ Condicoes de retorno
 *
 *
-****************************************************************************************/
+***********************************************************************/
 
    typedef enum {
 
-      PFZ_OK = 0 ,
-          /* Funcionou sem problemas*/
+         PFZ_OK,
+               /* Executou correto */
 
-      PFZ_Memoria = 1
-          /* Faltou memoria*/
-         
-   } PFZ_tpCondRet ;
+		   PFZ_NaoExisteLista,
+			   /* Lista de peças finalizadas não existe */
+
+         PFZ_SemMemoria
+               /* Faltou memória ao alocar dados */
+
+   } PFZ_tpCondRet;
 
 
 /***********************************************************************
 *
-*  $FC Função: PFZ Criar
+*  $FC Função: PFZ Criar lista de peças finalizadas
 *
 *  $ED Descrição da função
-*     Cria uma lista de peças finalizadas vazia
+*     Cria uma nova lista de peças finalizadas.
 *
-*  $EP Parâmetros:
-*     $P pFinalizadas   - Parâmetro de retorno do lista de pças
-*						  finalizadas criada.
-*                         Esse parâmetro é passado por referência
-*
-*  Assertivas de entrada:
-*     - O ponteiro passado como parametro deve ser válido.
-*
-*  Assertivas de saída:
-*     - *pFinalizadas deve conter a lista de peças finalizadas criada.
-*
-*  $FV Valor retornado:
-*     PFZ_OK
-*     PFZ_Memoria
-*
-***********************************************************************/
-
-   PFZ_tpCondRet PFZ_Criar( PFZ_PCabeca * pFinalizadas ) ;
-
-/***********************************************************************
-*
-*  $FC Função: PFZ Destruir
-*
-*  $ED Descrição da função:
-*     Destroi a lista e as peças nela contidas
-*
-*  $EP Parâmetros:
-*     $P pFinalizadas - Lista de peças finalizadas a ser destruída
-*
-*  Assertivas de entrada:
-*     - pFinalizadas deve ser uma instância válida de lista de peças finalizadas.
-*
-*  Assertivas de saída:
-*     - A memória ocupada pela lista passada por parâmetro deve
-*       ser desalocada.
-*
-*  $FV Valor retornado:
-*     PFZ_OK
-*
-***********************************************************************/
-
-   PFZ_tpCondRet PFZ_Destruir( PFZ_PCabeca pFinalizadas ) ;
-
-/***********************************************************************
-*
-*  $FC Função: PFZ Incluir Peça
-*
-*  $ED Descrição da função:
-*     Inclui uma peça na lista de peças finalizadas
-*
-*  $EP Parâmetros:
-*     $P pFinalizadas - Lista de peças a ser operado
-*     $P peca         - Peça a ser incluída
-*
-*  Assertivas de entrada:
-*     - pFinalizadas deve ser uma instância válida de lista de peças finalizadas.
-*     - peca deve ser uma instância válida de peça.
-*
-*  Assertivas de saída:
-*     - A peça passada no parâmetro peca será incluída na lista passada.
+*  $EP Parâmetros
+*     $P pPecasFinalizadas - ponteiro para a lista de peças finalizadas a ser criada. Passado por referência.
 *
 *  $FV Valor retornado
-*     PFZ_CondRetMemoria 
-*     PFZ_CondRetOK
+*     PFZ_OK
+*     PFZ_SemMemoria
 *
 ***********************************************************************/
 
-   PFZ_tpCondRet PFZ_InserirPeca ( PFZ_PCabeca pFinalizadas , char* peca ) ;
+   PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas);
 
- /***********************************************************************
+/***********************************************************************
 *
-*  $FC Função: PFZ Contar Peças
+*  $FC Função: PFZ Inserir peça
 *
-*  $ED Descrição da função:
-*     Conta as peças da lista de peças finalizadas.
+*  $ED Descrição da função
+*     Insere uma peça na lista de peças finalizadas.
 *
-*  $EP Parâmetros:
-*     $P pFinalizadas - Lista de peças a ser operado.
-*     $P qtd_pecas    - Ponteiro para a quantidade de peças a ser contada
+*  $EP Parâmetros
+*     $P pPecasFinalizadas - ponteiro para a lista de peças finalizadas a ser utilizada.
+*     $P pPeca - ponteiro para a peça a ser utilizada.
 *
-*  Assertivas de entrada:
-*     - pFinalizadas deve ser uma instância válida de lista de peças finalizadas.
-*     - qtd_pecas deve ser um ponteiro válido
-*
-*  Assertivas de saída:
-*     - qtd_pecas tem o tamnaho da lista.
-*
-*  $FV Valor retornado:
-*     PFZ_CondRetOK
+*  $FV Valor retornado
+*     PFZ_OK
+*     PFZ_NaoExisteLista
+*	  PFZ_SemMemoria
 *
 ***********************************************************************/
 
-   PFZ_tpCondRet PFZ_ContaPecas ( PFZ_PCabeca pFinalizadas , int * qtd_pecas ) ;
+   PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca *pPeca);
 
-/********** Fim do módulo de definição: Módulo Peças Finalizadas **********/
+/***********************************************************************
+*
+*  $FC Função: PFZ Contar peças
+*
+*  $ED Descrição da função
+*     Conta as peças de uma determinada cor na lista de peças finalizadas
+*
+*  $EP Parâmetros
+*     $P pPecasFinalizadas - ponteiro para a lista de peças finalizadas a ser utilizada.
+*     $P CorPeca - cor das peças a serem contadas.
+*     $P pContagem - ponteiro para o inteiro onde será armazenado o número de peças.
+*
+*  $FV Valor retornado
+*     PFZ_OK
+*	  PFZ_NaoExisteLista
+*
+***********************************************************************/
 
+   PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas* pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem);
+
+/***********************************************************************
+*
+*  $FC Função: PFZ Destruir lista de peças finalizadas
+*
+*  $ED Descrição da função
+*     Destrói a lista de peças finalizadas.
+*
+*  $EP Parâmetros
+*     $P pPecasFinalizadas - ponteiro para a lista de peças finalizadas a ser utilizada. Passado por referência.
+*
+*  $FV Valor retornado
+*     PFZ_OK
+*	  PFZ_NaoExisteLista
+*
+***********************************************************************/
+
+   PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas);
+
+#undef PFZ_EXT
+
+/********** Fim do módulo de definição: Módulo peças finalizadas **********/
 
 #else
 #endif
