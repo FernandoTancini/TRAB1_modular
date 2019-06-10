@@ -1,4 +1,4 @@
-/*****************************************************************************************
+*****************************************************************************************
 *  $MCI Módulo de implementação: Módulo Pecas Finalizadas
 *  Arquivo gerado:            PecasFinalizadas.c
 *  Letras identificadoras:       PFZ
@@ -62,7 +62,7 @@ void LiberarPeca(void *pPeca);
 PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas)
 {
 
-	*pPecasFinalizadas = (PFZ_tpPecasFinalizadas *) malloc(sizeof(PFZ_tpPecasFinalizadas));
+	pPecasFinalizadas = (PFZ_tpPecasFinalizadas *) malloc(sizeof(PFZ_tpPecasFinalizadas));//TIREI O * DE *pPecasFinalizadas = ...
 	if(*pPecasFinalizadas == NULL)
 		return PFZ_SemMemoria ;
 	(*pPecasFinalizadas)->listaPecasVermelhas = LIS_CriarLista(LiberarPeca);
