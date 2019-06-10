@@ -34,8 +34,10 @@
 ***********************************************************************/
 
 typedef struct tgPeca{
-	char cor;
-} tpPeca;
+
+	PEC_CorDaPeca cor; //Alterei de char para PEC_CorDaPeca
+
+}tpPeca;
 
 /***** Código das funcoes exportadas pelo modulo  *****/
 
@@ -44,8 +46,8 @@ typedef struct tgPeca{
 *  Funcao: PEC Criar Peca
 *  ****/
 
-PEC_tpCondRet PEC_CriarPeca(tppPeca * PECCriado, char CorDaNovaPeca) {
-	*PECCriado = (tppPeca)malloc(sizeof(struct tgPeca));
+PEC_tpCondRet PEC_CriarPeca(tppPeca* PECCriado, PEC_CorDaPeca CorDaNovaPeca) { //Alterei de char para PEC_CorDaPeca
+	*PECCriado = (tppPeca)malloc(sizeof(tpPeca)); //Alterei de struct tgPeca para tpPeca
 
 	if(PECCriado == NULL)
 		return PEC_CondRetFaltouMemoria;
@@ -60,13 +62,13 @@ PEC_tpCondRet PEC_CriarPeca(tppPeca * PECCriado, char CorDaNovaPeca) {
 *  Funcao: PEC Destruir Peca
 *  ****/
 
-void PEC_DestruirPeca(tppPeca Peca) {
-    if (Peca == NULL) {
+void PEC_DestruirPeca(tppPeca *Peca) { //Coloquei *Peca em todos. Antes era só Peca
+    if (*Peca == NULL) {
         return;
     } /* if */
     
 	free(Peca);
-    Peca = NULL;
+    *Peca = NULL;
 }
 
 /***************************************************************************
@@ -74,7 +76,7 @@ void PEC_DestruirPeca(tppPeca Peca) {
 *  Funcao: PEC Obter Cor
 *  ****/
 
-PEC_tpCondRet PEC_ObterCor(tppPeca  Peca, char *cor) {
+PEC_tpCondRet PEC_ObterCor(tppPeca Peca, PEC_CorDaPeca *cor) {//Alterie de char para PEC_CorDaPeca
 	if((Peca->cor != 'p') && (Peca->cor != 'v')) {
 		printf("Erro ao obter a cor");
 		return PEC_CondRetErro;
