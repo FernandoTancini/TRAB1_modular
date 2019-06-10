@@ -62,9 +62,10 @@ void LiberarPeca(void *pPeca);
 PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas)
 {
 
-	pPecasFinalizadas = (PFZ_tpPecasFinalizadas *) malloc(sizeof(PFZ_tpPecasFinalizadas));//TIREI O * DE *pPecasFinalizadas = ...
+	*pPecasFinalizadas = (PFZ_tpPecasFinalizadas) malloc(sizeof(struct PFZ_tagPecasFinalizadas));//TIREI O * DE *pPecasFinalizadas = ...
 	if(*pPecasFinalizadas == NULL)
 		return PFZ_SemMemoria ;
+
 	(*pPecasFinalizadas)->listaPecasVermelhas = LIS_CriarLista(LiberarPeca);
 	(*pPecasFinalizadas)->listaPecasPretas = LIS_CriarLista(LiberarPeca);
 
@@ -79,7 +80,7 @@ PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinal
 ****************************************************************************/
 PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca)
 {
-	char CorPeca;
+	PEC_CorDaPeca  CorPeca;
 
 	if(pPecasFinalizadas == NULL) 
 		return PFZ_NaoExisteLista;
@@ -163,7 +164,7 @@ PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFi
 ***********************************************************************/
 void LiberarPeca(tppPeca *pPeca)
 {
-	PEC_DestruirPeca(&pPeca);
+	PEC_DestruirPeca(&(*pPeca));
 }
 
 /********** Fim do módulo de implementação: Módulo peças finalizadas **********/
