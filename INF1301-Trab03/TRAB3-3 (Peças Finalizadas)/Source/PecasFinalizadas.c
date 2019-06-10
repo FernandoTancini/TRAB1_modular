@@ -1,4 +1,4 @@
-*****************************************************************************************
+/*****************************************************************************************
 *  $MCI Módulo de implementação: Módulo Pecas Finalizadas
 *  Arquivo gerado:            PecasFinalizadas.c
 *  Letras identificadoras:       PFZ
