@@ -113,7 +113,7 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *
 ***********************************************************************/
 
-   PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas* pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem);
+   PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem);
 
 /***********************************************************************
 *
