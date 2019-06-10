@@ -45,13 +45,13 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 
    typedef enum {
 
-         PFZ_OK,
+         PFZ_OK = 0,
                /* Executou correto */
 
-		   PFZ_NaoExisteLista,
+		   PFZ_NaoExisteLista = 1,
 			   /* Lista de peças finalizadas não existe */
 
-         PFZ_SemMemoria
+         PFZ_SemMemoria = 2
                /* Faltou memória ao alocar dados */
 
    } PFZ_tpCondRet;
@@ -93,7 +93,7 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *
 ***********************************************************************/
 
-   PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca *pPeca);
+   PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca); //TIREI O * de pPeca
 
 /***********************************************************************
 *
