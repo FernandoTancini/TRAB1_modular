@@ -9,9 +9,11 @@
 *
 *  Projeto: INF 1301
 *  Autor: jfr     Júlia Affonso Figueiredo Rocha
+*	  sipf	  Suemy Inagaki Pinheio Fagundes
 *
 *  $HA Historico de evolucao:
 *     Versao   Autor    Data       Observacoes
+*       1.10   sipf  10/06/2019 Algumas correções 
 *       1.00   jfr   01/05/2019 Inicio do desenvolvimento
 *
 *  $ED Descricao do modulo
