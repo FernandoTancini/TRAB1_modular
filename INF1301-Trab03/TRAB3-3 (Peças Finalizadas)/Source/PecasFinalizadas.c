@@ -46,12 +46,6 @@ typedef struct PFZ_tagPecasFinalizadas {
 
 };
 
-/*****  Dados encapsulados no módulo  *****/
-
-/***** Protótipos das funções encapsuladas no módulo *****/
-
-void LiberarPeca(void *pPeca);
-
 /*****  Código das funções exportadas pelo módulo  *****/
 
 /***************************************************************************
@@ -66,8 +60,8 @@ PFZ_tpCondRet PFZ_CriarListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinal
 	if(*pPecasFinalizadas == NULL)
 		return PFZ_SemMemoria ;
 
-	(*pPecasFinalizadas)->listaPecasVermelhas = LIS_CriarLista(LiberarPeca);
-	(*pPecasFinalizadas)->listaPecasPretas = LIS_CriarLista(LiberarPeca);
+	(*pPecasFinalizadas)->listaPecasVermelhas = LIS_CriarLista(PEC_DestruirPeca);
+	(*pPecasFinalizadas)->listaPecasPretas = LIS_CriarLista(PEC_DestruirPeca);
 
 	return PFZ_OK ;
 
@@ -152,19 +146,5 @@ PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFi
 
 } /* Fim função: PFZ Destruir lista de peças finalizadas */
 
-/*****  Código das funções encapsuladas no módulo  *****/
-
-/***********************************************************************
-*
-*  $FC Função: Libera peça
-*
-*  $ED Descrição da função
-*     Libera uma peça.
-*
-***********************************************************************/
-void LiberarPeca(tppPeca *pPeca)
-{
-	PEC_DestruirPeca(&(*pPeca));
-}
 
 /********** Fim do módulo de implementação: Módulo peças finalizadas **********/

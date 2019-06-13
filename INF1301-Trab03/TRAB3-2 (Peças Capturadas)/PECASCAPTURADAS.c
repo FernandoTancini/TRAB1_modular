@@ -43,12 +43,6 @@ typedef struct BAR_tagPecasCapturadas {
 
 } BAR_tpPecasCapturadas;
 
-/*****  Dados encapsulados no módulo  *****/
-
-/***** Protótipos das funções encapsuladas no módulo *****/
-
-void LiberarPeca(void *pPeca);
-
 /*****  Código das funções exportadas pelo módulo  *****/
 
 
@@ -67,7 +61,7 @@ BAR_tpCondRet BAR_CriarPecasCapturadas(BAR_tpPecasCapturadas **pPecasCapturadas)
         
 	} /* if */
     
-	(*pPecasCapturadas)->listaPecas = LIS_CriarLista(LiberarPeca);
+	(*pPecasCapturadas)->listaPecas = LIS_CriarLista(PEC_DestruirPeca);
     (*pPecasCapturadas)->tamanho = 0;
 
 	return BAR_CondRetOK ;
@@ -151,20 +145,6 @@ BAR_tpCondRet BAR_DestruirPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturada
 
 	return BAR_CondRetOK ;
 
-}
-
-/*****  Código das funções encapsuladas no módulo  *****/
-
-/***********************************************************************
- *
- *  $FC Função: Libera peça
- *
- *  $ED Descrição da função
- *     Libera uma peça.
- *
- ***********************************************************************/
-void LiberarPeca(tppPeca *pPeca) {
-    PEC_DestruirPeca(&(*pPeca));
 }
 
 /********** Fim do módulo de implementação: Módulo Peças Capturadas **********/
