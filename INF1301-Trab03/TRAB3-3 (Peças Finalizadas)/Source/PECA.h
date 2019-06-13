@@ -125,7 +125,7 @@ typedef struct tgPeca * tppPeca; //Alterei de tgPeca* para tpPeca*
 *   Assertivas de Saída:   A cor da peça obtida deve ser passada para p ponteiro
 ***********************************************************************/
 //PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
-PEC_tpCondRet PEC_ObterCor(tppPeca Peca, PEC_CorDaPeca *cor);
+PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
 
 /********** Fim do módulo de definição: Módulo PECA **********/
 

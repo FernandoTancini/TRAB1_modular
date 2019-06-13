@@ -78,7 +78,7 @@ void PEC_DestruirPeca(tppPeca *Peca) { //Coloquei *Peca em todos. Antes era só 
 *  Funcao: PEC Obter Cor
 *  ****/
 
-PEC_tpCondRet PEC_ObterCor(tppPeca Peca, PEC_CorDaPeca *cor) {//Alterie de char para PEC_CorDaPeca
+PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor) {//Alterie de char para PEC_CorDaPeca
 	if((Peca->cor != 'p') && (Peca->cor != 'v')) {
 		printf("Erro ao obter a cor");
 		return PEC_CondRetErro;
