@@ -1,0 +1,79 @@
+// Script:    TestePecasCapturadas.script
+
+// Autore:    Júlia Rocha
+// Data:      15/06/2019
+
+// Proposito: Testar o modulo Pecas Capturadas
+
+
+
+== Inicializar valores
+
+
+
+=declararparm   OK          	               int  0
+
+=declararparm   MaExecucao	               int  1
+
+=declararparm   ListaNaoExite 	               int  2
+
+=declararparm   ListaVazia 	               int  3
+
+=declararparm   FaltouMemoria                  int  4
+
+
+
+
+
+== Criar Lista de Pecas Capturadas
+=criarLista     OK
+
+
+
+== Destruir Lista de Pecas Capturadas
+=destruirLista OK
+
+
+
+== Destruindo uma lista que nao existe com recuperar
+
+=destruirLista  OK
+
+=recuperar
+
+
+
+==Destruindo uma lista que nao existe e acusando o erro
+
+=destruirLista  ListaNaoExite 
+
+== Criar uma nova lista de Pecas Capturadas
+=criarLista     OK
+
+
+
+==Inserir uma peca na lista
+
+=inserirPeca OK
+
+
+
+==Contar pecas na lista
+
+=contarPeca OK
+
+
+
+
+==Remover uma peca da lista
+
+=removerPeca OK
+
+
+
+== Destruir Lista de Pecas Capturadas
+=destruirLista OK
+
+
+
+// fim
