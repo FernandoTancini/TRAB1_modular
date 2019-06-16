@@ -1,22 +1,24 @@
-/*****************************************************************************************
-*  $MCI Módulo de implementação: Módulo Pecas Capturadas
-*  Arquivo gerado:            PecasCapturadas.c
-*  Letras identificadoras:       BAR
+/***************************************************************************
+*  $MCI Módulo de implementação: Módulo peças capturadas
 *
-*  Projeto:               Disciplina INF 1301
+*  Arquivo gerado:              PECASCAPTURADAS.C
+*  Letras identificadoras:      BAR
 *
-*  Autor:                 sipf - Suemy Inagaki Pinheiro Fagundes
-* 
-*  $HA Histórico de evolução:
-*  Versão  Autor    Data     Observações
-*  1       sipf   09/jun/2019 início desenvolvimento
+*  Nome da base de software:    Exemplo de teste automatizado
 *
-*       $ED Descrição do módulo
-*       Define as Funções de PecasCapturadas.
-*       No início de cada partida não existe PecasCapturadas
+*  Projeto: INF 1301
+*  Autor: jfr     Júlia Affonso Figueiredo Rocha
 *
-*****************************************************************************************/
-
+*  $HA Historico de evolucao:
+*     Versao   Autor    Data       Observacoes
+*       1.00   jfr   07/06/2019  Inicio do desenvolvimento
+*		1.01   sipf  16/06/2019  Melhorias no módulo
+*
+*  $ED Descricao do modulo
+*     O módulo implementa as funcoes de existencia e manutencao da Barra de Pecas Capturadas.
+*     No início de cada partida não existe PecasCapturadas.
+*
+***************************************************************************/
 
 #include   <malloc.h>
 #include   <stdio.h>
