@@ -45,6 +45,7 @@ static const char CMD_DESTRUIR_LISTA  [] = "=destuirLista";
 /*****  Dados encapsulados no módulo  *****/
 
 static BAR_tpPecasCapturadas **pPecasCapturadas = NULL;
+static BAR_tpPecasCapturadas *pPecasCapturadas2 = NULL;
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
@@ -69,7 +70,6 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ) {
     
     BAR_tpCondRet CondRetObtido   = BAR_CondRetOK ;
     BAR_tpCondRet CondRetEsperado = BAR_CondRetFaltouMemoria ;
-	tppPeca peca;
 	int NumPecas = 0;
     /* inicializa para qualquer coisa */
     
@@ -77,6 +77,9 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ) {
     char ValorObtido   = '!'  ;
     char ValorDado     = '\0' ;
     int  numLidos = -1 ;
+	tppPeca peca;
+	PEC_CorDaPeca cor = PEC_corVermelha;
+	PEC_tpCondRet ret = PEC_CriarPeca(&(peca),cor);
     
     /* Testar BAR Criar lista */
     
@@ -131,7 +134,7 @@ TST_tpCondRet TST_EfetuarComando( char * ComandoTeste ) {
 		numLidos = LER_LerParametros("i" , &CondRetEsperado);
         if(numLidos != 1)
                return TST_CondRetParm;
-   	    CondRetObtido = BAR_DestruirListaPecasCapturadas(pPecasCapturadas);
+   	    CondRetObtido = BAR_DestruirListaPecasCapturadas(pPecasCapturadas2);
         return TST_CompararInt(CondRetEsperado , CondRetObtido, "Erro ao destruir lista de pecas capturadas");
         
     } /* fim ativa: Testar BAR Destroi lista */
