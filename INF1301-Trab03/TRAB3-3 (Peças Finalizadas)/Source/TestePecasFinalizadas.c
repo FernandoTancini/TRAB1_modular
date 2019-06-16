@@ -1,8 +1,8 @@
 /***************************************************************************
 *  $MCI Módulo de implementação: Módulo de teste específico DPTS
 *
-*  Arquivo gerado:              TestDadoPontos.C
-*  Letras identificadoras:      TDPTS
+*  Arquivo gerado:              TestePecasFinalizadas.C
+*  Letras identificadoras:      TPFZ
 *
 *  Projeto: Disciplinas INF 1301
 *  Gestor:  DI/PUC-Rio
@@ -11,23 +11,13 @@
 *
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data		 Observações
-*       1.00   sipf   09/05/2019       Desenvolvimento
+*       1.00   sipf   09/06/2019       Desenvolvimento
 *
 *  $ED Descrição do módulo
 *     Este módulo testa utilizando as funções específicas do
-*     módulo de DadoPontos
+*     módulo de PecasFinalizadas
 *
 *
-*
-*  $EIU Interface com o usuário pessoa
-*     Comandos de teste específicos para testar o módulo peca:
-*
-*       =criardadopontos         chama a função  DPTS_CriarDadoPontos
-*	=destruirdadopontos      chama a função  DPTS_DestruirDadoPontos
-*	=jogadordobraatualiza    chama a função  DPTS_JogadorDobraAtualiza
-*	=dobrarpontuacao         chama a função  DPTS_DobrarPontuacaoAtual
-*	=obterjogadordobrapts    chama a função  DPTS_ObterJogadorDobraPonto
-*	=obterpontuacaopartida   chama a função  DPTS_ObterPontuacaoPartida
 *
 ***************************************************************************/
 
@@ -61,10 +51,10 @@ static PFZ_tpPecasFinalizadas pfinalizadas = NULL;
 
 /***********************************************************************
 *
-*  $FC Função: TDPTS Realizar Testes Específicas para DadoPonto
+*  $FC Função: TDPTS Realizar Testes Específicas para PecasFinalizadas
 *
 *  $ED Descrição da função
-*     Efetua os comandos de teste específicos para o módulo DadoPontos
+*     Efetua os comandos de teste específicos para o módulo PecasFinalizadas
 *
 *  $EP Parâmetros
 *     $P ComandoTeste - String contendo o comando
@@ -89,7 +79,7 @@ static PFZ_tpPecasFinalizadas pfinalizadas = NULL;
         PFZ_tpCondRet CondRetEsperado = PFZ_SemMemoria;
                                       /* inicializa para qualquer coisa */
 
-      /* Testar Criar Dado Pontos*/
+      /* Testar Criar Lista de Pecas Finalizadas*/
 
 	if(strcmp(ComandoTeste , CMD_CRIAR_LISTA_PECAS_FINALIZADAS) == 0){
         numLidos = LER_LerParametros("i", &CondRetEsperado);
@@ -97,38 +87,36 @@ static PFZ_tpPecasFinalizadas pfinalizadas = NULL;
               return TST_CondRetParm;
         CondRetObtido = PFZ_CriarListaPecasFinalizadas(&pfinalizadas);
         return TST_CompararInt(CondRetEsperado , CondRetObtido, "Erro ao criar lista de pecas finalizadas");
-  } /* fim ativa: Testar Criar Dado de Pontos */
+  } /* fim ativa: Testar Criar Lista de Pecas Finalizadas */
 
-	/* Testar Destruir Dado de Pontos */
+	/* Testar Inserir Pecas */
   else if(strcmp(ComandoTeste , CMD_INSERIR_PECA) == 0){
         numLidos = LER_LerParametros("i" , &CondRetEsperado);
         if(numLidos != 1)
                return TST_CondRetParm;   
 	      CondRetObtido = PFZ_InserirPeca(pfinalizadas, peca);
         return TST_CompararInt(CondRetEsperado , CondRetObtido, "Erro ao inserir pecas");
-  } /* fim ativa: Testar Destruir Dado de Pontos */
+  } /* fim ativa: Testar Inserir pecas */
 
-	/* Testar Atualizar jogador de dobra */
+	/* Testar Contar Peca */
   else if(strcmp(ComandoTeste ,CMD_CONTAR_PECAS ) == 0){
         numLidos = LER_LerParametros("ii" , &CorPeca, &CondRetEsperado);
         if(numLidos != 2)
                return TST_CondRetParm; 
         CondRetObtido = PFZ_ContarPecas(pfinalizadas, CorPeca, &contagem);
         return TST_CompararInt(CondRetEsperado , CondRetObtido, "Erro ao contar pecas.");
-  } /* fim ativa: Testar Atualizar jogador de dobra */
+  } /* fim ativa: Testar Contar Peca */
 	
-	/* Testar Dobrar pontuação da partida */
+	/* Testar Destruir Lista de Pecas */
   else if(strcmp(ComandoTeste , CMD_DESTRUIR_LISTA_PECAS_FINALIZADAS) == 0){
         numLidos = LER_LerParametros("i" , &CondRetEsperado);
         if(numLidos != 1)
                return TST_CondRetParm;
    	    CondRetObtido = PFZ_DestruirListaPecasFinalizadas(&pfinalizadas);
         return TST_CompararInt(CondRetEsperado , CondRetObtido, "Erro ao destruir lista de pecas finalizadas");
-  } /* fim ativa: Dobrar pontuação da partida */
-        /* Testar Obter jogador dobra partida */
-  
+  } /* fim ativa: Destruir Lista de Pecas */  
       return TST_CondRetNaoConhec;
 
-   }/* fim função: TDPTS Realizar Testes Específicas para DadoPonto */
+   }/* fim função: TDPTS Realizar Testes Específicas para PecasFinalizadas */
 	
-/********** Fim do módulo de implementação: TDPTS Teste dado pontos **********/
+/********** Fim do módulo de implementação: TPFZ Teste de Pecas Finalizadas **********/
