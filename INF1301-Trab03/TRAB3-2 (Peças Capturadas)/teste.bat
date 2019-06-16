@@ -1,0 +1,1 @@
+PecasCapturadas /steste.script /lsaida.log
