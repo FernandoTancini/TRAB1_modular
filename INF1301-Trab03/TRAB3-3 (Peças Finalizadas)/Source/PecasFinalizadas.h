@@ -52,7 +52,7 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 			   /* Lista de peças finalizadas não existe */
 
          PFZ_SemMemoria = 2
-               /* Faltou memória ao alocar dados */
+               /* Faltou memória */
 
    } PFZ_tpCondRet;
 
@@ -70,6 +70,11 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *  $FV Valor retornado
 *     PFZ_OK
 *     PFZ_SemMemoria
+*
+* AE:
+*    Deve existir um ponteiro de PFZ_tpPecasFinalizadas
+* AS:
+*    Deve ser criada uma lista de peças finalizadas a ser passado para o ponteiro recebido
 *
 ***********************************************************************/
 
@@ -91,6 +96,12 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *     PFZ_NaoExisteLista
 *	  PFZ_SemMemoria
 *
+* AE:
+*    Deve existir um PFZ_tpPecasFinalizadas
+*    Deve existir um ponteiro para peça do tipo tppPeca a ser inserida
+* AS:
+*    A lista passada pelo parâmetro deve ser atualizada com a nova peça inserida
+*
 ***********************************************************************/
 
    PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca); //TIREI O * de pPeca
@@ -111,6 +122,12 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *     PFZ_OK
 *	  PFZ_NaoExisteLista
 *
+* AE:
+*    Deve existir um  PFZ_tpPecasFinalizadas com as peças finalizadas
+*    Deve existir um ponteiro de inteiro para receber por referência a contagem
+* AS:
+*    O valor do ponteiro deve ser atualizado com a quantidade de peças da cor desejada
+*
 ***********************************************************************/
 
    PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem);
@@ -129,6 +146,11 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *     PFZ_OK
 *	  PFZ_NaoExisteLista
 *
+*
+* AE:
+*    Deve existir um ponteiro de PFZ_tpPecasFinalizadas a ser destruido
+* AS:
+*    O ponteiro deve ter sido destruido
 ***********************************************************************/
 
    PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas);
