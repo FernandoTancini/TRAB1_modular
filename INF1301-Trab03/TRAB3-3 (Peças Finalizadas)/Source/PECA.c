@@ -48,8 +48,8 @@ typedef struct tgPeca{
 *  Funcao: PEC Criar Peca
 *  ****/
 
-PEC_tpCondRet PEC_CriarPeca(tppPeca* PECCriado, PEC_CorDaPeca CorDaNovaPeca) { //Alterei de char para PEC_CorDaPeca
-	*PECCriado = (tppPeca)malloc(sizeof(tpPeca)); //Alterei de struct tgPeca para tpPeca
+PEC_tpCondRet PEC_CriarPeca(tppPeca* PECCriado, PEC_CorDaPeca CorDaNovaPeca) { 
+	*PECCriado = (tppPeca)malloc(sizeof(tpPeca));
 
 	if(PECCriado == NULL)
 		return PEC_CondRetFaltouMemoria;
@@ -64,7 +64,7 @@ PEC_tpCondRet PEC_CriarPeca(tppPeca* PECCriado, PEC_CorDaPeca CorDaNovaPeca) { /
 *  Funcao: PEC Destruir Peca
 *  ****/
 
-void PEC_DestruirPeca(tppPeca *Peca) { //Coloquei *Peca em todos. Antes era só Peca
+void PEC_DestruirPeca(tppPeca *Peca) { 
     if (*Peca == NULL) {
         return;
     } /* if */
@@ -78,7 +78,7 @@ void PEC_DestruirPeca(tppPeca *Peca) { //Coloquei *Peca em todos. Antes era só 
 *  Funcao: PEC Obter Cor
 *  ****/
 
-PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor) {//Alterie de char para PEC_CorDaPeca
+PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor) {
 	if((Peca->cor != 'p') && (Peca->cor != 'v')) {
 		printf("Erro ao obter a cor");
 		return PEC_CondRetErro;
