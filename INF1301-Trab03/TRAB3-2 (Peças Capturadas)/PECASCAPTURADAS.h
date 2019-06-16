@@ -167,7 +167,7 @@ BAR_tpCondRet BAR_ContarPecas(BAR_tpPecasCapturadas *pPecasCapturadas, int *pCon
  *
  ***********************************************************************/
 
-BAR_tpCondRet BAR_DestruirListaPecasCapturadas(BAR_tpPecasCapturadas **pPecasCapturadas);
+BAR_tpCondRet BAR_DestruirListaPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturadas);
 
 #undef BAR_EXT
 
