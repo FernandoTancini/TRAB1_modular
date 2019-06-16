@@ -1,6 +1,6 @@
 // Script:    TestePecasCapturadas.script
 
-// Autore:    Júlia Rocha
+// Autore:    JÃºlia Rocha
 // Data:      15/06/2019
 
 // Proposito: Testar o modulo Pecas Capturadas
@@ -10,70 +10,29 @@
 == Inicializar valores
 
 
-
 =declararparm   OK          	               int  0
-
-=declararparm   MaExecucao	               int  1
-
-=declararparm   ListaNaoExite 	               int  2
-
-=declararparm   ListaVazia 	               int  3
-
-=declararparm   FaltouMemoria                  int  4
+=declararparm   NaoExisteLista 	               int  1
+=declararparm   SemMemoria                     int  2
+=declararparm   ListaVazia 	                   int  3
 
 
+== Criar Lista de Pecas capturadas
+=criarlistapecasCapturadas     OK
 
-
-
-== Criar Lista de Pecas Capturadas
-=criarLista     OK
-
-
-
-== Destruir Lista de Pecas Capturadas
-=destruirLista OK
-
-
+== Destruir Lista de Pecas capturadas
+=destruirlistapecasCapturadas OK
 
 == Destruindo uma lista que nao existe com recuperar
-
-=destruirLista  OK
-
+=destruirlistapecasCapturadas  OK
 =recuperar
 
-
-
 ==Destruindo uma lista que nao existe e acusando o erro
+=destruirlistapecasCapturadas  NaoExisteLista
 
-=destruirLista  ListaNaoExite 
+==Inserir uma peca na lista que nao existe acusando o erro
+=inserirpeca NaoExisteLista
 
-== Criar uma nova lista de Pecas Capturadas
-=criarLista     OK
-
-
-
-==Inserir uma peca na lista
-
-=inserirPeca OK
-
-
-
-==Contar pecas na lista
-
-=contarPeca OK
-
-
-
-
-==Remover uma peca da lista
-
-=removerPeca OK
-
-
-
-== Destruir Lista de Pecas Capturadas
-=destruirLista OK
-
-
-
+==Inserir uma peca na Lista que nao existe com recuperar
+=inserirpeca OK
+=recuperar
 // fim
