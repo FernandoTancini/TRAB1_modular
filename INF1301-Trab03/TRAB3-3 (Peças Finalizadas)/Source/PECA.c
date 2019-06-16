@@ -37,7 +37,7 @@
 
 typedef struct tgPeca{
 
-	PEC_CorDaPeca cor; //Alterei de char para PEC_CorDaPeca
+	PEC_CorDaPeca cor;
 
 }tpPeca;
 
