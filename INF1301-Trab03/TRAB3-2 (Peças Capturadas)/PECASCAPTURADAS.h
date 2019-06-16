@@ -6,25 +6,27 @@
 #include "LISTA.h"
 
 /***************************************************************************
-*
-*  $MCD Módulo de definição: Módulo peças Capturadas
-*
-*  Arquivo gerado:              PecasCapturadas.h
-*  Letras identificadoras:      BAR
-*
-*  Projeto: Disciplina INF 1301
-*
-*  Autores: sipf - Suemy Inagaki Pinheiro Fagundes
-*
-*  $HA Histórico de evolução:
-*     Versão       Autor          Data          Observações
-*       1.00       sipf        09/jun/2019   Início do desenvolvimento
-*
-*  $ED Descrição do módulo
-*     Este módulo implementa funções do módulo de peças Capturadas
-*     Não existe peças Capturadas no inicio do programa
-*
-***************************************************************************/
+ *
+ *  $MCD Modulo de definicao: Módulo peças capturadas
+ *
+ *  Arquivo gerado:              PECASCAPTURADAS.H
+ *  Letras identificadoras:      BAR
+ *
+ *  Nome da base de software:    Exemplo de teste automatizado
+ *
+ *  Projeto: INF 1301
+ *  Autor: jfr     Júlia Affonso Figueiredo Rocha
+ *
+ *  $HA Historico de evolucao:
+ *     Versao   Autor    Data       Observacoes
+ *       1.00   jfr   07/06/2019  Inicio do desenvolvimento
+ *       1.01   sipf  16/06/2019  Melhorias no módulo
+ *
+ *  $ED Descricao do modulo
+ *     O módulo implementa as funcoes de existencia e manutencao da Barra de Pecas Capturadas.
+ *     No início de cada partida não existe PecasCapturadas.
+ *
+ ***************************************************************************/
  
 #if defined(PECASCapturadas_OWN)
    #define PECASCapturadas_EXT
@@ -50,13 +52,14 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
          BAR_OK = 0,
                /* Executou correto */
 
-		   BAR_NaoExisteLista = 1,
-			   /* Lista de peças Capturadas não existe */
+	 BAR_NaoExisteLista = 1,
+	       /* Lista de peças Capturadas não existe */
 
          BAR_SemMemoria = 2,
                /* Faltou memória ao alocar dados */
+	   
          BAR_CondRetVazia = 3,
-         /*Não tem peças na lista*/
+               /*Não tem peças na lista*/
 
    } BAR_tpCondRet;
 
@@ -93,7 +96,7 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *  $FV Valor retornado
 *     BAR_OK
 *     BAR_NaoExisteLista
-*	  BAR_SemMemoria
+*     BAR_SemMemoria
 *
 ***********************************************************************/
 
@@ -113,7 +116,7 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *
 *  $FV Valor retornado
 *     BAR_OK
-*	  BAR_NaoExisteLista
+*     BAR_NaoExisteLista
 *
 ***********************************************************************/
 
@@ -131,7 +134,7 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *
 *  $FV Valor retornado
 *     BAR_OK
-*	  BAR_NaoExisteLista
+*     BAR_NaoExisteLista
 *
 ***********************************************************************/
 
