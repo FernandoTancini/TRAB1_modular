@@ -22,7 +22,7 @@
 #include   <stdio.h>
 
 #define PECASCAPTURADAS_OWN
-#include "pecasCapturadas.h"
+#include "PECASCAPTURADAS.h"
 #undef PECASCAPTURADAS_OWN
 #include "PECA.h"
 #include "LISTA.H"
@@ -51,7 +51,7 @@ typedef struct BAR_tagPecasCapturadas {
 *  Função: BAR Criar lista de peças capturadas
 *
 */
-BAR_tpCondRet BAR_CriarPecasCapturadas(BAR_tpPecasCapturadas **pPecasCapturadas) {
+BAR_tpCondRet BAR_CriarListaPecasCapturadas(BAR_tpPecasCapturadas **pPecasCapturadas){
 
 	*pPecasCapturadas = (BAR_tpPecasCapturadas *) malloc(sizeof(BAR_tpPecasCapturadas));
     
@@ -73,7 +73,7 @@ BAR_tpCondRet BAR_CriarPecasCapturadas(BAR_tpPecasCapturadas **pPecasCapturadas)
 *  Função: BAR Inserir peça
 *
 */
-BAR_tpCondRet BAR_AdicionarPeca(BAR_tpPecasCapturadas *pPecasCapturadas, tppPeca pPeca) {
+BAR_tpCondRet BAR_InserirPeca(BAR_tpPecasCapturadas *pPecasCapturadas, tppPeca pPeca) {
     
     if(pPecasCapturadas->listaPecas == NULL) {
         
@@ -135,7 +135,7 @@ BAR_tpCondRet BAR_ContarPecas(BAR_tpPecasCapturadas *pPecasCapturadas, int *pCon
 *  Função: BAR Destruir lista de peças capturadas
 *
 */
-BAR_tpCondRet BAR_DestruirPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturadas) {
+BAR_tpCondRet BAR_DestruirListaPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturadas) {
     
     LIS_DestruirLista(pPecasCapturadas->listaPecas);
     
