@@ -31,7 +31,7 @@
    #define PECA_EXT extern
 #endif
 
-typedef struct tgPeca * tppPeca; //Alterei de tgPeca* para tpPeca*
+typedef struct tgPeca * tppPeca;
 
 /***********************************************************************
 *
