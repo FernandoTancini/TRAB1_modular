@@ -84,8 +84,6 @@ typedef struct tgPeca * tppPeca; //Alterei de tgPeca* para tpPeca*
 *
 ***********************************************************************/
   PEC_tpCondRet PEC_CriarPeca(tppPeca * PECCriado, PEC_CorDaPeca CorDaNovaPeca);
- // PEC_tpCondRet PEC_CriarPeca(tppPeca * PECCriado, char CorDaNovaPeca);
-
 /***********************************************************************
 *
 *  $FC Funcao: PEC Destruir Peca
@@ -102,8 +100,6 @@ typedef struct tgPeca * tppPeca; //Alterei de tgPeca* para tpPeca*
 *
 ***********************************************************************/
   void PEC_DestruirPeca(tppPeca *Peca);
-  //void PEC_DestruirPeca(void * Peca);
-
 /***********************************************************************
 *
 *  $FC Funcao: PEC Obter Cor
@@ -124,8 +120,8 @@ typedef struct tgPeca * tppPeca; //Alterei de tgPeca* para tpPeca*
 *   Assertivas de Entrada: Deve existir um ponteiro que receberá a peça
 *   Assertivas de Saída:   A cor da peça obtida deve ser passada para p ponteiro
 ***********************************************************************/
-//PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
 PEC_tpCondRet PEC_ObterCor(tppPeca Peca, char *cor);
+/*************************************************************************/
 
 /********** Fim do módulo de definição: Módulo PECA **********/
 
