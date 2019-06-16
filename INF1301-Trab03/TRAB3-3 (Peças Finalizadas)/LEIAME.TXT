@@ -27,11 +27,13 @@ ARQUIVOS FONTE
 - Módulos de Implementação
 	PecasFinalizadas.c
 	PECA.c
+	LISTA.c
 	TestePecasFinalizadas.c
 
 - Módulos de Interface
   PecasFinalizadas.h
 	PECA.h
+	LISTA.h
 	LERPARM.H
 	TST_ESPC.H
 	GENERICO.H
@@ -48,7 +50,7 @@ ARQUIVOS FONTE
 	saida.log
 
 - Arquivo .bat
-	TestDPecasFinalizadas.bat
+	teste.bat
 
 - Arquivo Executável
 	TRAB3-3.exe
@@ -63,7 +65,7 @@ UTILIZAÇÃO DO PROGRAMA
 - Extraia o conteúdo do arquivo INF1301-Trab03.zip
 
 - Execução do Teste
-	Dê dois cliques em TestDPecasFinalizadas.bat
+	Dê dois cliques em teste.bat
 
 - Visualisação do Log de Saída
 	Abra o arquivo saida.log gerado após a execução do passo anterior
