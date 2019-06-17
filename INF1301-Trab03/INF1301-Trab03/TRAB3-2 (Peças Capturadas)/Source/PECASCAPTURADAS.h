@@ -16,6 +16,7 @@
  *
  *  Projeto: INF 1301
  *  Autor: jfr     Júlia Affonso Figueiredo Rocha
+ *         sipf    Suemy Inagaki Pinheiro Fagundes
  *
  *  $HA Historico de evolucao:
  *     Versao   Autor    Data       Observacoes
