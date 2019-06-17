@@ -103,9 +103,7 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *    A lista passada pelo parâmetro deve ser atualizada com a nova peça inserida
 *
 ***********************************************************************/
-
-   PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca); //TIREI O * de pPeca
-
+   PFZ_tpCondRet PFZ_InserirPeca(PFZ_tpPecasFinalizadas pPecasFinalizadas, tppPeca pPeca);
 /***********************************************************************
 *
 *  $FC Função: PFZ Contar peças
@@ -129,9 +127,7 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 *    O valor do ponteiro deve ser atualizado com a quantidade de peças da cor desejada
 *
 ***********************************************************************/
-
    PFZ_tpCondRet PFZ_ContarPecas(PFZ_tpPecasFinalizadas pPecasFinalizadas, PEC_CorDaPeca  CorPeca, int *pContagem);
-
 /***********************************************************************
 *
 *  $FC Função: PFZ Destruir lista de peças finalizadas
@@ -152,7 +148,6 @@ typedef struct PFZ_tagPecasFinalizadas* PFZ_tpPecasFinalizadas;
 * AS:
 *    O ponteiro deve ter sido destruido
 ***********************************************************************/
-
    PFZ_tpCondRet PFZ_DestruirListaPecasFinalizadas(PFZ_tpPecasFinalizadas *pPecasFinalizadas);
 
 #undef PFZ_EXT
