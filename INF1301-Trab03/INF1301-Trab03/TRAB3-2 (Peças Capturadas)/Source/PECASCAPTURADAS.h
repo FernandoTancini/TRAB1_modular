@@ -79,6 +79,10 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *     BAR_OK
 *     BAR_SemMemoria
 *
+*AE:
+*    Deve existir um ponteiro de BAR_tpPecasCapturadas
+* AS:
+*    Deve ser criada uma lista de peças capturada a ser passado para o ponteiro recebido
 ***********************************************************************/
 
    BAR_tpCondRet BAR_CriarListaPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturadas);
@@ -98,6 +102,11 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *     BAR_OK
 *     BAR_NaoExisteLista
 *     BAR_SemMemoria
+ AE:
+*    Deve existir um BAR_tpPecasCapturadas
+*    Deve existir um ponteiro para peça do tipo tppPeca a ser inserida
+* AS:
+*    A lista passada pelo parâmetro deve ser atualizada com a nova peça inserida
 *
 ***********************************************************************/
 
@@ -118,7 +127,11 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *  $FV Valor retornado
 *     BAR_OK
 *     BAR_NaoExisteLista
-*
+* AE:
+*    Deve existir um  BAR_tpPecasCapturadas com as peças capturadas
+*    Deve existir um ponteiro de inteiro para receber por referência a contagem
+* AS:
+*    O valor do ponteiro deve ser atualizado com a quantidade de peças da cor desejada
 ***********************************************************************/
 
    BAR_tpCondRet BAR_ContarPecas(BAR_tpPecasCapturadas pPecasCapturadas, PEC_CorDaPeca  CorPeca, int *pContagem);
@@ -136,11 +149,31 @@ typedef struct BAR_tagPecasCapturadas* BAR_tpPecasCapturadas;
 *  $FV Valor retornado
 *     BAR_OK
 *     BAR_NaoExisteLista
-*
+* AE:
+*    Deve existir um ponteiro de BAR_tpPecasCapturadas a ser destruido
+* AS:
+*    O ponteiro deve ter sido destruido
 ***********************************************************************/
 
    BAR_tpCondRet BAR_DestruirListaPecasCapturadas(BAR_tpPecasCapturadas *pPecasCapturadas);
-
+/***********************************************************************
+*
+*  $FC Função: BAR Remover Peca
+*
+*  $ED Descrição da função
+*     Remove uma peca da lista.
+*
+*  $EP Parâmetros
+*     $P pPecasCapturadas - ponteiro para a lista de peças Capturadas a ser utilizada. Passado por referência.
+*     $P CorPeca - Cor da peça que deseja remover
+*  $FV Valor retornado
+*     BAR_OK
+*     BAR_NaoExisteLista
+* AE:
+*    Deve existir um ponteiro de BAR_tpPecasCapturadas de onde a peca será removida
+* AS:
+*    Se existir peça na lista ela deve ser removida.
+***********************************************************************/
    BAR_tpCondRet BAR_RemoverPeca(BAR_tpPecasCapturadas pPecasCapturadas, PEC_CorDaPeca  CorPeca);
 
 #undef BAR_EXT
