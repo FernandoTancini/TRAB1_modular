@@ -8,4 +8,4 @@ ___Data___|___Horas_Trabalhadas___|______Tipo_Tarefa_________|______Descrição 
 15/06/2019| 01 horas e 00 minutos | especificar os módulos   | Documentar o modulo
 15/06/2019| 01 horas e 00 minutos | especificar as funções   | Documentar o modulo
 16/06/2019| 04 horas e 00 minutos | modelar                  | Fiz o script de teste manual para a aplicação 
-16/06/2019| 01 horas e 00 minutos | projetar                 | Conclui o relatório 
+16/06/2019| 00 horas e 30 minutos | projetar                 | Conclui o relatório 
