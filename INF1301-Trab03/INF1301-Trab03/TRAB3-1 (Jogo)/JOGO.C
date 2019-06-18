@@ -1,5 +1,5 @@
 /***************************************************************************
-*  $MCI MÛdulo de definiÁ„o: Modulo Jogo
+*  $MCI M√≥dulo de defini√ß√£o: Modulo Jogo
 *
 *  Arquivo gerado:              JOGO.C
 *  Letras identificadoras:      JOG
@@ -7,10 +7,10 @@
 *  Projeto: Jogo Gamao
 *  Autores: fbt - Fernando Baggi Tancini
 *
-*  $HA HistÛrico de evoluÁ„o:
-*		Vers„o		Autores		Data			ObservaÁıes
+*  $HA Hist√≥rico de evolu√ß√£o:
+*		Vers√£o		Autores		Data			Observa√ß√µes
 *	  	3   		fbt	  		13/06/2019		Revisao e consertos
-*	  	2   		fbt	  		12/06/2019		CriaÁ„o do mÛdulo 
+*	  	2   		fbt	  		12/06/2019		Cria√ß√£o do m√≥dulo 
 *       1    		fbt	  		11/06/2019		Inicializado projeto
 *
 ***************************************************************************/
@@ -35,7 +35,7 @@ char qnpd = '\0';
 int pt = 0;
 int fd = 0;
 
-/***** ProtÛtipos das funÁıes encapuladas no mÛdulo *****/
+/***** Prot√≥tipos das fun√ß√µes encapuladas no m√≥dulo *****/
 
 void imprime_tabuleiro();
 void iniciar_jogo();
@@ -49,7 +49,7 @@ void capturarPeca(char jogador);
 int tem_peca_no_lado_interno_do_inimigo(char jogador_perderdor);
 int checa_se_pode_finalizar_pecas(char jogador);
 
-/*****  CÛdigo da funcao main  *****/
+/*****  C√≥digo da funcao main  *****/
 
 int main () {
 	char c;
@@ -67,13 +67,13 @@ int main () {
 }
 
 
-/*****  CÛdigo das funÁıes encapsuladas no mÛdulo  *****/
+/*****  C√≥digo das fun√ß√µes encapsuladas no m√≥dulo  *****/
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Rodar Jogo
+*  $FC Fun√ß√£o: JOG Rodar Jogo
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *     Roda uma partida do jogo.
 *
 ***********************************************************************/
@@ -81,20 +81,46 @@ int main () {
 void rodar_jogo() {
 	int pontos = 0, pontos_finais;
 	iniciar_jogo();
+	// 
 	while(jogo_rolando) {
 		realizar_jogada();
 		if (jogador_atual == 'p') jogador_atual = 'v';
 		else if (jogador_atual == 'v') jogador_atual = 'p';
 	}
 	// conta os pontos
+	//Argumenta√ß√£o de Corretude do IF
+	// AE1, vale AS para os argumentos acima e
+	// - fd tem que ser verdadeiro, ou seja, diferente de zero
 	if (fd) {
 		pontos_finais = pt;
+		// AI1:
+		//   Caso a quantidade de pe√ßas finais do jogador preto seja 15 entra no if
+		//   Caso contrario entra no else if
 		if (pf[0] == 15) {
 			printf("Jogador preto venceu!!!\n");
-		} else if (pf[1] == 15) {
+		} 
+		// AI2:
+		//   Caso a quantidade de pe√ßas finalizadas do jogador vermelho seja 15
+		//   N√£o existe caso contrario nesse caso.
+		else if (pf[1] == 15) {
 			printf("Jogador vermelho venceu!!!\n");
 		}
+		//AI3:
+		//  Caso nenhum dos jogadores tenha finalizado 15 pe√ßas
 	} else {
+			//AI4:  
+		    //   Caso a quantidade de pe√ßas finalizadas do jogador preto seja 15
+		    //   A pontua√ß√£o do jogador preto √© acrescido
+			//   AI5: 
+		    //     Caso pe√ßas finalizadas do jogador vermelho seja zero
+		    //        A pontua√ß√£o √© acrescidaa
+		    //        Caso a quantidade de pe√ßas capturadas do jogador vermelho seja maior que zero
+			//				A pontua√ß√£o √© acrescida
+		    //     Caso a quantidade de pe√ßas finalizadas do jogador vermelho seja 15:
+		    //    		Caso pe√ßas finalizadas do jogador preto seja zero
+		    //        		A pontua√ß√£o √© acrescidaa
+		    //              Caso a quantidade de pe√ßas capturadas do jogador preto seja maior que zero
+			//				    A pontua√ß√£o √© acrescida
 		if (pf[0] == 15) {
 			printf("Jogador preto venceu!!!\n");
 			pontos++;
@@ -122,12 +148,16 @@ void rodar_jogo() {
 	}
 	printf("pontos: %d\n", pontos_finais);
 }
+//AS:
+// A pontua√ß√£o dos jogadores √© atualizada
+// √â determinado o vncedor
+
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Realizar Jogada
+*  $FC Fun√ß√£o: JOG Realizar Jogada
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *     Permite a realizacao de uma jogada por parte do jogador corrente.
 *
 ***********************************************************************/
@@ -153,6 +183,9 @@ void realizar_jogada() {
 	mov[1] = dado2;
 	mov[2] = 0; mov[3] = 0;
 	if (dado1 == dado2) { mov[2] = dado1; mov[3] = dado2; }
+	// Argumenta√ß√£o de Corretude de Repeti√ß√£o
+	// Vale AE
+	// A lista mov tem pelo menos um elemento diferente de zero
 	while (mov[0] != 0 || mov[1] != 0 || mov[2] != 0 || mov[3] != 0) {
 		imprime_tabuleiro();
 		pergunta_movimentos(mov);
@@ -161,6 +194,13 @@ void realizar_jogada() {
 			break;
 		}
 	}
+	// Se existe ainda algum movimento em mov (mov[i] != 0 para algum i de 0 a 3)
+	// Entao
+	// 	  (mov[0] != 0 || mov[1] != 0 || mov[2] != 0 || mov[3] != 0)
+	//    e entra no loop novamente
+	// Senao
+	//	  mov[i] == 0 para qualquer i de 0 a 3
+	// FimSe
 	if (!fd) {
 		// acabou a jogada, entao imprime tabuleiro atualizado
 		printf("Tabuleiro apos a jogada:\n");
@@ -170,13 +210,13 @@ void realizar_jogada() {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Pergunta Movimento
+*  $FC Fun√ß√£o: JOG Pergunta Movimento
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Permite que o usuario faca input de movimentos, para realizar
 *		as jogadas desejadas pelo mesmo.
 *
-*  $EP Par‚metros
+*  $EP Par√¢metros
 *		mov - array com os movimentos possiveis.
 *
 ***********************************************************************/
@@ -394,12 +434,12 @@ void pergunta_movimentos(int *mov) {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Checa se pode finalizar pecas
+*  $FC Fun√ß√£o: JOG Checa se pode finalizar pecas
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Verifica se todas as pecas de certo jogador estao na area certa do tabuleiro para se finalziar pecas
 *
-*  $EP Par‚metros
+*  $EP Par√¢metros
 *		jogador - jogador em questao, para ver se ele tem pecas no lugar certo para finalizar pecas
 *
 ***********************************************************************/
@@ -432,12 +472,12 @@ int checa_se_pode_finalizar_pecas (char jogador) {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Tem Peca no Lado Interno do Inimigo
+*  $FC Fun√ß√£o: JOG Tem Peca no Lado Interno do Inimigo
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Verifica se ha pecas de um tal jogador no lado interno do inimigo.
 *
-*  $EP Par‚metros
+*  $EP Par√¢metros
 *		jogador_perderdor - jogador que perdeu o jogo e que sera analisado se ha pecas
 *							dele no lado interno do adversario
 *
@@ -471,13 +511,13 @@ int tem_peca_no_lado_interno_do_inimigo(char jogador_perderdor) {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Perguntar Yes ou No
+*  $FC Fun√ß√£o: JOG Perguntar Yes ou No
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *		Pergunta algo ao usuario ate que seja respondido 'y' ou 'n', retornando
 *		a resposta do usuario.
 *
-*  $EP Par‚metros
+*  $EP Par√¢metros
 *		txt - pergunta a ser perguntada
 *		c - char por onde sera retornada a resposta do usuario
 *
@@ -497,9 +537,9 @@ void perguntarYorN(char * txt, char * c) {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Inicia o jogo
+*  $FC Fun√ß√£o: JOG Inicia o jogo
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *     Inicia o jogo e realiza as configuracoes nescessarias para tal acao
 *
 ***********************************************************************/
@@ -515,9 +555,9 @@ void iniciar_jogo() {
 
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Termina Jogo
+*  $FC Fun√ß√£o: JOG Termina Jogo
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *     Termina o jogo e realiza as configuracoes nescessarias para tal acao.
 *
 ***********************************************************************/
@@ -529,9 +569,9 @@ void termina_jogo() {
  
 /***********************************************************************
 *
-*  $FC FunÁ„o: JOG Imprime Tabuleiro
+*  $FC Fun√ß√£o: JOG Imprime Tabuleiro
 *
-*  $ED DescriÁ„o da funÁ„o
+*  $ED Descri√ß√£o da fun√ß√£o
 *     Imprime o tabuleiro de gamao do jogo na tela do terminal.
 *
 ***********************************************************************/
@@ -599,4 +639,4 @@ void imprime_tabuleiro() {
 	printf("|_______________________________________________________|\n");
 }
 
-/********** Fim do mÛdulo de implementaÁ„o: MÛdulo Jogo **********/
+/********** Fim do m√≥dulo de implementa√ß√£o: M√≥dulo Jogo **********/
