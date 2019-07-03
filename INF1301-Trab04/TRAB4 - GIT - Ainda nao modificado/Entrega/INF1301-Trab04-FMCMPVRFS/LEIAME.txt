@@ -1,31 +1,31 @@
 LEIA-ME Trabalho 4
 
 Desenvolvido por:
-	- FMC - Fernanda de Miranda Carvalho (1411287)
-	- MPV - Marcelo Paulon Juc· Vasconcelos (1411029)
-	- RFS - Renan da Fonte Simas dos Santos (1412122)
+	1711799 - Fernando Tancini - fernandotancini@hotmail.com
+	1710635 - Júlia Rocha - juliaafr@outlook.com
+	1811208 - Suemy Inagaki - inagakisuemy@gmail.com  
 
-ApresentaÁ„o:
-	Este texto descreve resumidamente o conte˙do e funcionamento do arquivo INF1301-Trab04-FMCMPVRFS.zip.
-	Os programas contidos neste arquivo .zip realizam testes para o mÛdulo LISTA.C.
+Apresentação:
+	Este texto descreve resumidamente o conteúdo e funcionamento do arquivo INF1301-Trab04-FJS.zip.
+	Os programas contidos neste arquivo .zip realizam testes para o módulo LISTA.C.
 
-Conte˙do:
-	O conte˙do extraÌdo do zip est· dividido nas seguintes pastas:
-	- TRAB4: contÈm testes relativos ao mÛdulo LISTA.C e os execut·veis para os testes do mesmo.
-	- RelatÛrios: contÈm os relatÛrios feitos pelos alunos que desenvolveram este trabalho.
+conteúdo:
+	O conteúdo extraído do zip está dividido nas seguintes pastas:
+	- TRAB4: contém testes relativos ao módulo LISTA.C e os executáveis para os testes do mesmo.
+	- Relatórios: contém os Relatórios feitos pelos alunos que desenvolveram este trabalho.
 
-	Na pasta extraÌda tambÈm deve estar contido o arquivo LEIAME.txt (o presente documento), e o arquivo DocumentaÁ„o, contendo o modelo estrutural com as respectivas assertivas estruturais atualizadas para a estrutura autoverific·vel, e a descriÁ„o de cada comando de teste disponibilizado para testar o verificador.
+	Na pasta extraída também deve estar contido o arquivo LEIAME.txt (o presente documento), e o arquivo Documentação, contendo o modelo estrutural com as respectivas assertivas estruturais atualizadas para a estrutura autoverificável, e a descrição de cada comando de teste disponibilizado para testar o verificador.
 
-InstruÁıes:
-	Primeiro, È necess·rio extrair o conte˙do do arquivo INF1301-Trab04-FMCMPVRFS.zip
+Instruções:
+	Primeiro, È necessário extrair o conteúdo do arquivo INF1301-Trab04-FJS.zip
 
-	Para executar os testes relativos ao mÛdulo Lista, sem deturpaÁ„o:
-	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraÌdo.
-	2) Execute o arquivo TRAB4-2.bat
-	3) Para visualizar o resultado da execuÁ„o, abra o arquivo TRAB4-2_Saida.txt
-	
-	Para executar os testes relativos ao mÛdulo Lista, com deturpaÁ„o:
-	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraÌdo.
+	Para executar os testes relativos ao módulo Lista, sem deturpação:
+	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraído.
 	2) Execute o arquivo TRAB4-1.bat
-	3) A totalizaÁ„o dos contadores ser· impressa na tela, e armazenada no arquivo Contadores.count. O log completo, com os casos de teste realizados, pode ser visualizado ao abrir o arquivo TRAB4-1_Saida.txt.
+	3) Para visualizar o resultado da execução, abra o arquivo TRAB4-1_Saida.txt
+	
+	Para executar os testes relativos ao módulo Lista, com deturpação:
+	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraído.
+	2) Execute o arquivo TRAB4-2.bat
+	3) o total dos contadores ser impresso na tela, e armazenada no arquivo Contadores.count. O log completo, com os casos de teste realizados, pode ser visualizado ao abrir o arquivo TRAB4-2_Saida.txt.
 	
