@@ -23,11 +23,11 @@ Instruções:
 
 	Para executar os testes relativos ao módulo Lista, sem deturpação:
 	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraído.
-	2) Execute o arquivo TRAB4-1.bat
-	3) Para visualizar o resultado da execução, abra o arquivo TRAB4-1_Saida.txt
+	2) Execute o arquivo TesteLista.bat
+	3) Para visualizar o resultado da execução, abra o arquivo Saida.log
 	
 	Para executar os testes relativos ao módulo Lista, com deturpação:
 	1) Abra a pasta TRAB4 contida dentro da pasta onde o arquivo foi extraído.
-	2) Execute o arquivo TRAB4-2.bat
-	3) o total dos contadores ser impresso na tela, e armazenada no arquivo Contadores.count. O log completo, com os casos de teste realizados, pode ser visualizado ao abrir o arquivo TRAB4-2_Saida.txt.
+	2) Execute o arquivo testeLista.bat
+	3) A declaração dos contadores está em Lista.count e o total dos contadores ser impresso na tela, e armazenada no arquivo Saida.count. O log completo, com os casos de teste realizados, pode ser visualizado ao abrir o arquivo TesteListaDebug.log.
 	
