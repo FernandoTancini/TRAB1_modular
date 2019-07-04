@@ -599,24 +599,20 @@
       int iterator, num_alocados;
 
       if(Lista == NULL){
-         printf("\nErro: N�o existe lista");
          CNT_CONTAR("LIS_ListaNaoExiste");
          falhas++;
          return falhas;
       }
       if(Lista->pElemCorr == NULL ){
-         printf("\nErro: Elemento corrente nulo");
          CNT_CONTAR("LIS_CorrenteNULL");
          falhas++;
       }
       if(Lista->pOrigemLista == NULL){
-         printf("\nErro: Elemento origem nulo");
          CNT_CONTAR("LIS_OrigemNULL");
          falhas++;
          flag_ver_invertido = 1;
       }
       if(Lista->pFimLista == NULL){
-         printf("\nErro: Elemento final nulo");
          CNT_CONTAR("LIS_FimNULL");
          falhas++;
          flag_ver_invertido = 0;
@@ -630,7 +626,6 @@
          n_elementos++;
                
          if(Elemento->pValor == NULL){
-            printf("\nErro: Valor do elemento nulo");
             CNT_CONTAR("LIS_ConteudoNULL");
             falhas++;
          }
@@ -640,31 +635,26 @@
 
          }
          if(CED_ObterTipoEspaco(Elemento) != Elemento->tipo){
-            printf("\nErro: Tipo do elemento errado");
             CNT_CONTAR("LIS_TipoNoDiferente");
             falhas++;
          }
                
          if(Elemento->pProx == (tpElemLista*)PONTEIRO_LIXO){
-            printf("\nErro: Durante a verifica��o, proximo elemento lista � lixo");
             CNT_CONTAR("LIS_ProxElementoLIXO");
             flag_ver_invertido = 1;
             falhas++;
          }
          if(Elemento->pAnt == (tpElemLista*)PONTEIRO_LIXO){
-            printf("\nErro: Durante a verifica��o, elemento anterior � lixo");
             CNT_CONTAR("LIS_AntElementoLIXO");
             falhas++;
          }
 
          if(Elemento != Lista->pFimLista && Elemento->pProx == NULL){
-            printf("\nErro: Lista quebrada, elemento->prox = NULL");
             flag_ver_invertido = 1;
             CNT_CONTAR("LIS_ProxElementoNULL");
             falhas++;
          } 
          if(Elemento != Lista->pOrigemLista && Elemento->pAnt == NULL){
-            printf("\nErro: Lista quebrada, elmento->antes = NULL");
             flag_ver_invertido = 1;
             CNT_CONTAR("LIS_AntElementoNULL");
             falhas++;
@@ -676,7 +666,6 @@
                CED_MarcarEspacoAtivo(Elemento);
                n_elementos++;
                if(Elemento->pValor == NULL){
-                  printf("\nErro: Valor do elemento nulo");
                   CNT_CONTAR("ILIS_ConteudoNULL");
                   falhas++;
                }
@@ -686,29 +675,24 @@
 
                }
                if(CED_ObterTipoEspaco(Elemento) != Elemento->tipo){
-                  printf("\nErro: Tipo do elemento errado");
                   CNT_CONTAR("ILIS_TipoNoDiferente");
                   falhas++;
                }
                
                if(Elemento->pProx == (tpElemLista*)PONTEIRO_LIXO){
-                  printf("\nErro: Durante a verifica��o, proximo elemento lista � lixo");
                   CNT_CONTAR("ILIS_ProxElementoLIXO");
                   falhas++;
                }
                if(Elemento->pAnt == (tpElemLista*)PONTEIRO_LIXO){
-                  printf("\nErro: Durante a verifica��o, elemento anterior � lixo");
                   CNT_CONTAR("ILIS_AntElementoLIXO");
                   falhas++;
                } 
 
                if(Elemento != Lista->pFimLista && Elemento->pProx == NULL){
-                  printf("\nErro: Lista quebrada, elemento->prox = NULL");
                   CNT_CONTAR("ILIS_ProxElementoNULL");
                   falhas++;
                } 
                if(Elemento != Lista->pOrigemLista && Elemento->pAnt == NULL){
-                  printf("\nErro: Lista quebrada, elmento->antes = NULL");
                   flag_ver_invertido = 1;
                   CNT_CONTAR("ILIS_AntElementoNULL");
                   falhas++;
@@ -724,14 +708,12 @@
          int ativo = CED_EhEspacoAtivo(pointer);
          CNT_CONTAR("VERIFICANDO_ESPACOS_ALOCADOS");
          if(!ativo){
-            printf("\nErro: Vazamento de memoria");
             CNT_CONTAR("LIS_VazamentoMemoria");
             falhas++;
          }
          CED_AvancarProximoEspaco();
       }
       if(n_elementos != Lista->numElem){
-         printf("\nErro: Numero de elementos contabilizados errados");
          CNT_CONTAR("LIS_NumeroErradoDeElementos");
          falhas++;
       }
