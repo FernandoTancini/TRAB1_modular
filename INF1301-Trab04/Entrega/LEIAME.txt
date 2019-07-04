@@ -11,7 +11,9 @@ Apresentação:
 
 conteúdo:
 	O conteúdo extraído do zip está dividido nas seguintes pastas:
-	- TRAB4: contém testes relativos ao módulo LISTA.C e os executáveis para os testes do mesmo.
+	- este arquivo,
+	- Documentação-FJS.pdf: o arquivo com o modelo de lista genérica auto-verificável e assertivas estruturais,
+	- TRAB4: contém os arquivos fontes e executáveis.
 	- Relatórios: contém os Relatórios feitos pelos alunos que desenvolveram este trabalho.
 
 	Na pasta extraída também deve estar contido o arquivo LEIAME.txt (o presente documento), e o arquivo Documentação, contendo o modelo estrutural com as respectivas assertivas estruturais atualizadas para a estrutura autoverificável, e a descrição de cada comando de teste disponibilizado para testar o verificador.

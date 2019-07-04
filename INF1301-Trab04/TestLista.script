@@ -1,7 +1,9 @@
 // Script:    TesteLista.script
-// Autor:     Arndt von Staa
-// Data:      02/abr/2008
-// Propósito: Testar superficialmente o módulo lista genérica duplamente encadeada
+// Autores:   Fernando Tancini
+//	      Julia Rocha
+//	      Suemy Inagaki
+// Data:      03/07/2019
+// Proposito: Testar o modulo lista generica duplamente encadeada - instrumentacao
 //
 
 == Inicializar valores
@@ -26,8 +28,6 @@
 == Criar a lista 0
 =criarlista      lista0 
 
-== Verificar ObterValor relativo a lista vazia
-=obtervalorelem  lista0   "???"     pNULL
 
 == Inserir elemento em lista vazia
 =inselemantes    lista0   str0   OK
