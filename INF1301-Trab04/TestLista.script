@@ -1,7 +1,7 @@
 // Script:    TesteLista.script
 // Autor:     Arndt von Staa
 // Data:      02/abr/2008
-// Propósito: Testar superficialmente o módulo lista genérica duplamente encadeada
+// PropÃ³sito: Testar superficialmente o mÃ³dulo lista genÃ©rica duplamente encadeada
 //
 
 == Inicializar valores
@@ -33,11 +33,11 @@
 =inselemantes    lista0   str0   OK
 =obtervalorelem  lista0   str0   pNaoNULL
 
-== Inserir elemento após primeiro
+== Inserir elemento apÃ³s primeiro
 =inselemapos     lista0   str1   OK
 =obtervalorelem  lista0   str1   pNaoNULL
 
-== Inserir elemento antes do último
+== Inserir elemento antes do Ãºltimo
 =inselemantes    lista0   str2   OK
 =obtervalorelem  lista0   str2   pNaoNULL
 
@@ -45,11 +45,11 @@
 =obtervalorelem  lista0   str2   pNaoNULL
 =excluirelem     lista0             OK
 
-== Excluir elemento do início
+== Excluir elemento do inÃ­cio
 =obtervalorelem  lista0   str0   pNaoNULL
 =excluirelem     lista0             OK
 
-== Excluir elemento final, único 
+== Excluir elemento final, Ãºnico 
 =obtervalorelem  lista0   str1   pNaoNULL
 =excluirelem     lista0             OK
 
@@ -78,7 +78,7 @@
 =inselemapos     lista2   str2   OK
 =inselemapos     lista2   str3   OK
 
-== Verificar a lista de trás para diante
+== Verificar a lista de trÃ¡s para diante
 =obtervalorelem  lista2   str3   pNaoNULL
 =avancarelem     lista2   -1     OK
 =obtervalorelem  lista2   str2   pNaoNULL
@@ -88,7 +88,7 @@
 =obtervalorelem  lista2   str0   pNaoNULL
 =avancarelem     lista2   -1     FimLista
 
-== Verificar a lista de frente para trás
+== Verificar a lista de frente para trÃ¡s
 =obtervalorelem  lista2   str0   pNaoNULL
 =avancarelem     lista2   1      OK
 =obtervalorelem  lista2   str1   pNaoNULL
@@ -98,11 +98,11 @@
 =obtervalorelem  lista2   str3   pNaoNULL
 =avancarelem     lista2   1      FimLista
 
-== Verificar a lista andando demais de trás para diante
+== Verificar a lista andando demais de trÃ¡s para diante
 =avancarelem     lista2   -10     FimLista
 =obtervalorelem  lista2   str0   pNaoNULL
 
-== Verificar a lista andando demais de frente para trás
+== Verificar a lista andando demais de frente para trÃ¡s
 =avancarelem     lista2   10     FimLista
 =obtervalorelem  lista2   str3   pNaoNULL
 
