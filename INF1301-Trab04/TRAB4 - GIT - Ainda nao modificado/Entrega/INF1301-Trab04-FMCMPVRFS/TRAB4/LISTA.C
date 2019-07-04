@@ -13,7 +13,7 @@
  *
  *  $HA Histórico de evolução:
  *     Versão  Autor    Data           Observações
- *     5       jfr      01/jul/2019    Início desenvolvimento
+ *     1       jfr      01/jul/2019    Início desenvolvimento
  *
  ***************************************************************************/
 
