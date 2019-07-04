@@ -77,7 +77,7 @@ static const char AVANCAR_ELEM_CMD        [ ] = "=avancarelem"    ;
 
 LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
-/***** Prot�tipos das fun��es encapuladas no m�dulo *****/
+/***** Protótipos das funções encapuladas no módulo *****/
 
    static void DestruirValor( void * pValor ) ;
 
@@ -87,14 +87,14 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
    static int ValidarInxListaDebug( int inx);
    #endif
 
-/*****  C�digo das fun��es exportadas pelo m�dulo  *****/
+/*****  Código das funções exportadas pelo módulo  *****/
 
 
 /***********************************************************************
 *
-*  $FC Fun��o: TLIS &Testar lista
+*  $FC Função: TLIS &Testar lista
 *
-*  $ED Descri��o da fun��o
+*  $ED Descrição da fun��o
 *     Podem ser criadas at� 10 listas, identificadas pelos �ndices 0 a 10
 *
 *     Comandos dispon�veis:
@@ -171,26 +171,7 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
 
          } /* fim ativa: Testar CriarLista */
 
-      /* Testar Esvaziar lista lista */
-
-         else if ( strcmp( ComandoTeste , ESVAZIAR_LISTA_CMD ) == 0 )
-         {
-
-            numLidos = LER_LerParametros( "i" ,
-                               &inxLista ) ;
-
-            if ( ( numLidos != 1 )
-              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )))
-            {
-               return TST_CondRetParm ;
-            } /* if */
-
-            LIS_EsvaziarLista( vtListas[ inxLista ] ) ;
-
-            return TST_CondRetOK ;
-
-         } /* fim ativa: Testar Esvaziar lista lista */
-
+     
       /* Testar Destruir lista */
 
          else if ( strcmp( ComandoTeste , DESTRUIR_LISTA_CMD ) == 0 )
@@ -392,6 +373,26 @@ LIS_tppLista   vtListas[ DIM_VT_LISTA ] ;
                       "Condicao de retorno errada ao avancar" ) ;
 
          } /* fim ativa: LIS  &Avan�ar elemento */
+
+	   /* Testar Esvaziar lista lista */
+
+         else if ( strcmp( ComandoTeste , ESVAZIAR_LISTA_CMD ) == 0 )
+         {
+
+            numLidos = LER_LerParametros( "i" ,
+                               &inxLista ) ;
+
+            if ( ( numLidos != 1 )
+              || ( ! ValidarInxLista( inxLista , NAO_VAZIO )))
+            {
+               return TST_CondRetParm ;
+            } /* if */
+
+            LIS_EsvaziarLista( vtListas[ inxLista ] ) ;
+
+            return TST_CondRetOK ;
+
+         } /* fim ativa: Testar Esvaziar lista lista */
 
 #ifdef _DEBUG
 		else if ( strcmp( ComandoTeste , DETURPAR ) == 0 ){
