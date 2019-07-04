@@ -1,24 +1,28 @@
 /***************************************************************************
-*  $MCI M�dulo de implementa��o: TLIS Teste lista de s�mbolos
+*  $MCI Módulo de implementação: TLIS Teste lista de símbolos
 *
 *  Arquivo gerado:              TestLIS.c
 *  Letras identificadoras:      TLIS
 *
-*  Nome da base de software:    Arcabou�o para a automa��o de testes de programas redigidos em C
+*  Nome da base de software:    Arcabouçoo para a automação de testes de programas redigidos em C
 *  Arquivo da base de software: D:\AUTOTEST\PROJETOS\LISTA.BSW
 *
-*  Projeto: INF 1301 / 1628 Automatiza��o dos testes de m�dulos C
+*  Projeto: INF 1301 / 1628 Automatização dos testes de módulos C
 *  Gestor:  LES/DI/PUC-Rio
-*  Autores: avs, gmc, rd
+*  Autores: avs
+*           sipf - suemy inagaki pinheiro fagundes
+*           jfr  - júlia afonso figueiredo rocha
+*           ft   - fernando tancini
 *
-*  $HA Hist�rico de evolu��o:
-*     Vers�o  Autor    Data     Observa��es
-*     6       gmc   01/jul/2019 pequenas correções e comentários no código
-*     5       rdms   28/jun/2019 alterações para verificação da lista
-*     4       avs   01/fev/2006 criar linguagem script simb�lica
-*     3       avs   08/dez/2004 uniformiza��o dos exemplos
-*     2       avs   07/jul/2003 unifica��o de todos os m�dulos em um s� projeto
-*     1       avs   16/abr/2003 in�cio desenvolvimento
+*  $HA Histórico de evolução:
+*     Versão  Autor    Data     Observações
+*     7       ft    01/jul/2019 comentários
+*     6       jfr   01/jul/2019 algumas correções
+*     5       sipf  30/jun/2019 inicio da implementação da adaptação do teste
+*     4       avs   01/fev/2006 criar linguagem script simbólica
+*     3       avs   08/dez/2004 uniformização dos exemplos
+*     2       avs   07/jul/2003 unificação de todos os módulos em um só projeto
+*     1       avs   16/abr/2003 início desenvolvimento
 *
 ***************************************************************************/
 
