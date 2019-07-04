@@ -123,9 +123,9 @@ LIS_tppLista   vtListas[ DIMENSAO_LISTA] ;
       int i ;
       TST_tpCondRet CondRet ;
 
-      char   strDado[  DIMENSAO_VALOR ] ;
-      strDado[ 0 ] = 0 ;
-      char * pDado ;
+      char   strDado[  DIMENSAO_VALOR ];
+	  char * pDado;
+	  strDado[ 0 ] = 0;
 
       /* Efetuar reset de teste de lista */
 

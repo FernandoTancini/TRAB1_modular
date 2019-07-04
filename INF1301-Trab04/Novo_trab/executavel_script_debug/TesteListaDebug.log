@@ -9,126 +9,32 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
       Arquivo de teste:    TesteListaDebug.script
 
 
-    1  == Declaração de listas
-    4  == Declaração de Tipos de deturpação
-   16  == Declaração de Tipos de verificação
-   29  == Declaração de dados
-   36  == Declaração de retornos das funções de lista
+    1  == Declara‹o de listas
+    4  == Declara‹o de Tipos de deturpa‹o
+   16  == Declara‹o de Tipos de verifica‹o
+   29  == Declara‹o de dados
+   36  == Declara‹o de retornos das fun›es de lista
    43  == Iniciar contagem
-   48  == Não existe lista
-Erro: Nï¿½o existe lista
->>>    1  Linha:    49  Numero errado de erros Deveria ser: 0  É: 1
+   48  == N‹o existe lista
    51  == Lista ok
-Erro: Tipo do elemento errado
-Erro: Tipo do elemento errado
-Erro: Tipo do elemento errado
-Erro: Tipo do elemento errado
->>>    2  Linha:    57  Numero errado de erros Deveria ser: 10  É: 4
->>>    3  Linha:    58  Não é comando recuperar:  =liberartudo
->>>    4  Linha:    59  Comando de teste ignorado:  =resetteste
    61  == Vazamento de memoria
->>>    5  Linha:    62  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>    6  Linha:    64  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>    7  Linha:    65  Comando de teste ignorado:  =inselemapos 	LISTA0	str2	OK
->>>    8  Linha:    66  Comando de teste ignorado:  =inselemapos 	LISTA0	str3	OK
->>>    9  Linha:    67  Comando de teste ignorado:  =irinicio	LISTA0
->>>   10  Linha:    68  Comando de teste ignorado:  =avancarelem	LISTA0	2	OK
->>>   11  Linha:    69  Comando de teste ignorado:  =deturparlista	LISTA0	DERPQUEBRARSEMFREE	OK
->>>   12  Linha:    70  Comando de teste ignorado:  =verificarlista	LISTA0	VERMEMLEAK
->>>   13  Linha:    71  Comando de teste ignorado:  =liberartudo
->>>   14  Linha:    72  Comando de teste ignorado:  =resetteste
    75  == Deturpando ponteiro para o proximo null
->>>   15  Linha:    76  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   16  Linha:    78  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   17  Linha:    79  Comando de teste ignorado:  =irinicio	LISTA0
->>>   18  Linha:    80  Comando de teste ignorado:  =deturparlista	LISTA0	DERPNULLPROXNO		OK
->>>   19  Linha:    81  Comando de teste ignorado:  =verificarlista	LISTA0	VERNULLPROXNO
->>>   20  Linha:    82  Comando de teste ignorado:  =liberartudo
->>>   21  Linha:    83  Comando de teste ignorado:  =resetteste
    85  == Deturpando ponteiro para o proximo Lixo
->>>   22  Linha:    86  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   23  Linha:    88  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   24  Linha:    89  Comando de teste ignorado:  =irinicio	LISTA0
->>>   25  Linha:    90  Comando de teste ignorado:  =deturparlista	LISTA0	DERPLIXOPROXNO		OK
->>>   26  Linha:    91  Comando de teste ignorado:  =verificarlista	LISTA0	VERLIXOPROXNO
->>>   27  Linha:    92  Comando de teste ignorado:  =liberartudo
->>>   28  Linha:    93  Comando de teste ignorado:  =resetteste
    95  == Deturpando ponteiro para o anterior null
->>>   29  Linha:    96  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   30  Linha:    98  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   31  Linha:    99  Comando de teste ignorado:  =irfinal	LISTA0
->>>   32  Linha:   100  Comando de teste ignorado:  =deturparlista	LISTA0	DERPNULLANTNO		OK
->>>   33  Linha:   101  Comando de teste ignorado:  =verificarlista	LISTA0	VERNULLANTNO
->>>   34  Linha:   102  Comando de teste ignorado:  =liberartudo
->>>   35  Linha:   103  Comando de teste ignorado:  =resetteste
-  105  == Deturpando ponteiro para o anterior null
->>>   36  Linha:   106  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   37  Linha:   108  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   38  Linha:   109  Comando de teste ignorado:  =irfinal	LISTA0
->>>   39  Linha:   110  Comando de teste ignorado:  =deturparlista	LISTA0	DERPLIXOANTNO		OK
->>>   40  Linha:   111  Comando de teste ignorado:  =verificarlista	LISTA0	VERLIXOANTNO
->>>   41  Linha:   112  Comando de teste ignorado:  =liberartudo
->>>   42  Linha:   113  Comando de teste ignorado:  =resetteste
+  105  == Deturpando ponteiro para o anterior Lixo
   115  == Deturpando ponteiro para o Conteudo NULL
->>>   43  Linha:   116  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   44  Linha:   118  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   45  Linha:   119  Comando de teste ignorado:  =irinicio	LISTA0
->>>   46  Linha:   120  Comando de teste ignorado:  =deturparlista	LISTA0	DERPNULLCONTNO		OK
->>>   47  Linha:   121  Comando de teste ignorado:  =verificarlista	LISTA0	VERNULLCONTNO
->>>   48  Linha:   122  Comando de teste ignorado:  =liberartudo
->>>   49  Linha:   123  Comando de teste ignorado:  =resetteste
   125  == Deturparndo o corrente NULL
->>>   50  Linha:   126  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   51  Linha:   128  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   52  Linha:   129  Comando de teste ignorado:  =irinicio	LISTA0
->>>   53  Linha:   130  Comando de teste ignorado:  =deturparlista	LISTA0	DERPNULLCORR		OK
->>>   54  Linha:   131  Comando de teste ignorado:  =verificarlista	LISTA0	VERNULLCORR
->>>   55  Linha:   132  Comando de teste ignorado:  =liberartudo
->>>   56  Linha:   133  Comando de teste ignorado:  =resetteste
   135  == Deturpando a origen NULL
->>>   57  Linha:   136  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   58  Linha:   138  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   59  Linha:   139  Comando de teste ignorado:  =irinicio	LISTA0
->>>   60  Linha:   140  Comando de teste ignorado:  =deturparlista	LISTA0	DERPNULLORIG		OK
->>>   61  Linha:   141  Comando de teste ignorado:  =verificarlista	LISTA0	VERNULLORIG
->>>   62  Linha:   142  Comando de teste ignorado:  =liberartudo
->>>   63  Linha:   143  Comando de teste ignorado:  =resetteste
   145  == Deturpando tipo do no
->>>   64  Linha:   146  Erro nos parâmetros do comando:  =criarlista	LISTA0	OK
->>>   65  Linha:   148  Comando de teste ignorado:  =inselemapos 	LISTA0	str1	OK
->>>   66  Linha:   149  Comando de teste ignorado:  =irinicio	LISTA0
->>>   67  Linha:   150  Comando de teste ignorado:  =deturparlista	LISTA0	DERPMUDARTIPONO		OK
->>>   68  Linha:   151  Comando de teste ignorado:  =verificarlista	LISTA0	VERDIFFERTIPONO
->>>   69  Linha:   152  Comando de teste ignorado:  =liberartudo
->>>   70  Linha:   153  Comando de teste ignorado:  =resetteste
-  155  == Terminar controlar contadores
-cc>   71  Linha:   157   Contagem em "ILIS_AntElementoLIXO" é zero.
-cc>   72  Linha:   157   Contagem em "ILIS_AntElementoNULL" é zero.
-cc>   73  Linha:   157   Contagem em "ILIS_ConteudoNULL" é zero.
-cc>   74  Linha:   157   Contagem em "ILIS_ProxElementoLIXO" é zero.
-cc>   75  Linha:   157   Contagem em "ILIS_ProxElementoNULL" é zero.
-cc>   76  Linha:   157   Contagem em "ILIS_TipoNoDiferente" é zero.
-cc>   77  Linha:   157   Contagem em "IVALIDANDO_CAMPO_VALOR" é zero.
-cc>   78  Linha:   157   Contagem em "LIS_AntElementoLIXO" é zero.
-cc>   79  Linha:   157   Contagem em "LIS_AntElementoNULL" é zero.
-cc>   80  Linha:   157   Contagem em "LIS_ConteudoNULL" é zero.
-cc>   81  Linha:   157   Contagem em "LIS_CorrenteNULL" é zero.
-cc>   82  Linha:   157   Contagem em "LIS_FimNULL" é zero.
-cc>   83  Linha:   157   Contagem em "LIS_NumeroErradoDeElementos" é zero.
-cc>   84  Linha:   157   Contagem em "LIS_OrigemNULL" é zero.
-cc>   85  Linha:   157   Contagem em "LIS_ProxElementoLIXO" é zero.
-cc>   86  Linha:   157   Contagem em "LIS_ProxElementoNULL" é zero.
-cc>   87  Linha:   157   Contagem em "LIS_VazamentoMemoria" é zero.
->>>   88  Linha:   157  Número de contadores zero errado. Deveria ser: 0  É: 17
-  159  == Terminar contagem
-  162  == Liberando tudo
+  156  == Terminar contagem
+  159  == Liberando tudo
 
-!!! Número de linhas lidas:         163
-!!! Número de casos de teste:        20
-!!! Número comandos corretos:        43
-!!! Número de falhas encontradas:    88
+!!! Número de linhas lidas:         160
+!!! Número de casos de teste:        19
+!!! Número comandos corretos:       121
+!!! Número de falhas encontradas:     0
 
-!!! Foram encontrados problemas
+!!! Não foram encontrados problemas
 
 
 !!! Numero de espacos ainda alocados: 0
